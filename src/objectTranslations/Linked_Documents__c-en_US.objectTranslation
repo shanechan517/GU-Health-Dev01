@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Notes and Document Link</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Notes and Document Links</value>
+    </caseValues>
+    <fields>
+        <label><!-- Case --></label>
+        <name>Case__c</name>
+        <relationshipLabel><!-- Notes and Document Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Company --></label>
+        <name>Company__c</name>
+        <relationshipLabel><!-- Notes and Document Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Contact --></label>
+        <name>Contact__c</name>
+        <relationshipLabel><!-- Notes and Document Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Document Type --></label>
+        <name>Document_Type__c</name>
+        <picklistValues>
+            <masterLabel>Link to Network drive Document</masterLabel>
+            <translation><!-- Link to Network drive Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Link to SharePoint Document</masterLabel>
+            <translation><!-- Link to SharePoint Document --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Document URL --></label>
+        <name>Document_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Document Version --></label>
+        <name>Document_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- External_ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- File Name --></label>
+        <name>File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+        <relationshipLabel><!-- Notes and Document Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Location in Network Drive --></label>
+        <name>Location_in_Network_Drive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Notes --></label>
+        <name>Notes__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Notes and Document Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Section Product Link --></label>
+        <name>Section_Product_Link__c</name>
+        <relationshipLabel><!-- Notes and Document Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Section --></label>
+        <name>Section__c</name>
+        <relationshipLabel><!-- Notes and Document Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inactive</masterLabel>
+            <translation><!-- Inactive --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Linked Document Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Document Information --></label>
+            <section>Document Information</section>
+        </sections>
+        <sections>
+            <label><!-- Link to the document --></label>
+            <section>Link to the document</section>
+        </sections>
+        <sections>
+            <label><!-- Notes(Optional) --></label>
+            <section>Notes(Optional)</section>
+        </sections>
+        <sections>
+            <label><!-- Related to --></label>
+            <section>Related to</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

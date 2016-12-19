@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Opp Requested Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Opp Requested Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Base or Upgrade --></label>
+        <name>Base_or_Upgrade__c</name>
+        <picklistValues>
+            <masterLabel>Base</masterLabel>
+            <translation><!-- Base --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade</masterLabel>
+            <translation><!-- Upgrade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employer/Member Excess --></label>
+        <name>Employer_Member_Excess__c</name>
+        <picklistValues>
+            <masterLabel>Employer Excess</masterLabel>
+            <translation><!-- Employer Excess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Excess</masterLabel>
+            <translation><!-- Excess --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Excess Amount --></label>
+        <name>Excess_Amount__c</name>
+        <picklistValues>
+            <masterLabel>$100(S)/$200(F)</masterLabel>
+            <translation><!-- $100(S)/$200(F) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$200(S)/$400(F)</masterLabel>
+            <translation><!-- $200(S)/$400(F) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$250(S)/$500(F)</masterLabel>
+            <translation><!-- $250(S)/$500(F) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>$500(S)/$1000(F)</masterLabel>
+            <translation><!-- $500(S)/$1000(F) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Extras Product --></label>
+        <name>Extras_Product__c</name>
+        <picklistValues>
+            <masterLabel>Added Value Benefits</masterLabel>
+            <translation><!-- Added Value Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Advantage 80</masterLabel>
+            <translation><!-- Advantage 80 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget 50 Benefits</masterLabel>
+            <translation><!-- Budget 50 Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget 60 Benefits</masterLabel>
+            <translation><!-- Budget 60 Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Budget Benefits</masterLabel>
+            <translation><!-- Budget Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business 60 Benefits</masterLabel>
+            <translation><!-- Business 60 Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business 80 Benefits</masterLabel>
+            <translation><!-- Business 80 Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business 85 Benefits</masterLabel>
+            <translation><!-- Business 85 Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Business 90 Benefits</masterLabel>
+            <translation><!-- Business 90 Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Corporate Plus Benefits</masterLabel>
+            <translation><!-- Corporate Plus Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Economy Benefits</masterLabel>
+            <translation><!-- Economy Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Essential Benefits</masterLabel>
+            <translation><!-- Essential Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Essential Lifestyle Benefits</masterLabel>
+            <translation><!-- Essential Lifestyle Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Everyday Benefits</masterLabel>
+            <translation><!-- Everyday Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Everyday Lifestyle Benefits</masterLabel>
+            <translation><!-- Everyday Lifestyle Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Benefits</masterLabel>
+            <translation><!-- Executive Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Lifestyle Benefits</masterLabel>
+            <translation><!-- Executive Lifestyle Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended Benefits</masterLabel>
+            <translation><!-- Extended Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Extended Lifestyle Benefits</masterLabel>
+            <translation><!-- Extended Lifestyle Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier Ancillary Benefits</masterLabel>
+            <translation><!-- Premier Ancillary Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Super Benefits</masterLabel>
+            <translation><!-- Super Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Super Lifestyle Benefits</masterLabel>
+            <translation><!-- Super Lifestyle Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Super U Benefits</masterLabel>
+            <translation><!-- Super U Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Superior Benefits</masterLabel>
+            <translation><!-- Superior Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Superior Lifestyle Benefits</masterLabel>
+            <translation><!-- Superior Lifestyle Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Superior Lite Benefits</masterLabel>
+            <translation><!-- Superior Lite Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value 70 Benefits</masterLabel>
+            <translation><!-- Value 70 Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value 70 Lifestyle Benefits</masterLabel>
+            <translation><!-- Value 70 Lifestyle Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Benefits</masterLabel>
+            <translation><!-- Value Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Lifestyle Benefits</masterLabel>
+            <translation><!-- Value Lifestyle Benefits --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Value Plus</masterLabel>
+            <translation><!-- Value Plus --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Hospital Product --></label>
+        <name>Hospital_Product__c</name>
+        <picklistValues>
+            <masterLabel>Budget Plus Cover_NonRHCA</masterLabel>
+            <translation><!-- Budget Plus Cover_NonRHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classic Plus Hospital &amp; Standard Medical Cover_NonRHCA</masterLabel>
+            <translation><!-- Classic Plus Hospital &amp; Standard Medical Cover_NonRHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Classic Plus Hospital Cover with Medical Benefits_RHCA</masterLabel>
+            <translation><!-- Classic Plus Hospital Cover with Medical Benefits_RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete Hospital</masterLabel>
+            <translation><!-- Complete Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Executive Hospital</masterLabel>
+            <translation><!-- Executive Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inpatriate Basic Hospital Cover with Medical Benefits_RHCA</masterLabel>
+            <translation><!-- Inpatriate Basic Hospital Cover with Medical Benefits_RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inpatriate Hospital &amp; Medical Cover_NonRHCA</masterLabel>
+            <translation><!-- Inpatriate Hospital &amp; Medical Cover_NonRHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Inpatriate Hospital Cover with Medical Benefits_RHCA</masterLabel>
+            <translation><!-- Inpatriate Hospital Cover with Medical Benefits_RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>My Choice Hospital</masterLabel>
+            <translation><!-- My Choice Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>My Choice Hospital Saver</masterLabel>
+            <translation><!-- My Choice Hospital Saver --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optimum Hospital with Medical</masterLabel>
+            <translation><!-- Optimum Hospital with Medical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optimum Hospital with Medical_RHCA</masterLabel>
+            <translation><!-- Optimum Hospital with Medical_RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optimum Plus Hospital with Medical</masterLabel>
+            <translation><!-- Optimum Plus Hospital with Medical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Optimum Plus Hospital with Medical_RHCA</masterLabel>
+            <translation><!-- Optimum Plus Hospital with Medical_RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Premier Hospital</masterLabel>
+            <translation><!-- Premier Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pricepoint</masterLabel>
+            <translation><!-- Pricepoint --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top Hospital</masterLabel>
+            <translation><!-- Top Hospital --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Opp Requested Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Requested Product Name --></label>
+        <name>Requested_Product_Name__c</name>
+    </fields>
+    <layouts>
+        <layout>Opportunity Product Layout</layout>
+        <sections>
+            <label><!-- Building Blocks --></label>
+            <section>Building Blocks</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Opportunity --></label>
+            <section>Opportunity</section>
+        </sections>
+    </layouts>
+    <startsWith>Vowel</startsWith>
+</CustomObjectTranslation>

@@ -1,0 +1,3220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>AddInfluence</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>opportunityView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <businessProcesses>
+        <fullName>Client Maintenance</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Closed Discarded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed%2FDeclined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation with Client%2FBroker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Opportunity</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Background %2F Validation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Unsuccessful</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Won</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed%2FDeclined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Quote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation with Client%2FBroker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Non Standard Process Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tender Document</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <businessProcesses>
+        <fullName>Renewal</fullName>
+        <isActive>true</isActive>
+        <values>
+            <fullName>Approved by Broker%2FClient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Awaiting Approval</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Closed Discarded</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Preparation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Revision</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Negotiation with Client%2FBroker</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for Advising Broker%2FClient</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for Finalise Docs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ready for Negotiation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rejected from Approval Process</fullName>
+            <default>false</default>
+        </values>
+    </businessProcesses>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <enableFeeds>true</enableFeeds>
+    <enableHistory>false</enableHistory>
+    <fields>
+        <fullName>AccountId</fullName>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Client, Prospect</value>
+            </filterItems>
+            <infoMessage>Please select a Prospect or Client for this opportunity</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Account_Manager__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Manager</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Additional_Client_Broker_Requirements__c</fullName>
+        <externalId>false</externalId>
+        <label>Additional Client/Broker Requirements</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Amount</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Any_Other_Modifications__c</fullName>
+        <externalId>false</externalId>
+        <label>Any Other Modifications</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Approval_Stage__c</fullName>
+        <externalId>false</externalId>
+        <label>Approval Step</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Approved by Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved by Head of Commercial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved by Head of Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined by Account Manager</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined by Head of Commercial</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined by Head of Sales</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved by Broker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved by Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined by Broker</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Declined by Client</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Base_or_Upgrade__c</fullName>
+        <externalId>false</externalId>
+        <label>Base or Upgrade</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Base</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Already_holds_Client__c</fullName>
+        <externalId>false</externalId>
+        <label>Broker Already holds Client?</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Commision_OVC__c</fullName>
+        <externalId>false</externalId>
+        <label>Broker Commision OVC</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Commision_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Broker Commision Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Resident</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>OVC</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Commision__c</fullName>
+        <externalId>false</externalId>
+        <label>Broker Commision Resident</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Number__c</fullName>
+        <externalId>false</externalId>
+        <formula>Broker__r.Client_Number__c</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Broker Number</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Broker__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Broker</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Broker</value>
+            </filterItems>
+            <infoMessage>Please select a broker for this opportunity</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Opportunities (Broker)</relationshipLabel>
+        <relationshipName>Opportunities1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CampaignId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Changes_to_Renewal_Terms__c</fullName>
+        <externalId>false</externalId>
+        <label>Changes to Renewal Terms</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Client_background__c</fullName>
+        <externalId>false</externalId>
+        <label>Client background</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Clone_of__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Clone of</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>CloseDate</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Comments</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Commercial_Analyst__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Commercial Analyst</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Opportunities1</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Confirmed_Launch_plans__c</fullName>
+        <description>Confirmed Launch plans</description>
+        <externalId>false</externalId>
+        <label>Launch plans</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Confirmed_funding_model__c</fullName>
+        <description>Confirmed funding model</description>
+        <externalId>false</externalId>
+        <label>Funding Model/Level</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Confirmed_product_details__c</fullName>
+        <externalId>false</externalId>
+        <label>Confirmed product details</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>ContractId</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Current_Health_Fund_General_Insurer__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Current Health Fund/General Insurer</label>
+        <lookupFilter>
+            <active>true</active>
+            <filterItems>
+                <field>Account.RecordTypeId</field>
+                <operation>equals</operation>
+                <value>Health Fund</value>
+            </filterItems>
+            <infoMessage>Please select a Health Fund for this opportunity</infoMessage>
+            <isOptional>false</isOptional>
+        </lookupFilter>
+        <referenceTo>Account</referenceTo>
+        <relationshipLabel>Opportunities</relationshipLabel>
+        <relationshipName>Opportunities</relationshipName>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Description</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Discounting__c</fullName>
+        <externalId>false</externalId>
+        <label>Discounting</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Renewal_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Effective Renewal End Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Employees__c</fullName>
+        <externalId>false</externalId>
+        <label>Number of Employees</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>ExpectedRevenue</fullName>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fixed_Amount__c</fullName>
+        <externalId>false</externalId>
+        <label>Fixed $ Amount</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Forced_Tier__c</fullName>
+        <externalId>false</externalId>
+        <label>Forced Tier</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Forced Base Tier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forced Tier 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forced Tier 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Forced Tier 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Formal_proposal__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Formal proposal</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Funded_to__c</fullName>
+        <externalId>false</externalId>
+        <label>% Funded to</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Funding_SplitPay_Arrangement_Mods__c</fullName>
+        <externalId>false</externalId>
+        <label>Funding &amp; SplitPay A. Modifications</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Further_information__c</fullName>
+        <externalId>false</externalId>
+        <label>Further information</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>General_renewal_information__c</fullName>
+        <externalId>false</externalId>
+        <label>General renewal information</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Geographics__c</fullName>
+        <externalId>false</externalId>
+        <label>Geographics</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Group_Modifications__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Modifications</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Group_pays_GST__c</fullName>
+        <defaultValue>true</defaultValue>
+        <externalId>false</externalId>
+        <label>Group pays GST</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Group_pays_LHC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Group pays LHC</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Growth_Prospects__c</fullName>
+        <externalId>false</externalId>
+        <label>Growth Prospects</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Health_Fund_Reinsurer__c</fullName>
+        <externalId>false</externalId>
+        <label>Health Fund/General Insurer Infor</label>
+        <length>255</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>IsPrivate</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Join_Online__c</fullName>
+        <externalId>false</externalId>
+        <label>Join Online</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>LeadSource</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Letter_of_Authority__c</fullName>
+        <externalId>false</externalId>
+        <label>Letter of Authority</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Level_of_Funding__c</fullName>
+        <externalId>false</externalId>
+        <label>Level of Funding</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>NSW_ACT_no__c</fullName>
+        <externalId>false</externalId>
+        <label>NSW &amp; ACT no</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Name</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>NextStep</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>No_of_Non_RHCA__c</fullName>
+        <externalId>false</externalId>
+        <label>No of Non-RHCA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_RHCA__c</fullName>
+        <externalId>false</externalId>
+        <label>No of RHCA</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_Resident__c</fullName>
+        <externalId>false</externalId>
+        <label>No of Resident</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_employees_Family__c</fullName>
+        <externalId>false</externalId>
+        <label>No of employees - Family</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>No_of_employees_Single__c</fullName>
+        <externalId>false</externalId>
+        <label>No of employees - Single</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Non_standard_Join_Online_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-standard Join Online Details</label>
+        <length>10000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Northern_Territory__c</fullName>
+        <externalId>false</externalId>
+        <label>Northern Territory</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Number__c</fullName>
+        <displayFormat>OPP-{000000}</displayFormat>
+        <externalId>false</externalId>
+        <label>Opportunity Number</label>
+        <trackTrending>false</trackTrending>
+        <type>AutoNumber</type>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Result__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(ISPICKVAL(StageName, &apos;Closed Won&apos;), &quot;Win&quot;, IF(ISPICKVAL(StageName, &apos;Closed Unsuccessful&apos;), &quot;Unsuccessful&quot;, IF(ISPICKVAL(StageName, &apos;Closed/Declined&apos;), &quot;Decline&quot;, &quot;Pending&quot;)))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Result</label>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Opportunity summary</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>OwnerId</fullName>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Payment_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Payment Frequency</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Previous_Health_Plan__c</fullName>
+        <externalId>false</externalId>
+        <label>Previous Health Plan</label>
+        <length>200</length>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Pricebook2Id</fullName>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Probability</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Product_Modifications__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Modifications</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Products__c</fullName>
+        <externalId>false</externalId>
+        <label>Non-standard Products</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>5</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Proposed_Funding_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Proposed Funding Model</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Queensland__c</fullName>
+        <externalId>false</externalId>
+        <label>Queensland</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Authorisation_Comments__c</fullName>
+        <description>Long text field to capture commentary of renewal by Commercial</description>
+        <externalId>false</externalId>
+        <label>Renewal Authorisation Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Renewal_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This field is automatically calculated based on the start date + renewal months</inlineHelpText>
+        <label>Effective Renewal Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Months__c</fullName>
+        <defaultValue>12</defaultValue>
+        <externalId>false</externalId>
+        <label>Renewal Months</label>
+        <precision>2</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Renewal_Terms_Accepted__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Terms Accepted</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Terms_Due__c</fullName>
+        <description>Date terms due to be presented to client</description>
+        <externalId>false</externalId>
+        <label>Renewal Terms Due</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Standard Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Fund Renewal</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Renewal Letter only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_of_Existing_arrangement__c</fullName>
+        <externalId>false</externalId>
+        <label>Renewal of Existing arrangement</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Resident_status__c</fullName>
+        <externalId>false</externalId>
+        <label>Resident status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Resident</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>overseas visitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Resident &amp; overseas visitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Result_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Result Comments</label>
+        <length>32768</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Review_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Review Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Section_Details__c</fullName>
+        <externalId>false</externalId>
+        <label>Section Details</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Section_Modifications__c</fullName>
+        <externalId>false</externalId>
+        <label>Section Modifications</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Service_Delivery_Model__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Delivery Model</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Service_Delivery_Model_details__c</fullName>
+        <externalId>false</externalId>
+        <label>Service Delivery Model - details</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Single_or_Family_Funded__c</fullName>
+        <externalId>false</externalId>
+        <label>Single or Family Funded</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Single</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Family</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Single and Family</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>South_Australia__c</fullName>
+        <externalId>false</externalId>
+        <label>South Australia</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Special_arrangements__c</fullName>
+        <externalId>false</externalId>
+        <label>Special arrangements</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>SplitPay__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>SplitPay</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>StageName</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>New</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>10</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Background / Validation</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>10</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Preparation</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>15</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>15</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Awaiting Approval</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>40</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Commercial Quote</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>30</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tender Document</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>40</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non Standard Process Approval</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>60</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready for Finalise Docs</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>45</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready for Negotiation</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>50</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Negotiation with Client/Broker</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>BestCase</forecastCategory>
+                <probability>70</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>In Revision</fullName>
+                <default>false</default>
+                <description>Changes been made when requested by Broker/Client</description>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>50</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>New Agreement Renewal</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>10</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Rejected from Approval Process</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>35</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Approved by Broker/Client</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>BestCase</forecastCategory>
+                <probability>90</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready for Uploading Docs</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>BestCase</forecastCategory>
+                <probability>90</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ready for Advising Broker/Client</fullName>
+                <default>false</default>
+                <closed>false</closed>
+                <forecastCategory>Pipeline</forecastCategory>
+                <probability>95</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <closed>true</closed>
+                <forecastCategory>Closed</forecastCategory>
+                <probability>100</probability>
+                <won>true</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expired</fullName>
+                <default>false</default>
+                <closed>true</closed>
+                <forecastCategory>Closed</forecastCategory>
+                <probability>100</probability>
+                <won>true</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Won</fullName>
+                <default>false</default>
+                <closed>true</closed>
+                <forecastCategory>Closed</forecastCategory>
+                <probability>100</probability>
+                <won>true</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed/Declined</fullName>
+                <default>false</default>
+                <closed>true</closed>
+                <forecastCategory>Omitted</forecastCategory>
+                <probability>0</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Unsuccessful</fullName>
+                <default>false</default>
+                <closed>true</closed>
+                <forecastCategory>Omitted</forecastCategory>
+                <probability>10</probability>
+                <won>false</won>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Closed Discarded</fullName>
+                <default>false</default>
+                <description>The group (version) has been discarded</description>
+                <closed>true</closed>
+                <forecastCategory>Omitted</forecastCategory>
+                <probability>0</probability>
+                <won>false</won>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>true</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <description>For won opportunity, start date</description>
+        <externalId>false</externalId>
+        <inlineHelpText>For won opportunity, start date</inlineHelpText>
+        <label>Start Date</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>State_based_employee_numbers_available__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>State based employee numbers available for SplitPay?</description>
+        <externalId>false</externalId>
+        <inlineHelpText>State based employee numbers available for SplitPay?</inlineHelpText>
+        <label>State based employee numbers available?</label>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Strength__c</fullName>
+        <externalId>false</externalId>
+        <label>Strength</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Supporting_Business__c</fullName>
+        <externalId>false</externalId>
+        <label>Supporting Business</label>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Tasmania__c</fullName>
+        <externalId>false</externalId>
+        <label>Tasmania</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Tier_Funded_to__c</fullName>
+        <externalId>false</externalId>
+        <label>Tier Funded to</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Base Tier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Member Nominated Tier</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>TotalOpportunityQuantity</fullName>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+    </fields>
+    <fields>
+        <fullName>Type</fullName>
+        <picklist>
+            <picklistValues>
+                <fullName>Organic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Inorganic</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Transition of existing members/group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_Rates__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of Rates</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Blended rate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State by state</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_non_resident__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of non-resident</label>
+        <picklist>
+            <controllingField>Resident_status__c</controllingField>
+            <picklistValues>
+                <fullName>RHCA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-RHCA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RHCA and non-RHCA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Type_of_overseas_visitor__c</fullName>
+        <externalId>false</externalId>
+        <label>Type of overseas visitor</label>
+        <picklist>
+            <picklistValues>
+                <fullName>RHCA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-RHCA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>RHCA and non-RHCA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>N/A</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Victoria__c</fullName>
+        <externalId>false</externalId>
+        <label>Victoria</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Wellness_Solution__c</fullName>
+        <externalId>false</externalId>
+        <label>Wellness Solution</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes – Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes - Non-Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Wellness_Solution_details__c</fullName>
+        <externalId>false</externalId>
+        <label>Wellness Solution details</label>
+        <length>2000</length>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Western_Australia__c</fullName>
+        <externalId>false</externalId>
+        <label>Western Australia</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackFeedHistory>false</trackFeedHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <listViews>
+        <fullName>AllOpportunities</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All Opportunities</label>
+    </listViews>
+    <listViews>
+        <fullName>Client_Maintenance</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Client_Maintenance</value>
+        </filters>
+        <label>Client Maintenance</label>
+    </listViews>
+    <listViews>
+        <fullName>ClosingNextMonth</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>NEXT_MONTH</value>
+        </filters>
+        <label>Closing Next Month</label>
+    </listViews>
+    <listViews>
+        <fullName>ClosingThisMonth</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>0</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSE_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_MONTH</value>
+        </filters>
+        <label>Closing This Month</label>
+    </listViews>
+    <listViews>
+        <fullName>MyOpportunities</fullName>
+        <filterScope>Mine</filterScope>
+        <label>My Opportunities</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Client_Maintenance</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Client_Maintenance</value>
+        </filters>
+        <label>My Client Maintenance</label>
+    </listViews>
+    <listViews>
+        <fullName>My_opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Opportunity</value>
+        </filters>
+        <label>My opportunities</label>
+    </listViews>
+    <listViews>
+        <fullName>My_renewals</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Account_Manager__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <filterScope>Mine</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Renewal</value>
+        </filters>
+        <label>My renewals</label>
+    </listViews>
+    <listViews>
+        <fullName>NewThisWeek</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>THIS_WEEK</value>
+        </filters>
+        <label>New This Week</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_Client_Maintenance</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Client_Maintenance</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <operation>lessThan</operation>
+            <value>100</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>Open Client Maintenance</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.AMOUNT</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <operation>lessThan</operation>
+            <value>100</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Opportunity</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>Open opportunities</label>
+    </listViews>
+    <listViews>
+        <fullName>Open_renewals</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Account_Manager__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Renewal</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <operation>lessThan</operation>
+            <value>100</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.PROBABILITY</field>
+            <operation>greaterThan</operation>
+            <value>0</value>
+        </filters>
+        <label>Open renewals</label>
+    </listViews>
+    <listViews>
+        <fullName>Opportunities</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Opportunity</value>
+        </filters>
+        <label>Opportunities</label>
+    </listViews>
+    <listViews>
+        <fullName>Renewals</fullName>
+        <columns>OPPORTUNITY.NAME</columns>
+        <columns>ACCOUNT.NAME</columns>
+        <columns>Account_Manager__c</columns>
+        <columns>OPPORTUNITY.CLOSE_DATE</columns>
+        <columns>OPPORTUNITY.STAGE_NAME</columns>
+        <columns>OPPORTUNITY.CREATED_DATE</columns>
+        <columns>CORE.USERS.FULL_NAME</columns>
+        <columns>OPPORTUNITY.LAST_UPDATE</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Opportunity.Renewal</value>
+        </filters>
+        <label>Renewals</label>
+    </listViews>
+    <listViews>
+        <fullName>Won</fullName>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>OPPORTUNITY.WON</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <filters>
+            <field>OPPORTUNITY.CLOSED</field>
+            <operation>equals</operation>
+            <value>1</value>
+        </filters>
+        <label>Won</label>
+    </listViews>
+    <recordTypeTrackFeedHistory>false</recordTypeTrackFeedHistory>
+    <recordTypes>
+        <fullName>Client_Maintenance</fullName>
+        <active>true</active>
+        <businessProcess>Client Maintenance</businessProcess>
+        <label>Client Maintenance</label>
+        <picklistValues>
+            <picklist>Approval_Stage__c</picklist>
+            <values>
+                <fullName>Approved by Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Head of Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Head of Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Head of Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Head of Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Base_or_Upgrade__c</picklist>
+            <values>
+                <fullName>Base</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Broker_Already_holds_Client__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Broker_Commision_Type__c</picklist>
+            <values>
+                <fullName>OVC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resident</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Forced_Tier__c</picklist>
+            <values>
+                <fullName>Forced Base Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forced Tier 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forced Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forced Tier 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Join_Online__c</picklist>
+            <values>
+                <fullName>Non-standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Letter_of_Authority__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Type__c</picklist>
+            <values>
+                <fullName>Fund Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal Letter only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_of_Existing_arrangement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resident_status__c</picklist>
+            <values>
+                <fullName>Resident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resident %26 overseas visitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>overseas visitor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service_Delivery_Model__c</picklist>
+            <values>
+                <fullName>Non standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Single_or_Family_Funded__c</picklist>
+            <values>
+                <fullName>Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single and Family</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tier_Funded_to__c</picklist>
+            <values>
+                <fullName>Base Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Nominated Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Inorganic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Transition of existing members%2Fgroup</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Rates__c</picklist>
+            <values>
+                <fullName>Blended rate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State by state</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_non_resident__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA and non-RHCA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_overseas_visitor__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA and non-RHCA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wellness_Solution__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes %E2%80%93 Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes - Non-Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Opportunity</fullName>
+        <active>true</active>
+        <businessProcess>Opportunity</businessProcess>
+        <label>Opportunity</label>
+        <picklistValues>
+            <picklist>Approval_Stage__c</picklist>
+            <values>
+                <fullName>Approved by Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Head of Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Head of Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Head of Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Head of Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Base_or_Upgrade__c</picklist>
+            <values>
+                <fullName>Base</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Broker_Already_holds_Client__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Broker_Commision_Type__c</picklist>
+            <values>
+                <fullName>OVC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resident</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Forced_Tier__c</picklist>
+            <values>
+                <fullName>Forced Base Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forced Tier 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forced Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forced Tier 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Join_Online__c</picklist>
+            <values>
+                <fullName>Non-standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Letter_of_Authority__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Type__c</picklist>
+            <values>
+                <fullName>Fund Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal Letter only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_of_Existing_arrangement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resident_status__c</picklist>
+            <values>
+                <fullName>Resident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resident %26 overseas visitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>overseas visitor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service_Delivery_Model__c</picklist>
+            <values>
+                <fullName>Non standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Single_or_Family_Funded__c</picklist>
+            <values>
+                <fullName>Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single and Family</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tier_Funded_to__c</picklist>
+            <values>
+                <fullName>Base Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Nominated Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Inorganic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Transition of existing members%2Fgroup</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Rates__c</picklist>
+            <values>
+                <fullName>Blended rate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State by state</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_non_resident__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA and non-RHCA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_overseas_visitor__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA and non-RHCA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wellness_Solution__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes %E2%80%93 Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes - Non-Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Renewal</fullName>
+        <active>true</active>
+        <businessProcess>Renewal</businessProcess>
+        <label>Renewal</label>
+        <picklistValues>
+            <picklist>Approval_Stage__c</picklist>
+            <values>
+                <fullName>Approved by Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Head of Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Approved by Head of Sales</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Account Manager</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Broker</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Client</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Head of Commercial</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Declined by Head of Sales</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Base_or_Upgrade__c</picklist>
+            <values>
+                <fullName>Base</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Broker_Already_holds_Client__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Broker_Commision_Type__c</picklist>
+            <values>
+                <fullName>OVC</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resident</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Forced_Tier__c</picklist>
+            <values>
+                <fullName>Forced Base Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forced Tier 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forced Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Forced Tier 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>ForecastCategoryName</picklist>
+            <values>
+                <fullName>Best Case</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Closed</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Commit</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Omitted</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pipeline</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Join_Online__c</picklist>
+            <values>
+                <fullName>Non-standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>LeadSource</picklist>
+            <values>
+                <fullName>Advertisement</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Employee Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>External Referral</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Other</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Public Relations</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Internal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Seminar - Partner</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Trade Show</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Word of mouth</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Letter_of_Authority__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Pending</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Type__c</picklist>
+            <values>
+                <fullName>Fund Renewal</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Renewal Letter only</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard Renewal</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_of_Existing_arrangement__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Not Applicable</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Resident_status__c</picklist>
+            <values>
+                <fullName>Resident</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Resident %26 overseas visitor</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>overseas visitor</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Service_Delivery_Model__c</picklist>
+            <values>
+                <fullName>Non standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Single_or_Family_Funded__c</picklist>
+            <values>
+                <fullName>Family</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Single and Family</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Tier_Funded_to__c</picklist>
+            <values>
+                <fullName>Base Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Member Nominated Tier</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 1</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 2</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Tier 3</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type</picklist>
+            <values>
+                <fullName>Inorganic</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Organic</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Transition of existing members%2Fgroup</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Rates__c</picklist>
+            <values>
+                <fullName>Blended rate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State by state</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_non_resident__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA and non-RHCA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_overseas_visitor__c</picklist>
+            <values>
+                <fullName>N%2FA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Non-RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>RHCA and non-RHCA</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Wellness_Solution__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes %E2%80%93 Standard</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes - Non-Standard</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <customTabListAdditionalFields>OPPORTUNITY.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>ACCOUNT.NAME</customTabListAdditionalFields>
+        <customTabListAdditionalFields>OPPORTUNITY.CLOSE_DATE</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>OPPORTUNITY.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.NAME</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>ACCOUNT.SITE</lookupDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>OPPORTUNITY.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.NAME</lookupPhoneDialogsAdditionalFields>
+        <lookupPhoneDialogsAdditionalFields>ACCOUNT.SITE</lookupPhoneDialogsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.RECORDTYPE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>ACCOUNT.NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Opportunity_Result__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.STAGE_NAME</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>OPPORTUNITY.CLOSE_DATE</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>CORE.USERS.ALIAS</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>AccountManagerInOppValidationStage</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF( 
+AND((NULLVALUE(Account_Manager__c , &quot;&quot;) = &quot;&quot; ), ISPICKVAL(StageName, &apos;Background / Validation&apos;)), true, false)</errorConditionFormula>
+        <errorMessage>Please Attach the account manager to the opportunity&apos;s Client/Prospect</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ConfirmedFundingModelWhenClosedWon</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( 
+AND((NULLVALUE(Confirmed_funding_model__c , &quot;&quot;) = &quot;&quot; ), Opportunity_Result__c = &quot;Win&quot;), true, false )</errorConditionFormula>
+        <errorDisplayField>Confirmed_funding_model__c</errorDisplayField>
+        <errorMessage>Opp Stage is Closed Won so need to enter confirmed funding model</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ConfirmedLaunchPlansWhenClosedWon</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( 
+AND((NULLVALUE(Confirmed_Launch_plans__c , &quot;&quot;) = &quot;&quot; ), Opportunity_Result__c = &quot;Win&quot;), true, false )</errorConditionFormula>
+        <errorDisplayField>Confirmed_Launch_plans__c</errorDisplayField>
+        <errorMessage>Opp Stage is Closed Won so need to enter Confirmed Launch plans</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ConfirmedProductDetailsWhenClosedWon</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF( 
+AND((NULLVALUE(Confirmed_product_details__c , &quot;&quot;) = &quot;&quot; ), Opportunity_Result__c = &quot;Win&quot;), true, false )</errorConditionFormula>
+        <errorDisplayField>Confirmed_product_details__c</errorDisplayField>
+        <errorMessage>Opp Stage is Closed Won so need to enter Confirmed product details</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ConfirmedStartDateWhenClosedWon</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(AND(ISNULL(CloseDate), Opportunity_Result__c = &quot;Win&quot;), true, false )</errorConditionFormula>
+        <errorMessage>Opp Stage is Closed Won so need to enter Confirmed Start Date</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RequiredEmployeesFromStageOppValidation</fullName>
+        <active>false</active>
+        <errorConditionFormula>IF( 
+AND((NULLVALUE(Employees__c , 0) &lt;&gt; 0 ), ISPICKVAL(StageName , &apos;New&apos;)), true, false )</errorConditionFormula>
+        <errorDisplayField>Employees__c</errorDisplayField>
+        <errorMessage>Please enter Employees (greater than zero)</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ResultCommentsWhenClosed</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF( 
+AND((NULLVALUE(Result_Comments__c , &quot;&quot;) = &quot;&quot; ), OR( Opportunity_Result__c = &quot;Unsuccessful&quot;, Opportunity_Result__c = &quot;Decline&quot;,Opportunity_Result__c = &quot;Win&quot;)), true, false )</errorConditionFormula>
+        <errorDisplayField>Result_Comments__c</errorDisplayField>
+        <errorMessage>Please enter result comments</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>ServiceModelDetailsValidation01</fullName>
+        <active>true</active>
+        <description>Service Model details must be populated if Service Delivery is equal to Non-Standard</description>
+        <errorConditionFormula>IF(
+ AND((NULLVALUE(Service_Delivery_Model_details__c, &quot;&quot;) = &quot;&quot; ), ISPICKVAL(Service_Delivery_Model__c, &apos;Non standard&apos;)), true, false )</errorConditionFormula>
+        <errorDisplayField>Service_Delivery_Model_details__c</errorDisplayField>
+        <errorMessage>You need to capture Service Model Details</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Create_Cases</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Case</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>window.location.href = &apos;/apex/Test_HC_caseTemplateBuilder?oid={!Opportunity.Id}&amp;aid={!Opportunity.AccountId}&apos; ;</url>
+    </webLinks>
+</CustomObject>

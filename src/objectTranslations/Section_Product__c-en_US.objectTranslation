@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Product</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Products</value>
+    </caseValues>
+    <fields>
+        <label><!-- Ambulance --></label>
+        <name>Ambulance__c</name>
+        <picklistValues>
+            <masterLabel>Covered</masterLabel>
+            <translation><!-- Covered --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Emergency Transport Only</masterLabel>
+            <translation><!-- Emergency Transport Only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Ancillary Date Withdrawn --></label>
+        <name>Ancillary_Date_Withdrawn__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select if relevant to SplitPay groups. This information ensures products displayed as base or upgrade in book. --></help>
+        <label><!-- Base or Upgrade Product --></label>
+        <name>Base_Upgrade__c</name>
+        <picklistValues>
+            <masterLabel>Add On</masterLabel>
+            <translation><!-- Add On --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade</masterLabel>
+            <translation><!-- Upgrade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Broker Code --></label>
+        <name>Broker_Code__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Clone of --></label>
+        <name>Clone_of__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Cover Code --></label>
+        <name>Cover_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Del Date closed --></label>
+        <name>Date_closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display Product in Book --></label>
+        <name>Display_Product_in_Book__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes, as withdrawn product</masterLabel>
+            <translation><!-- Yes, as withdrawn product --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Employee Excess Code :ThisWillBeDeleted --></label>
+        <name>Employee_Excess_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employee Excess Code --></label>
+        <name>Employee_Excess_Code_lkp__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Employee Excess Description --></label>
+        <name>Employee_Excess_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employer Excess Code  :ThisWillBeDeleted --></label>
+        <name>Employer_Excess_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employer Excess Code --></label>
+        <name>Employer_Excess_Code_lkp__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Employer Excess Description --></label>
+        <name>Employer_Excess_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fixed Amount Funded --></label>
+        <name>Fixed_Amount_Funded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hospital Date Withdrawn --></label>
+        <name>Hospital_Date_Withdrawn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Del LHC --></label>
+        <name>LHC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Medical Date Withdrawn --></label>
+        <name>Medical_Date_Withdrawn__c</name>
+    </fields>
+    <fields>
+        <label><!-- Overseas Visitor status --></label>
+        <name>Overseas_Visitor_status__c</name>
+        <picklistValues>
+            <masterLabel>Non-RHCA</masterLabel>
+            <translation><!-- Non-RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RHCA</masterLabel>
+            <translation><!-- RHCA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Percentage Funded --></label>
+        <name>Percentage_Funded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Code --></label>
+        <name>Product_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Long Name --></label>
+        <name>Product_Long_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name System (Long) --></label>
+        <name>Product_Name_System__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name Web --></label>
+        <name>Product_Name_Web__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Type --></label>
+        <name>Product_Type__c</name>
+        <picklistValues>
+            <masterLabel>Ancillary</masterLabel>
+            <translation><!-- Ancillary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ancillary &amp; Hospital</masterLabel>
+            <translation><!-- Ancillary &amp; Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ancillary &amp; Medical</masterLabel>
+            <translation><!-- Ancillary &amp; Medical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ancillary, Medical &amp; Hospital</masterLabel>
+            <translation><!-- Ancillary, Medical &amp; Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital</masterLabel>
+            <translation><!-- Hospital --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Medical</masterLabel>
+            <translation><!-- Medical --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rate Code --></label>
+        <name>Rate_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Del Rebate --></label>
+        <name>Rebate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Resident status --></label>
+        <name>Resident_status__c</name>
+        <picklistValues>
+            <masterLabel>Overseas Visitor</masterLabel>
+            <translation><!-- Overseas Visitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resident</masterLabel>
+            <translation><!-- Resident --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Del Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tax statement required --></label>
+        <name>Tax_statement_required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Del Withdrawn Date --></label>
+        <name>Withdrawn_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Section Product Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing / Brochure --></label>
+            <section>Marketing / Brochure</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Ambulance is mandatory --></errorMessage>
+        <name>Ambulance_is_mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Overseas Visitor Status is mandatory when Resident Status equals &apos;Overseas Visitor&apos; --></errorMessage>
+        <name>Overseas_Visitor_Validation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot change Product Type when Cover Code is set. To change Product Type, clear the value for Cover Code and Save changes with new Product and then re-apply Cover Code as applicable --></errorMessage>
+        <name>When_Product_type_Chng_on_Cover_Code_set</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Related_Sections --></label>
+        <name>Related_Sections</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Group__c$Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Group__c$Group_Whics_Name__c</field>
+    </columns>
+    <columns>
+        <field>Group__c$Original_Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Group__c$Closed_on__c</field>
+    </columns>
+    <columns>
+        <field>Group__c$Rate_Code__c</field>
+    </columns>
+    <description>Groups for WHICS Reconciliation</description>
+    <filter>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <criteriaItems>
+            <column>Group__c$Is_Active__c</column>
+            <operator>equals</operator>
+            <value>Active</value>
+        </criteriaItems>
+        <criteriaItems>
+            <column>Group__c$Is_Active__c</column>
+            <operator>equals</operator>
+            <value>Closed</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>Group Extract for WHICS Reconciliation</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>Group_Extract_for_Manual_Reconciliation__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Group__c$Group_Number__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Group__c$Closed_on__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

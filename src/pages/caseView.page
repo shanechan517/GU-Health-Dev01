@@ -1,0 +1,36 @@
+<apex:page standardController="Case" title="Case - {!Case.CaseNumber}">
+   
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+   
+   <script>
+   $( document ).ready(function() {
+        
+        initFunction();
+       
+   });
+   
+   function initFunction(){
+       if("{!Case.RecordType.Name}" == "Parent"){
+            $( "td.labelCol:contains('Case Owner')" ).each(function() {
+               $(this).html($(this).html().replace('Case Owner','Requester'));
+            });
+        }
+        
+        var nameString = "{!Case.Related_Record__c}";
+        var withoutApos = nameString.replace("'","");;
+        
+        $( "td.labelCol:contains('Related Record')" ).next("td").children("div").html('<a href="/{!Case.Related_Record_Id__c}">' + withoutApos + '</a>');
+   }
+   
+   </script>
+   
+   <apex:sectionHeader title="Case" subtitle="{!Case.CaseNumber}"/>
+   
+   <chatter:feedWithFollowers entityId="{!Case.Id}" />
+   
+   <apex:detail subject="{!Case.Id}" relatedList="true" title="false" inlineEdit="true" oncomplete="initFunction()"/>
+   
+</apex:page>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to Account manager to notify them that the renewal has been approved in stage 2</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GUHealth</letterhead>
+    <name>Step 2 Complete to AM</name>
+    <style>freeForm</style>
+    <subject>Approval Step 2 of 3 Complete - {!Opportunity.Account} - {!Opportunity.RecordType} - {!Opportunity.Name}</subject>
+    <textOnly>{!Opportunity.Account} - {!Opportunity.RecordType} - {!Opportunity.Name}
+
+The HOC has approved the renewal. This is step 2 of 3 complete. The renewal will now be sent off to the HOS to have the final approval.
+
+If at any time you need to view the record please click on the following link:
+
+{!Opportunity.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

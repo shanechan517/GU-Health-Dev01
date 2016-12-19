@@ -1,0 +1,908 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Estimated Implementation Date</value>
+        </caseValues>
+        <name>close_date_opportunity</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>General Information</value>
+        </caseValues>
+        <name>description_opportunity</name>
+        <startsWith>Consonant</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Name</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity Names</value>
+        </caseValues>
+        <name>opportunity_name</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Owner</value>
+        </caseValues>
+        <name>opportunity_owner</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <caseValues>
+            <plural>false</plural>
+            <value>Record Type</value>
+        </caseValues>
+        <caseValues>
+            <plural>true</plural>
+            <value>Opportunity Record Types</value>
+        </caseValues>
+        <name>opportunity_record_type</name>
+        <startsWith>Vowel</startsWith>
+    </fields>
+    <fields>
+        <label><!-- Account Manager --></label>
+        <name>Account_Manager__c</name>
+        <relationshipLabel><!-- Opportunities (Account Manager) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Additional Client/Broker Requirements --></label>
+        <name>Additional_Client_Broker_Requirements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Any Other Modifications --></label>
+        <name>Any_Other_Modifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Approval Step --></label>
+        <name>Approval_Stage__c</name>
+        <picklistValues>
+            <masterLabel>Approved by Account Manager</masterLabel>
+            <translation><!-- Approved by Account Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved by Broker</masterLabel>
+            <translation><!-- Approved by Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved by Client</masterLabel>
+            <translation><!-- Approved by Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved by Head of Commercial</masterLabel>
+            <translation><!-- Approved by Head of Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Approved by Head of Sales</masterLabel>
+            <translation><!-- Approved by Head of Sales --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined by Account Manager</masterLabel>
+            <translation><!-- Declined by Account Manager --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined by Broker</masterLabel>
+            <translation><!-- Declined by Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined by Client</masterLabel>
+            <translation><!-- Declined by Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined by Head of Commercial</masterLabel>
+            <translation><!-- Declined by Head of Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Declined by Head of Sales</masterLabel>
+            <translation><!-- Declined by Head of Sales --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Base or Upgrade --></label>
+        <name>Base_or_Upgrade__c</name>
+        <picklistValues>
+            <masterLabel>Base</masterLabel>
+            <translation><!-- Base --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade</masterLabel>
+            <translation><!-- Upgrade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Broker Already holds Client? --></label>
+        <name>Broker_Already_holds_Client__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Broker Commision OVC --></label>
+        <name>Broker_Commision_OVC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker Commision Type --></label>
+        <name>Broker_Commision_Type__c</name>
+        <picklistValues>
+            <masterLabel>OVC</masterLabel>
+            <translation><!-- OVC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resident</masterLabel>
+            <translation><!-- Resident --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Broker Commision Resident --></label>
+        <name>Broker_Commision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker Number --></label>
+        <name>Broker_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker --></label>
+        <name>Broker__c</name>
+        <relationshipLabel><!-- Opportunities (Broker) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Changes to Renewal Terms --></label>
+        <name>Changes_to_Renewal_Terms__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client background --></label>
+        <name>Client_background__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clone of --></label>
+        <name>Clone_of__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commercial Analyst --></label>
+        <name>Commercial_Analyst__c</name>
+        <relationshipLabel><!-- Opportunities (Commercial Analyst) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Launch plans --></label>
+        <name>Confirmed_Launch_plans__c</name>
+    </fields>
+    <fields>
+        <label><!-- Funding Model/Level --></label>
+        <name>Confirmed_funding_model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Confirmed product details --></label>
+        <name>Confirmed_product_details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Current Health Fund/General Insurer --></label>
+        <name>Current_Health_Fund_General_Insurer__c</name>
+        <relationshipLabel><!-- Opportunities --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Discounting --></label>
+        <name>Discounting__c</name>
+    </fields>
+    <fields>
+        <label><!-- Effective Renewal End Date --></label>
+        <name>Effective_Renewal_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Employees --></label>
+        <name>Employees__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fixed $ Amount --></label>
+        <name>Fixed_Amount__c</name>
+    </fields>
+    <fields>
+        <label><!-- Forced Tier --></label>
+        <name>Forced_Tier__c</name>
+        <picklistValues>
+            <masterLabel>Forced Base Tier</masterLabel>
+            <translation><!-- Forced Base Tier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forced Tier 1</masterLabel>
+            <translation><!-- Forced Tier 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forced Tier 2</masterLabel>
+            <translation><!-- Forced Tier 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Forced Tier 3</masterLabel>
+            <translation><!-- Forced Tier 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Formal proposal --></label>
+        <name>Formal_proposal__c</name>
+    </fields>
+    <fields>
+        <label><!-- % Funded to --></label>
+        <name>Funded_to__c</name>
+    </fields>
+    <fields>
+        <label><!-- Funding &amp; SplitPay A. Modifications --></label>
+        <name>Funding_SplitPay_Arrangement_Mods__c</name>
+    </fields>
+    <fields>
+        <label><!-- Further information --></label>
+        <name>Further_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- General renewal information --></label>
+        <name>General_renewal_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Geographics --></label>
+        <name>Geographics__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Modifications --></label>
+        <name>Group_Modifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group pays GST --></label>
+        <name>Group_pays_GST__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group pays LHC --></label>
+        <name>Group_pays_LHC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Growth Prospects --></label>
+        <name>Growth_Prospects__c</name>
+    </fields>
+    <fields>
+        <label><!-- Health Fund/General Insurer Infor --></label>
+        <name>Health_Fund_Reinsurer__c</name>
+    </fields>
+    <fields>
+        <label><!-- Join Online --></label>
+        <name>Join_Online__c</name>
+        <picklistValues>
+            <masterLabel>Non-standard</masterLabel>
+            <translation><!-- Non-standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>LeadSource</name>
+        <picklistValues>
+            <masterLabel>Advertisement</masterLabel>
+            <translation><!-- Advertisement --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Employee Referral</masterLabel>
+            <translation><!-- Employee Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>External Referral</masterLabel>
+            <translation><!-- External Referral --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Other</masterLabel>
+            <translation><!-- Other --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Partner</masterLabel>
+            <translation><!-- Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Public Relations</masterLabel>
+            <translation><!-- Public Relations --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Internal</masterLabel>
+            <translation><!-- Seminar - Internal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Seminar - Partner</masterLabel>
+            <translation><!-- Seminar - Partner --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Trade Show</masterLabel>
+            <translation><!-- Trade Show --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web</masterLabel>
+            <translation><!-- Web --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Word of mouth</masterLabel>
+            <translation><!-- Word of mouth --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Letter of Authority --></label>
+        <name>Letter_of_Authority__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Pending</masterLabel>
+            <translation><!-- Pending --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Level of Funding --></label>
+        <name>Level_of_Funding__c</name>
+    </fields>
+    <fields>
+        <label><!-- NSW &amp; ACT no --></label>
+        <name>NSW_ACT_no__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Non-RHCA --></label>
+        <name>No_of_Non_RHCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of RHCA --></label>
+        <name>No_of_RHCA__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of Resident --></label>
+        <name>No_of_Resident__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of employees - Family --></label>
+        <name>No_of_employees_Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- No of employees - Single --></label>
+        <name>No_of_employees_Single__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-standard Join Online Details --></label>
+        <name>Non_standard_Join_Online_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Northern Territory --></label>
+        <name>Northern_Territory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Number --></label>
+        <name>Opportunity_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Result --></label>
+        <name>Opportunity_Result__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity summary --></label>
+        <name>Opportunity_summary__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment Frequency --></label>
+        <name>Payment_Frequency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Previous Health Plan --></label>
+        <name>Previous_Health_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Modifications --></label>
+        <name>Product_Modifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Non-standard Products --></label>
+        <name>Products__c</name>
+    </fields>
+    <fields>
+        <label><!-- Proposed Funding Model --></label>
+        <name>Proposed_Funding_Model__c</name>
+    </fields>
+    <fields>
+        <label><!-- Queensland --></label>
+        <name>Queensland__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Authorisation Comments --></label>
+        <name>Renewal_Authorisation_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field is automatically calculated based on the start date + renewal months --></help>
+        <label><!-- Effective Renewal Start Date --></label>
+        <name>Renewal_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Months --></label>
+        <name>Renewal_Months__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Terms Accepted --></label>
+        <name>Renewal_Terms_Accepted__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Terms Due --></label>
+        <name>Renewal_Terms_Due__c</name>
+    </fields>
+    <fields>
+        <label><!-- Renewal Type --></label>
+        <name>Renewal_Type__c</name>
+        <picklistValues>
+            <masterLabel>Fund Renewal</masterLabel>
+            <translation><!-- Fund Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal Letter only</masterLabel>
+            <translation><!-- Renewal Letter only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard Renewal</masterLabel>
+            <translation><!-- Standard Renewal --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Renewal of Existing arrangement --></label>
+        <name>Renewal_of_Existing_arrangement__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Not Applicable</masterLabel>
+            <translation><!-- Not Applicable --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Resident status --></label>
+        <name>Resident_status__c</name>
+        <picklistValues>
+            <masterLabel>Resident</masterLabel>
+            <translation><!-- Resident --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Resident &amp; overseas visitor</masterLabel>
+            <translation><!-- Resident &amp; overseas visitor --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>overseas visitor</masterLabel>
+            <translation><!-- overseas visitor --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Result Comments --></label>
+        <name>Result_Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review Date --></label>
+        <name>Review_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Details --></label>
+        <name>Section_Details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Modifications --></label>
+        <name>Section_Modifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Service Delivery Model --></label>
+        <name>Service_Delivery_Model__c</name>
+        <picklistValues>
+            <masterLabel>Non standard</masterLabel>
+            <translation><!-- Non standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Service Delivery Model - details --></label>
+        <name>Service_Delivery_Model_details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single or Family Funded --></label>
+        <name>Single_or_Family_Funded__c</name>
+        <picklistValues>
+            <masterLabel>Family</masterLabel>
+            <translation><!-- Family --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single</masterLabel>
+            <translation><!-- Single --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Single and Family</masterLabel>
+            <translation><!-- Single and Family --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- South Australia --></label>
+        <name>South_Australia__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special arrangements --></label>
+        <name>Special_arrangements__c</name>
+    </fields>
+    <fields>
+        <label><!-- SplitPay --></label>
+        <name>SplitPay__c</name>
+    </fields>
+    <fields>
+        <name>StageName</name>
+        <picklistValues>
+            <masterLabel>Approved by Broker/Client</masterLabel>
+            <translation><!-- Approved by Broker/Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Approval</masterLabel>
+            <translation><!-- Awaiting Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Background / Validation</masterLabel>
+            <translation><!-- Background / Validation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Discarded</masterLabel>
+            <translation><!-- Closed Discarded --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Unsuccessful</masterLabel>
+            <translation><!-- Closed Unsuccessful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Won</masterLabel>
+            <translation><!-- Closed Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed/Declined</masterLabel>
+            <translation><!-- Closed/Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Quote</masterLabel>
+            <translation><!-- Commercial Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Complete</masterLabel>
+            <translation><!-- Complete --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expired</masterLabel>
+            <translation><!-- Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Preparation</masterLabel>
+            <translation><!-- In Preparation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Progress</masterLabel>
+            <translation><!-- In Progress --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Revision</masterLabel>
+            <translation><!-- In Revision --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negotiation with Client/Broker</masterLabel>
+            <translation><!-- Negotiation with Client/Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New</masterLabel>
+            <translation><!-- New --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Agreement Renewal</masterLabel>
+            <translation><!-- New Agreement Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Standard Process Approval</masterLabel>
+            <translation><!-- Non Standard Process Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Advising Broker/Client</masterLabel>
+            <translation><!-- Ready for Advising Broker/Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Finalise Docs</masterLabel>
+            <translation><!-- Ready for Finalise Docs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Negotiation</masterLabel>
+            <translation><!-- Ready for Negotiation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Uploading Docs</masterLabel>
+            <translation><!-- Ready for Uploading Docs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected from Approval Process</masterLabel>
+            <translation><!-- Rejected from Approval Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tender Document</masterLabel>
+            <translation><!-- Tender Document --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- For won opportunity, start date --></help>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- State based employee numbers available for SplitPay? --></help>
+        <label><!-- State based employee numbers available? --></label>
+        <name>State_based_employee_numbers_available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Strength --></label>
+        <name>Strength__c</name>
+    </fields>
+    <fields>
+        <label><!-- Supporting Business --></label>
+        <name>Supporting_Business__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tasmania --></label>
+        <name>Tasmania__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier Funded to --></label>
+        <name>Tier_Funded_to__c</name>
+        <picklistValues>
+            <masterLabel>Base Tier</masterLabel>
+            <translation><!-- Base Tier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Nominated Tier</masterLabel>
+            <translation><!-- Member Nominated Tier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 1</masterLabel>
+            <translation><!-- Tier 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 2</masterLabel>
+            <translation><!-- Tier 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 3</masterLabel>
+            <translation><!-- Tier 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <name>Type</name>
+        <picklistValues>
+            <masterLabel>Inorganic</masterLabel>
+            <translation><!-- Inorganic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Organic</masterLabel>
+            <translation><!-- Organic --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Transition of existing members/group</masterLabel>
+            <translation><!-- Transition of existing members/group --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of Rates --></label>
+        <name>Type_of_Rates__c</name>
+        <picklistValues>
+            <masterLabel>Blended rate</masterLabel>
+            <translation><!-- Blended rate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State by state</masterLabel>
+            <translation><!-- State by state --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of non-resident --></label>
+        <name>Type_of_non_resident__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-RHCA</masterLabel>
+            <translation><!-- Non-RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RHCA</masterLabel>
+            <translation><!-- RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RHCA and non-RHCA</masterLabel>
+            <translation><!-- RHCA and non-RHCA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Type of overseas visitor --></label>
+        <name>Type_of_overseas_visitor__c</name>
+        <picklistValues>
+            <masterLabel>N/A</masterLabel>
+            <translation><!-- N/A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non-RHCA</masterLabel>
+            <translation><!-- Non-RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RHCA</masterLabel>
+            <translation><!-- RHCA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>RHCA and non-RHCA</masterLabel>
+            <translation><!-- RHCA and non-RHCA --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Victoria --></label>
+        <name>Victoria__c</name>
+    </fields>
+    <fields>
+        <label><!-- Wellness Solution --></label>
+        <name>Wellness_Solution__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes - Non-Standard</masterLabel>
+            <translation><!-- Yes - Non-Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes – Standard</masterLabel>
+            <translation><!-- Yes – Standard --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Wellness Solution details --></label>
+        <name>Wellness_Solution_details__c</name>
+    </fields>
+    <fields>
+        <label><!-- Western Australia --></label>
+        <name>Western_Australia__c</name>
+    </fields>
+    <layouts>
+        <layout>Client Maintanence Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Broker --></label>
+            <section>Broker</section>
+        </sections>
+        <sections>
+            <label><!-- VF page --></label>
+            <section>VF page</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Client Renewal Layout</layout>
+        <sections>
+            <label><!-- Renewal Terms --></label>
+            <section>Renewal Terms</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Opportunity Layout</layout>
+        <sections>
+            <label><!-- Broker --></label>
+            <section>Broker</section>
+        </sections>
+        <sections>
+            <label><!-- Information and Quotation --></label>
+            <section>Information and Quotation</section>
+        </sections>
+        <sections>
+            <label><!-- Internal Stakeholders --></label>
+            <section>Internal Stakeholders</section>
+        </sections>
+        <sections>
+            <label><!-- Outcome --></label>
+            <section>Outcome</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Client Maintenance --></label>
+        <name>Client_Maintenance</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Opportunity --></label>
+        <name>Opportunity</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Renewal --></label>
+        <name>Renewal</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- Please Attach the account manager to the opportunity&apos;s Client/Prospect --></errorMessage>
+        <name>AccountManagerInOppValidationStage</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opp Stage is Closed Won so need to enter confirmed funding model --></errorMessage>
+        <name>ConfirmedFundingModelWhenClosedWon</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opp Stage is Closed Won so need to enter Confirmed Launch plans --></errorMessage>
+        <name>ConfirmedLaunchPlansWhenClosedWon</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opp Stage is Closed Won so need to enter Confirmed product details --></errorMessage>
+        <name>ConfirmedProductDetailsWhenClosedWon</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Opp Stage is Closed Won so need to enter Confirmed Start Date --></errorMessage>
+        <name>ConfirmedStartDateWhenClosedWon</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter Employees (greater than zero) --></errorMessage>
+        <name>RequiredEmployeesFromStageOppValidation</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter result comments --></errorMessage>
+        <name>ResultCommentsWhenClosed</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You need to capture Service Model Details --></errorMessage>
+        <name>ServiceModelDetailsValidation01</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Create_Cases --></label>
+        <name>Create_Cases</name>
+    </webLinks>
+    <workflowTasks>
+        <description><!-- A new renewal has been created and is awaiting action. --></description>
+        <name>A_new_renewal_has_been_created</name>
+        <subject><!-- A new renewal has been created --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- A new renewal has been created and is awaiting action. --></description>
+        <name>A_new_renewal_has_been_created_AM</name>
+        <subject><!-- A new renewal has been created --></subject>
+    </workflowTasks>
+    <workflowTasks>
+        <description><!-- A new won opportunity has now been assigned to you. Please initiate the “New Group” process. --></description>
+        <name>Opportunity_Won_Start_new_group_process</name>
+        <subject><!-- Opportunity Won - Start new group process --></subject>
+    </workflowTasks>
+</CustomObjectTranslation>

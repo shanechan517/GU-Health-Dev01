@@ -1,0 +1,42 @@
+<apex:page controller="opportunityTab" showChat="false" showHeader="true" sidebar="true" standardStylesheets="true" title="Opportunities">
+    
+    <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+    <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+    
+    <style>
+        .controls{
+            display:none;
+        }
+        .btn{
+            display:block;
+        }
+        .lastItem .btn{
+            display:block !important;
+        }
+    </style>
+    
+    <apex:form >
+        <apex:selectList value="{!selectedView}" size="1" multiselect="false" styleClass="viewSelect" style="min-width: 200px;padding: 4px 6px;margin: 4px 5px 4px 0px;font-weight: bold;">
+            <apex:actionSupport event="onchange" rerender="tableArea" status="searchStatus" />
+            <apex:selectOptions value="{!Views}" />
+        </apex:selectList>
+        <apex:actionStatus id="searchStatus"><apex:facet name="start">Loading...</apex:facet></apex:actionStatus>
+    </apex:form>
+    
+    <apex:outputPanel id="tableArea">
+        <apex:outputPanel rendered="{!IF(selectedView == 'All', true, false)}">
+            <apex:enhancedlist type="Opportunity" height="730" customizable="false" rowsPerPage="25" Listid="{!$Label.TAB_Opportunities}" />
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!IF(selectedView == 'My', true, false)}">
+            <apex:enhancedlist type="Opportunity" height="730" customizable="false" rowsPerPage="25" Listid="{!$Label.TAB_My_Opportunities}" />
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!IF(selectedView == 'Open', true, false)}">
+            <apex:enhancedlist type="Opportunity" height="730" customizable="false" rowsPerPage="25" Listid="{!$Label.TAB_Open_Opportunities}" />
+        </apex:outputPanel>
+    </apex:outputPanel>
+
+</apex:page>

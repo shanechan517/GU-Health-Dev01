@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Section</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Sections</value>
+    </caseValues>
+    <fields>
+        <label><!-- Add Dependant --></label>
+        <name>Add_Dependant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Add Dependants --></label>
+        <name>Add_Dependants__c</name>
+    </fields>
+    <fields>
+        <label><!-- Additional information --></label>
+        <name>Additional_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow HR to change scale --></label>
+        <name>Allow_HR_to_change_scale__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow HR to update member contact detail --></label>
+        <name>Allow_HR_to_update_member_contact_detail__c</name>
+    </fields>
+    <fields>
+        <label><!-- Allow Tier nomination during join online --></label>
+        <name>Allow_Tier_nomination_during_join_online__c</name>
+    </fields>
+    <fields>
+        <label><!-- Any Product (Emp Sub) --></label>
+        <name>Any_Product_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates at what level the employer funds for SplitPay --></help>
+        <label><!-- Any Product --></label>
+        <name>Any_Product__c</name>
+    </fields>
+    <fields>
+        <label><!-- Associated System Section --></label>
+        <name>Associated_System_Section__c</name>
+        <relationshipLabel><!-- Sections --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Base Tier (Emp Sub) --></label>
+        <name>Base_Tier_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker Code --></label>
+        <name>Broker_Code__c</name>
+        <relationshipLabel><!-- Sections --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Broker Commission --></label>
+        <name>Broker_Commission_Formula__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker Id --></label>
+        <name>Broker_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker Name --></label>
+        <name>Broker_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Broker Number --></label>
+        <name>Broker_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Plan --></label>
+        <name>Change_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Rebate Tier --></label>
+        <name>Change_Rebate_Tier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Scale --></label>
+        <name>Change_Scale__c</name>
+    </fields>
+    <fields>
+        <label><!-- Change Tier --></label>
+        <name>Change_Tier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Id --></label>
+        <name>Client_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client Name --></label>
+        <name>Client_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clone of --></label>
+        <name>Clone_of__c</name>
+        <relationshipLabel><!-- Sections (Clone of) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Comments (Emp Sub) --></label>
+        <name>Comments_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments (Exc) --></label>
+        <name>Comments_Exc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Comments --></label>
+        <name>Comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Compulsory payroll field? --></label>
+        <name>Compulsory_payroll_field__c</name>
+    </fields>
+    <fields>
+        <label><!-- Custom payroll label --></label>
+        <name>Custom_payroll_label__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date Closed --></label>
+        <name>Date_Closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Date_On__c</name>
+    </fields>
+    <fields>
+        <label><!-- Delete Dependant --></label>
+        <name>Delete_Dependant__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Credit --></label>
+        <name>Direct_Credit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Direct Debit --></label>
+        <name>Direct_Debit__c</name>
+    </fields>
+    <fields>
+        <label><!-- Display employee contribution --></label>
+        <name>Display_employee_contribution__c</name>
+    </fields>
+    <fields>
+        <label><!-- Earliest cover commencement date --></label>
+        <name>Earliest_cover_commencement_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Email notification --></label>
+        <name>Email_notification__c</name>
+    </fields>
+    <fields>
+        <label><!-- Employer Payment --></label>
+        <name>Employer_Payment__c</name>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payroll</masterLabel>
+            <translation><!-- Payroll --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Family (Emp Sub) --></label>
+        <name>Family_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Family (Exc) --></label>
+        <name>Family_Exc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Family --></label>
+        <name>Family__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fixed Dollar (Emp Sub) --></label>
+        <name>Fixed_Dollar_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates at what level the employer funds for SplitPay --></help>
+        <label><!-- Fixed Dollar --></label>
+        <name>Fixed_Dollar__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates at what level the employer funds for SplitPay. &apos;Tier 3 - No rebate section&apos; is for marketing reference. --></help>
+        <label><!-- Forced Tier --></label>
+        <name>Forced_Tier__c</name>
+        <picklistValues>
+            <masterLabel>Base Tier</masterLabel>
+            <translation><!-- Base Tier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 1</masterLabel>
+            <translation><!-- Tier 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 2</masterLabel>
+            <translation><!-- Tier 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 3</masterLabel>
+            <translation><!-- Tier 3 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 3 - No rebate section</masterLabel>
+            <translation><!-- Tier 3 - No rebate section --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Funding model --></label>
+        <name>Funding_model__c</name>
+        <picklistValues>
+            <masterLabel>Direct Debit</masterLabel>
+            <translation><!-- Direct Debit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payroll</masterLabel>
+            <translation><!-- Payroll --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SplitPay</masterLabel>
+            <translation><!-- SplitPay --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- GST --></label>
+        <name>GST__c</name>
+    </fields>
+    <fields>
+        <label><!-- GroupSectionNumber --></label>
+        <name>GroupSectionNumber__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Directory --></label>
+        <name>Group_Directory__c</name>
+    </fields>
+    <fields>
+        <help><!-- &quot;The clients join online link
+eg guhealth.com.au/microsoft&quot; --></help>
+        <label><!-- Group Directory --></label>
+        <name>Group_Directory_todel__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Number --></label>
+        <name>Group_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Section Number --></label>
+        <name>Group_Section_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- Status of parent group --></help>
+        <label><!-- Group Status --></label>
+        <name>Group_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Version --></label>
+        <name>Group_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+        <relationshipLabel><!-- Sections --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- HR Access --></label>
+        <name>HR_Access__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Add Dependants --></label>
+        <name>HR_Add_Dependants__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Additional information --></label>
+        <name>HR_Additional_information__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Allow HR to change scale --></label>
+        <name>HR_Allow_HR_to_change_scale__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Can update member contact details --></label>
+        <name>HR_Allow_HR_to_update_member_contact_det__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Allow Tier nomin during join online --></label>
+        <name>HR_Allow_Tier_nomin_during_join_online__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Change Rebate Tier --></label>
+        <name>HR_Change_Rebate_Tier__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Change plan --></label>
+        <name>HR_Change_plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Delete dependants --></label>
+        <name>HR_Delete_dependants__c</name>
+    </fields>
+    <fields>
+        <help><!-- Display employee contribution (Split Payment) --></help>
+        <label><!-- HR Display employee contribution (Split) --></label>
+        <name>HR_Display_employee_contribution_Split__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Earliest cover commencement date --></label>
+        <name>HR_Earliest_cover_commencement_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Features Add Dependant --></label>
+        <name>HR_Features_Add_Dependant__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Features Change Plan --></label>
+        <name>HR_Features_Change_Plan__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Features Change Scale --></label>
+        <name>HR_Features_Change_Scale__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Features Delete Dependant --></label>
+        <name>HR_Features_Delete_Dependant__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR email notifications --></label>
+        <name>HR_HR_email_notifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Join online --></label>
+        <name>HR_Join_online__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Join online in Retrospect --></label>
+        <name>HR_Join_online_in_Retrospect__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR Terminate members --></label>
+        <name>HR_Terminate_members__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR View Rebate Tier --></label>
+        <name>HR_View_Rebate_Tier__c</name>
+    </fields>
+    <fields>
+        <label><!-- HR email notifications --></label>
+        <name>HR_email_notifications__c</name>
+    </fields>
+    <fields>
+        <label><!-- Has Employer prepaid? --></label>
+        <name>Has_Employer_prepaid__c</name>
+    </fields>
+    <fields>
+        <label><!-- How to Join/Transfer --></label>
+        <name>How_to_Join_Transfer_toDel__c</name>
+        <picklistValues>
+            <masterLabel>Application - return to HR/Employer</masterLabel>
+            <translation><!-- Application - return to HR/Employer --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application - return to HR/Employer or GU</masterLabel>
+            <translation><!-- Application - return to HR/Employer or GU --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Application or Join Online</masterLabel>
+            <translation><!-- Application or Join Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Join Online</masterLabel>
+            <translation><!-- Join Online --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Inpatriate-SplitPay Cover Guide Wording --></label>
+        <name>Inpatriate_SplitPay_Cover_Guide_Wording__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Publish Wizard --></label>
+        <name>IsPublishWizard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Join Online - HR access code --></label>
+        <name>Join_Online_HR_access_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Join Online URL --></label>
+        <name>Join_Online_URL__c</name>
+    </fields>
+    <fields>
+        <label><!-- Join Online --></label>
+        <name>Join_Online__c</name>
+    </fields>
+    <fields>
+        <help><!-- The Join Online/Web access code. Appears in the book. --></help>
+        <label><!-- Web Access Code --></label>
+        <name>Join_Online_access_code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Join Online available --></label>
+        <name>Join_Online_available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Join Online link --></label>
+        <name>Join_Online_link__c</name>
+    </fields>
+    <fields>
+        <label><!-- Join online in Retrospect --></label>
+        <name>Join_online_in_Retrospect__c</name>
+    </fields>
+    <fields>
+        <label><!-- LHC (Emp Sub) --></label>
+        <name>LHC_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- LHC (Exc) --></label>
+        <name>LHC_Exc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rebate registration mandatory --></label>
+        <name>Make_Rebate_registration_mandatory_durin__c</name>
+    </fields>
+    <fields>
+        <label><!-- Member Payment --></label>
+        <name>Member_Payment__c</name>
+        <picklistValues>
+            <masterLabel>Direct Debit</masterLabel>
+            <translation><!-- Direct Debit --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Invoice</masterLabel>
+            <translation><!-- Invoice --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payroll</masterLabel>
+            <translation><!-- Payroll --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Members --></label>
+        <name>Member__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nominate Tier --></label>
+        <name>Nominate_Tier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nominated Tier (Emp Sub) --></label>
+        <name>Nominated_Tier_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Nominated Tier (Exc) --></label>
+        <name>Nominated_Tier_Exc__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates date OMS was activated --></help>
+        <label><!-- OMS Activation Date --></label>
+        <name>OMS_Activation_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates date OMS was disabled --></help>
+        <label><!-- OMS Disabled Date --></label>
+        <name>OMS_Disabled_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates if OMS is active for the Section --></help>
+        <label><!-- OMS status --></label>
+        <name>OMS_status__c</name>
+        <picklistValues>
+            <masterLabel>Active</masterLabel>
+            <translation><!-- Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Disabled</masterLabel>
+            <translation><!-- Disabled --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Office Use Only Application --></label>
+        <name>Office_Use_Only_Application__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other (Emp Sub) --></label>
+        <name>Other_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other --></label>
+        <name>Other_Employer_exclusions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other --></label>
+        <name>Other_Employer_subsidy__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other (Exc) --></label>
+        <name>Other_Exc__c</name>
+    </fields>
+    <fields>
+        <label><!-- Other --></label>
+        <name>Other__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payment frequency - Employer --></label>
+        <name>Payment_frequency_Employer__c</name>
+        <picklistValues>
+            <masterLabel>Fortnightly</masterLabel>
+            <translation><!-- Fortnightly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half-Yearly</masterLabel>
+            <translation><!-- Half-Yearly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yearly</masterLabel>
+            <translation><!-- Yearly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Payment frequency - Member --></label>
+        <name>Payment_frequency_Member__c</name>
+        <picklistValues>
+            <masterLabel>Fortnightly</masterLabel>
+            <translation><!-- Fortnightly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Fortnightly/Monthly</masterLabel>
+            <translation><!-- Fortnightly/Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly</masterLabel>
+            <translation><!-- Weekly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly/ Fortnightly</masterLabel>
+            <translation><!-- Weekly/ Fortnightly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly/Fortnightly/Monthly</masterLabel>
+            <translation><!-- Weekly/Fortnightly/Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Weekly/Monthly</masterLabel>
+            <translation><!-- Weekly/Monthly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- List of email addresses for payroll contacts --></help>
+        <label><!-- Payroll Contacts --></label>
+        <name>Payroll_Contacts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Payroll field compulsory --></label>
+        <name>Payroll_field_compulsory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage or Fixed amount --></label>
+        <name>Percentage_or_Fixed_amount__c</name>
+        <picklistValues>
+            <masterLabel>Fixed Amount</masterLabel>
+            <translation><!-- Fixed Amount --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Percentage</masterLabel>
+            <translation><!-- Percentage --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Postal Address --></label>
+        <name>Postal_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal City --></label>
+        <name>Postal_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Postcode --></label>
+        <name>Postal_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal State --></label>
+        <name>Postal_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Postal Street --></label>
+        <name>Postal_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Prepaid to --></label>
+        <name>Prepaid_to__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Upgrade (Emp Sub) --></label>
+        <name>Product_Upgrade_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Upgrade (Exc) --></label>
+        <name>Product_Upgrade_Exc__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates at what level the employer funds for SplitPay --></help>
+        <label><!-- Product Upgrade --></label>
+        <name>Product_Upgrade__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publish SP Inpatriate Wording --></label>
+        <name>Publish_SP_Inpatriate_Wording__c</name>
+        <picklistValues>
+            <masterLabel>App only</masterLabel>
+            <translation><!-- App only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Book</masterLabel>
+            <translation><!-- Book --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Book and App</masterLabel>
+            <translation><!-- Book and App --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Publish SP Resident Wording --></label>
+        <name>Publish_SP_Resident_Wording__c</name>
+        <picklistValues>
+            <masterLabel>App only</masterLabel>
+            <translation><!-- App only --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Book</masterLabel>
+            <translation><!-- Book --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Book and App</masterLabel>
+            <translation><!-- Book and App --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rate Rise / Renewal Correspondence --></label>
+        <name>Rate_Rise_Renewal_Correspondence__c</name>
+        <picklistValues>
+            <masterLabel>Change plan</masterLabel>
+            <translation><!-- Change plan --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Mid- March</masterLabel>
+            <translation><!-- Mid- March --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate rise</masterLabel>
+            <translation><!-- Rate rise --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rate rise and rebate</masterLabel>
+            <translation><!-- Rate rise and rebate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rebate - DD form required</masterLabel>
+            <translation><!-- Rebate - DD form required --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rebate - Rate increase</masterLabel>
+            <translation><!-- Rebate - Rate increase --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SplitPay Transitiion - DD form required</masterLabel>
+            <translation><!-- SplitPay Transitiion - DD form required --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Rebate mandatory --></label>
+        <name>Rebate_mandatory__c</name>
+    </fields>
+    <fields>
+        <label><!-- Register for Rebate --></label>
+        <name>Register_for_Rebate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Register for rebate(during join online) --></label>
+        <name>Register_for_rebate_during_join_online__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Name - HICAPS --></label>
+        <name>Section_Name_HICAPS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Number --></label>
+        <name>Section_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section name - OMS --></label>
+        <name>Section_name_OMS__c</name>
+    </fields>
+    <fields>
+        <label><!-- Shared Key --></label>
+        <name>SharedKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Single (Emp Sub) --></label>
+        <name>Single_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Arrangements --></label>
+        <name>Special_Arrangements__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Features --></label>
+        <name>Special_Features__c</name>
+    </fields>
+    <fields>
+        <help><!-- Capture the intention of the SP arrangements at  section level (this may be different to how set up in whics) --></help>
+        <label><!-- SplitPay Arrangements --></label>
+        <name>SplitPay_Arrangements__c</name>
+    </fields>
+    <fields>
+        <help><!-- The SplitPay Marketing Wording that appears in the book. --></help>
+        <label><!-- Resident-SplitPay Cover Guide Wording --></label>
+        <name>SplitPay_Marketing_Wording__c</name>
+    </fields>
+    <fields>
+        <label><!-- SplitPay Processing Instructions --></label>
+        <name>SplitPay_Processing_Instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Standard Product (Emp Sub) --></label>
+        <name>Standard_Product_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates at what level the employer funds for SplitPay --></help>
+        <label><!-- Standard Product --></label>
+        <name>Standard_Product__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates at what level the employer funds for SplitPay --></help>
+        <label><!-- Standard &apos;downgrade&apos; option at tier 3 --></label>
+        <name>Standard_downgrade_option_at_tier_3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- STD Downgrade Option at tier 3 (ES) --></label>
+        <name>Std_downgrade_option_at_tier_3_emp_sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address --></label>
+        <name>Street_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street City --></label>
+        <name>Street_City__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Postcode --></label>
+        <name>Street_Postcode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street State --></label>
+        <name>Street_State__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Street --></label>
+        <name>Street_Street__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terminate Membership --></label>
+        <name>Terminate_Membership__c</name>
+    </fields>
+    <fields>
+        <label><!-- Terminate members --></label>
+        <name>Terminate_members__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier 1 (Emp Sub) --></label>
+        <name>Tier_1_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier 2 (Emp Sub) --></label>
+        <name>Tier_2_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier 3 (Emp Sub) --></label>
+        <name>Tier_3_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier 3 (Forced) - (Emp Sub) --></label>
+        <name>Tier_3_Forced_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <label><!-- Tier Funded to --></label>
+        <name>Tier_Funded_to__c</name>
+        <picklistValues>
+            <masterLabel>Base Tier</masterLabel>
+            <translation><!-- Base Tier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Member Nominated Tier</masterLabel>
+            <translation><!-- Member Nominated Tier --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 1</masterLabel>
+            <translation><!-- Tier 1 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 2</masterLabel>
+            <translation><!-- Tier 2 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tier 3</masterLabel>
+            <translation><!-- Tier 3 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Update direct debit (only DD section) --></label>
+        <name>Update_direct_debit_only_DD_section__c</name>
+    </fields>
+    <fields>
+        <label><!-- User1 --></label>
+        <name>User1__c</name>
+    </fields>
+    <fields>
+        <label><!-- User2 --></label>
+        <name>User2__c</name>
+    </fields>
+    <fields>
+        <label><!-- User3 --></label>
+        <name>User3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- View Rebate Tier --></label>
+        <name>View_Rebate_Tier__c</name>
+    </fields>
+    <fields>
+        <label><!-- View Tier --></label>
+        <name>View_Tier__c</name>
+    </fields>
+    <fields>
+        <label><!-- Voluntary Tier Upgrade --></label>
+        <name>Voluntary_Tier_Upgrade__c</name>
+    </fields>
+    <fields>
+        <label><!-- Warnings &amp; Alerts --></label>
+        <name>Warnings_Alerts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Worksite --></label>
+        <name>Worksite__c</name>
+    </fields>
+    <fields>
+        <label><!-- % of Family cover (Emp Sub) --></label>
+        <name>of_Family_cover_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates at what level the employer funds for SplitPay --></help>
+        <label><!-- % of Family cover --></label>
+        <name>of_Family_cover__c</name>
+    </fields>
+    <fields>
+        <label><!-- % of standard product (Emp Sub) --></label>
+        <name>of_standard_product_Emp_Sub__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates at what level the employer funds for SplitPay --></help>
+        <label><!-- % of standard product --></label>
+        <name>of_standard_product__c</name>
+    </fields>
+    <layouts>
+        <layout>Section Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Address  Information --></label>
+            <section>Address  Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Employer exclusions --></label>
+            <section>Employer exclusions</section>
+        </sections>
+        <sections>
+            <label><!-- Employer subsidy --></label>
+            <section>Employer subsidy</section>
+        </sections>
+        <sections>
+            <label><!-- Join Online - Member Features --></label>
+            <section>Join Online - Member Features</section>
+        </sections>
+        <sections>
+            <label><!-- Join online --></label>
+            <section>Join online</section>
+        </sections>
+        <sections>
+            <label><!-- Join online - HR Features --></label>
+            <section>Join online - HR Features</section>
+        </sections>
+        <sections>
+            <label><!-- OMS Settings - HR --></label>
+            <section>OMS Settings - HR</section>
+        </sections>
+        <sections>
+            <label><!-- OMS Settings - Member --></label>
+            <section>OMS Settings - Member</section>
+        </sections>
+        <sections>
+            <label><!-- Special Arrangements --></label>
+            <section>Special Arrangements</section>
+        </sections>
+        <sections>
+            <label><!-- SplitPay Information --></label>
+            <section>SplitPay Information</section>
+        </sections>
+        <sections>
+            <label><!-- VF Page --></label>
+            <section>VF Page</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You can only close a section via a draft --></errorMessage>
+        <name>Close_Section_in_Draft_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Publish SP Inpatriate Wording is mandatory when  &apos;Inpatriate - SplitPay Cover Guide Wording&apos; field is completed --></errorMessage>
+        <name>Mandatory_Publish_SP_Inpatriate_Wording</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Publish SP Resident Wording is mandatory when Resident - SplitPay Cover Guide Wording  is set --></errorMessage>
+        <name>Mandatory_publish_SP_resident_wording</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- OMS Disable Date cannot be before OMS Activation Date --></errorMessage>
+        <name>OMS_Disable_Date_Cannot_be_before_Activa</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Comments (Emp Sub) are required when you select the Other (Emp Sub) option --></errorMessage>
+        <name>Other_Comments_Emp_sub</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Comments (Exc) are required when you select the Other (Exc) option --></errorMessage>
+        <name>Other_Comments_Exc</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- As the employer has prepaid please enter a date in the &quot;Prepaid to&quot; field --></errorMessage>
+        <name>Prepaid_Date</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Clone_with_products --></label>
+        <name>Clone_with_products</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Related_Client_Record --></label>
+        <name>Related_Client_Record</name>
+    </webLinks>
+</CustomObjectTranslation>

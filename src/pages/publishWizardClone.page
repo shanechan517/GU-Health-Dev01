@@ -1,0 +1,823 @@
+<apex:page standardController="Group__c" extensions="publishWizardExtensionClone" standardStylesheets="false" sidebar="false" id="pWizard" title="{!Group__c.Group_Number__c} v{!Group__c.Version__c} Publish Wizard">
+    <!--Stylesheet ripped from the Salesforce Lightning Design System website for the layout of the left hand nav panel-->
+    <apex:stylesheet value="{!$Resource.sfdcCSS}" />
+    <!--jQuery-->
+    <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+    <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+    <!--SVG plugin to render SVGs on Visualforce-->
+    <apex:includeScript value="{!$Resource.svg4everybody}"/>
+    <!--Momentjs used to format the date values in the comparison pages-->
+    <apex:includeScript value="{!$Resource.momentjs}"/>
+    <!--Salesforce Lightnign Design System static resource-->
+    <apex:stylesheet value="{!URLFOR($Resource.SLDS0120, 'assets/styles/salesforce-lightning-design-system-vf.css')}" />
+    <!--on/off switch styling-->
+    <apex:stylesheet value="{!$Resource.onoffswitch}" />
+    <!--jQuery UI for the datepicker-->
+    <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+    <!-- Bootstrap -->
+    <apex:includeScript value="https://www.atlasestateagents.co.uk/javascript/tether.min.js"/>
+    <apex:stylesheet value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/css/bootstrap.min.css" />
+    <apex:includeScript value="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js"/>
+    
+    <!--html delcaration line required for SVG4Everybody-->
+    <html xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <!--START Javascript block-->
+        <script>
+            $( document ).ready(function() {
+                $( ".select-value" ).change(function() {
+                    if($(this).is(":checked")){
+                        var id = $(this).data('key');
+                        $('.select-value[data-key="' + id + '"]').not(this).prop('checked', false);
+                    }else{
+                        $(this).prop('checked', true);
+                    }
+                });
+    
+                $( ".gu-nav-option" ).click(function() {
+                    $(".gu-flip-panel").hide();
+                    $(".slds-tree__item").removeClass("selected-branch");
+                    var key = $(this).data("target");
+                    $("#" + key).show();
+                    $(this).parent(".slds-tree__item").addClass("selected-branch");
+                    scrollToAnchor('scroll-anchor');
+                });
+    
+                //$(".sec-nav li").first().addClass("slds-active");
+                $(".sec-holder").first().show();
+    
+                //$(".spl-nav li").first().addClass("slds-active");
+                $(".spl-holder").first().show();
+    
+                $('.onoffswitch-label').click(function(){
+                    $(this).parent().toggleClass('onoffswitch-checked');
+                });
+    
+                $('.datepicker').datepicker({
+                    dateFormat: 'dd/mm/yy',
+                    yearRange: "0:+2",
+                    changeMonth: true,
+                    changeYear: true
+                });
+    
+                $(".hasDatepicker").attr('readonly','true');
+    
+                //fix the output text formats with strict comparitive validation
+                $('.output-bind').each(function (index, dateElem) {
+                    var $dateElem = $(dateElem);
+                    if(moment($dateElem.text(), "YYYY-MM-DD HH:mm:ss", true).isValid()){
+                        var formatted = moment($dateElem.text(), 'YYYY-MM-DD HH:mm:ss').format('DD/MM/YYYY');
+                        $dateElem.text(formatted);
+                    }
+                });
+    
+                //fix the date field on load (for page refreshes that break stabndard datepicker formatting with APEX binding)
+                $('#pWizard\\:wizardForm\\:DraftPublishDate').each(function (index, dateElem) {
+                    var $dateElem = $(dateElem);
+                    var formatted = moment($dateElem.text(), 'YYYY-MM-DD HH:mm:ss').format('DD/MM/YYYY');
+                    $dateElem.text(formatted);
+                });
+                
+                //Initialize collapse
+                <apex:repeat value="{!fieldSetListMap['Group__c']}" var="sectionName"> 
+                    if({!groupFamily.grp.fieldSetContainsChange[sectionName]} == true){
+                        $('#{!sectionName}group').collapse('toggle');
+                        document.getElementById('{!sectionName}groupright').classList.remove('slds-show');
+                        document.getElementById('{!sectionName}groupright').classList.add('slds-hide');
+                        document.getElementById('{!sectionName}groupdown').classList.add('slds-show');
+                        document.getElementById('{!sectionName}groupdown').classList.remove('slds-hide');
+                    }else{
+                        $('#{!sectionName}group').addClass('collapse');
+                        document.getElementById('{!sectionName}groupdown').classList.remove('slds-show');
+                        document.getElementById('{!sectionName}groupdown').classList.add('slds-hide');
+                        document.getElementById('{!sectionName}groupright').classList.add('slds-show');
+                        document.getElementById('{!sectionName}groupright').classList.remove('slds-hide');
+                    }
+                </apex:repeat>
+                <apex:repeat value="{!groupFamily.sectionList}" var="secKey" id="secSection">
+                    <apex:repeat value="{!fieldSetListMap['Section__c']}" var="sectionName">
+                        if({!secKey.section.fieldSetContainsChange[sectionName]} == true){
+                            $('#{!sectionName}{!secKey.section.recordName}').collapse('toggle');
+                            document.getElementById('{!sectionName}{!secKey.section.recordName}right').classList.remove('slds-show');
+                            document.getElementById('{!sectionName}{!secKey.section.recordName}right').classList.add('slds-hide');
+                            document.getElementById('{!sectionName}{!secKey.section.recordName}down').classList.add('slds-show');
+                            document.getElementById('{!sectionName}{!secKey.section.recordName}down').classList.remove('slds-hide');
+                        }else{
+                            $('#{!sectionName}{!secKey.section.recordName}').addClass('collapse');
+                            document.getElementById('{!sectionName}{!secKey.section.recordName}down').classList.remove('slds-show');
+                            document.getElementById('{!sectionName}{!secKey.section.recordName}down').classList.add('slds-hide');
+                            document.getElementById('{!sectionName}{!secKey.section.recordName}right').classList.add('slds-show');
+                            document.getElementById('{!sectionName}{!secKey.section.recordName}right').classList.remove('slds-hide');
+                        }
+                    </apex:repeat>
+                    <apex:repeat value="{!secKey.splList}" var="splKey" id="splSection">
+                        <apex:repeat value="{!fieldSetListMap['Section_Product_Link__c']}" var="sectionName">
+                        if({!splKey.spl.fieldSetContainsChange[sectionName]} == true){
+                            document.getElementById('{!sectionName}{!splKey.spl.recordName}right').classList.remove('slds-show');
+                            document.getElementById('{!sectionName}{!splKey.spl.recordName}right').classList.add('slds-hide');
+                            document.getElementById('{!sectionName}{!splKey.spl.recordName}down').classList.add('slds-show');
+                            document.getElementById('{!sectionName}{!splKey.spl.recordName}down').classList.remove('slds-hide');
+                        }else{
+                            $('#{!sectionName}{!splKey.spl.recordName}').addClass('collapse');
+                            document.getElementById('{!sectionName}{!splKey.spl.recordName}down').classList.remove('slds-show');
+                            document.getElementById('{!sectionName}{!splKey.spl.recordName}down').classList.add('slds-hide');
+                            document.getElementById('{!sectionName}{!splKey.spl.recordName}right').classList.add('slds-show');
+                            document.getElementById('{!sectionName}{!splKey.spl.recordName}right').classList.remove('slds-hide');
+                        }
+                        </apex:repeat>
+                    </apex:repeat>
+                </apex:repeat>
+            });
+    
+            function selectTab(elmnt) {
+                // slds-active
+                $(elmnt).parent("li").siblings(".slds-active").removeClass("slds-active");
+                $(elmnt).parent("li").addClass("slds-active");
+    
+                // tabindex
+                $(elmnt).parent("li").siblings().children("a").attr("tabindex", -1);
+                $(elmnt).attr("tabindex", 0);
+    
+                // aria-selected
+                $(elmnt).parent("li").siblings().children("a").attr("aria-selected", false);
+                $(elmnt).attr("aria-selected", true);
+    
+                // hiding previouly selected tab (slds-show/slds-hide)
+                $(elmnt).closest(".slds-tabs--default").children("div[role='tabpanel'].slds-show").addClass("slds-hide").removeClass("slds-show");
+                // displaying newly selected tab (slds-show/slds-hide)
+                $(elmnt).closest(".slds-tabs--default").children("div[role='tabpanel']#" + elmnt.id).addClass("slds-show").removeClass("slds-hide");
+            }
+    
+            function closeModal(){
+                $("#skip-modal").hide();
+            }
+    
+            function scrollToAnchor(aid){
+                var aTag = $("#"+ aid);
+                $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+            }
+        </script>
+        <!--END Javascript block-->
+    
+        <!--START CSS block-->
+        <style>
+            .header-container{
+                padding:8px 0px;
+            }
+            .section-holder{
+                padding:0px 12px;
+            }
+            .slds-button{
+                cursor: pointer;
+            }
+            .map-label{
+                width: 70px;
+                display: inline-block;
+            }
+            .btnHolder{
+                padding:40px 20px;
+                text-align:right;
+            }
+            #left {
+                width: 20%;
+                height: 100%;
+                position: fixed;
+                outline: 1px solid;
+                background-color:#fff;
+            }
+            #right {
+                width: 80%;
+                height: auto;
+                position: absolute;
+                right: 0;
+            }
+            .slds-nested{
+                padding-left: 20px !important;
+            }
+            .spl-branch{
+                padding-left:32px !important;
+                margin-left:20px !important;
+            }
+            .selected-branch{
+                background-color:rgba(107, 134, 174, 0.3) !important;
+            }
+        </style>
+        <!--END CSS block-->
+        
+        <apex:form id="wizardForm">
+            <div id="Group__c" class="slds">
+                <!--popup modal for wizard when not required-->
+                <div style="{!IF(OR(needWizard, missingField, isVersionOne, pendingGroupVersion != ''),'display:none;','')}" id="skip-modal">
+                    <div aria-hidden="false" role="dialog" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header slds-theme--success slds-theme--alert-texture">
+                                <h2 class="slds-text-heading--medium">Original version still active</h2>
+                                <button class="slds-button slds-button--icon-inverse slds-modal__close">
+                                    <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                                        <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#close"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                            </div>
+                            <div class="slds-modal__content">
+                                <div>
+                                    <p>The version of the group that this draft was cloned from is still active. The Publishing Wizard will only display changes made to the draft.</p>
+                                    <p>You can still check the comparison tabs if you wish to double check the records, otherwise simply enter the ‘Publish Date’ and ‘Publish’ the record.</p>
+                                </div>
+                            </div>
+                            <div class="slds-modal__footer">
+                                <div class="slds-x-small-buttons--horizontal">
+                                    <div class="slds-button slds-button--neutral" onclick="closeModal()">Ok</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-backdrop slds-backdrop--open"></div>
+                </div>
+    
+                <!--popup modal for missing fields (required fields)-->
+                <div style="{!IF(missingField,'','display:none;')}" id="skip-modal">
+                    <div aria-hidden="false" role="dialog" class="slds-modal slds-fade-in-open">
+                        <div class="slds-modal__container">
+                            <div class="slds-modal__header">
+                                <h2 class="slds-text-heading--medium">Missing required fields</h2>
+                                <button class="slds-button slds-button--icon-inverse slds-modal__close">
+                                    <svg aria-hidden="true" class="slds-button__icon slds-button__icon--large">
+                                        <use xlink:href="/assets/icons/action-sprite/svg/symbols.svg#close"></use>
+                                    </svg>
+                                    <span class="slds-assistive-text">Close</span>
+                                </button>
+                            </div>
+                            <div class="slds-modal__content">
+                                <div>
+                                    <p>Please <i>review</i> the following messages:</p>
+                                    <p>&nbsp;</p>
+                                    <apex:outputText value="{!missingFieldMsg}" escape="false" />
+                                </div>
+                            </div>
+                            <div class="slds-modal__footer">
+                                <div class="slds-x-small-buttons--horizontal">
+                                    <apex:commandButton styleClass="slds-button slds-button--neutral" value="Ok" action="{!Cancel}" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slds-backdrop slds-backdrop--open"></div>
+                </div>
+                
+                <div class="slds-page-header" role="banner">
+                    <div class="slds-grid">
+                        <div class="slds-media__figure">
+                            <svg aria-hidden="true" style="padding: 8px;" class="slds-icon slds-icon--large slds-icon-standard-user">
+                                <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#magicwand')}"></use>
+                            </svg>
+                        </div>
+                        <div class="slds-col slds-has-flexi-truncate">
+                            <p class="slds-text-heading--label">Group Publish Wizard</p>
+                            <div class="slds-grid">
+                                <div class="slds-grid slds-type-focus slds-no-space">
+                                    <h1 class="slds-text-heading--medium slds-truncate" title="My Leads (truncates)">Group #{!groupNumber}</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <div style="padding:10px 0px;">
+                    <apex:pageMessages />
+                </div>
+    
+                <div class="slds-box slds-theme--info slds-theme--alert-texture" style="{!IF(needWizard,'','display:none;')}">
+                    <div class="notify__content slds-grid">
+                        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                            <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                        </svg>
+                        <div class="slds-col slds-align-middle">
+                            <h2 class="slds-text-heading--small">There has been another version of this Group cloned and published <strong>after</strong> this version was created.</h2>
+                            <p>To ensure your version is up-to-date, please use the Publishing Wizard to merge the changes from the active record to the draft. The Publishing Wizard compares the active Group record with the current draft.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="slds-box slds-theme--warning slds-theme--alert-texture" style="margin-top:12px;{!IF(ISNULL(oppStatusMsg),'display:none;','')}">
+                    <div class="notify__content slds-grid">
+                        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                            <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                        </svg>
+                        <div class="slds-col slds-align-middle">
+                            <h2 class="slds-text-heading--small" >Parent record has <strong>not</strong> been closed.</h2>
+                            <p>{!oppStatusMsg}</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="slds-box slds-theme--error slds-theme--alert-texture" style="margin-top:12px;{!IF(excludedMessage == '','display:none;','')}">
+                    <div class="notify__content slds-grid">
+                        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                            <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#warning')}"></use>
+                        </svg>
+                        <div class="slds-col slds-align-middle">
+                            <h2 class="slds-text-heading--small">Group <strong>too large</strong> to display Section Product Links.</h2>
+                            <p>{!excludedMessage}</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="slds-box slds-theme--success slds-theme--alert-texture" style="margin-top:12px;{!IF(pendingGroupVersion == '','display:none;','')}">
+                    <div class="notify__content slds-grid" >
+                        <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                            <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#announcement')}"></use>
+                        </svg>
+                        <div class="slds-col slds-align-middle">
+                            <h2 class="slds-text-heading--small">The following version is currently pending: <strong>{!pendingGroupVersion}</strong>.</h2>
+                            <p>Please be mindful that your changes are now being compared to the pending version mentioned above instead of the current active version.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div style="padding:20px;"></div>
+    
+                <div class="slds-box slds-box--small">
+                    <div class="slds-text-heading--medium" style="margin-bottom:10px;">Alert Button Definitions:</div>
+                    <div class="slds-grid slds-wrap">
+                        <div class="slds-col">
+                            <p style="margin:6px 0px;"><label class="map-label"><span class="slds-badge slds-theme--error">change</span></label>There is at least one change which requires attention.</p>
+                        </div>
+                        <div class="slds-col">
+                            <p style="margin:6px 0px;"><label class="map-label"><span class="slds-badge slds-theme--warning">new</span></label>There is new information on either the draft or active version, not both.</p>
+                        </div>
+                        <div class="slds-col">
+                            <p style="margin:6px 0px;"><label class="map-label"><span class="slds-badge slds-theme--success">same</span></label>The active and draft records are the same and do not require attention.</p>
+                        </div>
+                    </div>
+                </div>
+    
+                <div style="clear:both;padding:50px 0px;">
+                    <div class="slds-tabs--path" role="application tablist">
+                        <ul class="slds-tabs--path__nav" role="presentation">
+                            <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                <a class="slds-tabs--path__link" aria-selected="false" tabindex="-1" role="tab" href="#void" aria-live="assertive">
+                                    <span class="slds-tabs--path__stage">
+                                        <svg aria-hidden="true" class="slds-icon slds-icon--x-small">
+                                            <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#check')}"></use>
+                                        </svg>
+                                        <span class="slds-assistive-text">Stage Complete</span>
+                                    </span>
+                                    <span class="slds-tabs--path__title">Create draft</span>
+                                </a>
+                            </li>
+                            <li class="slds-tabs--path__item slds-is-complete" role="presentation">
+                                <a class="slds-tabs--path__link" aria-selected="false" tabindex="-1" role="tab" href="#void" aria-live="assertive">
+                                    <span class="slds-tabs--path__stage">
+                                        <svg aria-hidden="true" class="slds-icon slds-icon--x-small">
+                                            <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#check')}"></use>
+                                        </svg>
+                                        <span class="slds-assistive-text">Stage Complete</span>
+                                    </span>
+                                    <span class="slds-tabs--path__title">Apply changes within draft</span>
+                                </a>
+                            </li>
+                            <li class="slds-tabs--path__item slds-is-current" role="presentation">
+                                <a class="slds-tabs--path__link" aria-selected="true" tabindex="0" role="tab" href="#void" aria-live="assertive">
+                                    <span class="slds-tabs--path__stage">
+                                        <svg aria-hidden="true" class="slds-icon slds-icon--x-small">
+                                            <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#check')}"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="slds-tabs--path__title">Publish draft</span>
+                                </a>
+                            </li>
+                            <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                <a class="slds-tabs--path__link" aria-selected="false" tabindex="-1" role="tab" href="#void" aria-live="assertive">
+                                    <span class="slds-tabs--path__stage">
+                                        <svg aria-hidden="true" class="slds-icon slds-icon--x-small">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="slds-tabs--path__title">Activate version</span>
+                                </a>
+                            </li>
+                            <li class="slds-tabs--path__item slds-is-incomplete" role="presentation">
+                                <a class="slds-tabs--path__link" aria-selected="false" tabindex="-1" role="tab" href="#void" aria-live="assertive">
+                                    <span class="slds-tabs--path__stage">
+                                        <svg aria-hidden="true" class="slds-icon slds-icon--x-small">
+                                            <use xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#check"></use>
+                                        </svg>
+                                    </span>
+                                    <span class="slds-tabs--path__title">Discard old version</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <nav id="navigation" class="site-navigation" role="navigation">
+                    <div class="slds-tree-container" role="application">
+                        <h4 class="slds-text-heading--label" id="treeheading" style="text-align: center;margin-bottom: 30px;">Group Record Navigation</h4>
+                        <ul class="slds-tree" role="tree" aria-labelledby="treeheading" aria-activedescendant="tree0-node0">
+                            <li id="tree0-node0" class="slds-tree__branch slds-is-open" role="treeitem" aria-level="1" aria-expanded="true">
+                                <div class="slds-tree__item selected-branch">
+                                    <button class="slds-button slds-button--icon-bare slds-m-right--x-small">
+                                        <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                                            <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#chevronright')}"></use>
+                                        </svg>
+                                        <span class="slds-assistive-text">Toggle</span>
+                                    </button>
+                                    <a data-target="group-container" class="gu-nav-option" id="tree0-node0-link" tabindex="-1" role="presentation">
+                                        Group {!groupNumber}&nbsp;
+                                        <span class="slds-badge slds-theme--success" style="{!IF(OR(groupFamily.grp.containsChange, groupFamily.grp.hasAct = false, groupFamily.grp.hasPub = false), 'display:none;', 'display:inline-block;')}">same</span>
+                                        <span class="slds-badge slds-theme--error" style="{!IF(groupFamily.grp.containsChange, 'display:inline-block;', 'display:none;')}">change</span>
+                                        <span class="slds-badge slds-theme--warning" style="{!IF(groupFamily.grp.hasAct != groupFamily.grp.hasPub, 'display:inline-block;', 'display:none;')}">new</span>
+                                    </a>
+                                </div>
+                                <apex:repeat value="{!groupFamily.sectionList}" var="secKey" id="secNavSection">
+                                    <ul class="slds-tree__group slds-nested is-expanded" role="group" aria-labelledby="tree0-node0-link">
+                                        <li id="tree0-node0-0" class="slds-tree__branch slds-is-open" role="treeitem" aria-level="2" aria-expanded="true">
+                                            <div class="slds-tree__item">
+                                                <button class="slds-button slds-button--icon-bare slds-m-right--x-small">
+                                                    <svg aria-hidden="true" class="slds-button__icon slds-button__icon--small">
+                                                        <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#chevronright')}"></use>
+                                                    </svg>
+                                                    <span class="slds-assistive-text">Toggle</span>
+                                                </button>
+                                                <a data-target="{!secKey.section.uniqueIdentifier}" class="gu-nav-option" id="tree0-node0-0-link" tabindex="-1" role="presentation">
+                                                    Section {!secKey.section.recordName}&nbsp;
+                                                    <span class="slds-badge slds-theme--success" style="{!IF(OR(secKey.section.containsChange, secKey.section.hasAct = false, secKey.section.hasPub = false), 'display:none;', 'display:inline-block;')}">same</span>
+                                                    <span class="slds-badge slds-theme--error" style="{!IF(secKey.section.containsChange, 'display:inline-block;', 'display:none;')}">change</span>
+                                                    <!--<span class="slds-badge slds-theme--error" style="{!IF(secKey.section.hasChangedChild, 'display:inline-block;', 'display:none;')}">changed product</span>-->
+                                                    <span class="slds-badge slds-theme--warning" style="{!IF(secKey.section.hasAct != secKey.section.hasPub, 'display:inline-block;', 'display:none;')}">new</span>
+                                                    <!--<span class="slds-badge slds-theme--warning" style="{!IF(secKey.section.hasNewChild, 'display:inline-block;', 'display:none;')}">new product</span>-->
+                                                </a>
+                                            </div>
+                                        </li>
+                                        <apex:repeat value="{!secKey.splList}" var="splKey" id="splNavSection">
+                                            <li id="tree0-node0-1" class="slds-tree__item spl-branch" role="treeitem" aria-level="2">
+                                                <a data-target="spl{!splKey.spl.uniqueIdentifier}" class="gu-nav-option slds-truncate" tabindex="-1" role="presentation">
+                                                    {!splKey.spl.recordName}&nbsp;
+                                                    <span class="slds-badge slds-theme--success" style="{!IF(OR(splKey.spl.containsChange, splKey.spl.hasAct = false, splKey.spl.hasPub = false), 'display:none;', 'display:inline-block;')}">same</span>
+                                                    <span class="slds-badge slds-theme--error" style="{!IF(splKey.spl.containsChange, 'display:inline-block;', 'display:none;')}">change</span>
+                                                    <span class="slds-badge slds-theme--warning" style="{!IF(splKey.spl.hasAct != splKey.spl.hasPub, 'display:inline-block;', 'display:none;')}">new</span>
+                                                </a>
+                                            </li>
+                                        </apex:repeat>
+                                    </ul>
+                                </apex:repeat>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+    
+                <main class="site-main" role="main">
+                    <div style="padding:30px 0px;" id="scroll-anchor">
+                        <div class="slds-text-body--regular">Please go through the following records and ensure that this publish encapsulates all changes made to the group. Once you have finished, please enter a <b>publish date</b> and press <b>publish</b> at the bottom of the page.</div>
+                    </div>
+                    <div class="slds-container--small">
+                        <div class="slds-form-element">
+                            <label class="slds-form-element__label" for="date">Draft Publish Date</label>
+                            <div class="slds-form-element__control">
+                                <div class="slds-input-has-icon slds-input-has-icon--right">
+                                    <svg aria-hidden="true" class="slds-input__icon slds-icon-text-default" onclick="document.getElementById('{!$Component.DraftPublishDate}').focus();">
+                                        <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#event')}"></use>
+                                    </svg>
+                                    <apex:inputText value="{!publishDate}" id="DraftPublishDate" styleClass="slds-input datepicker" html-placeholder="Pick a Date" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <div class="btnHolder">
+                        <apex:commandButton styleClass="slds-button slds-button--brand" action="{!publishGroup}" value="Publish" />
+                        <apex:commandButton styleClass="slds-button slds-button--neutral" action="{!Cancel}" value="Cancel" style="margin-left:8px;" />
+                    </div>
+    
+                    <div class="slds-grid">
+                        <div id="group-container" class="slds-col gu-flip-panel">
+                            <!--Start of Group container-->
+                            <div class="slds-col slds-has-flexi-truncate">
+                                <h3 class="slds-text-heading--medium slds-truncate" title="Contacts (will truncate)">
+                                    Group {!groupNumber}&nbsp;
+                                    <span class="slds-badge slds-theme--success" style="{!IF(OR(groupFamily.grp.containsChange, groupFamily.grp.hasAct = false, groupFamily.grp.hasPub = false), 'display:none;', 'display:inline-block;')}">same</span>
+                                    <span class="slds-badge slds-theme--error" style="{!IF(groupFamily.grp.containsChange, 'display:inline-block;', 'display:none;')}">change</span>
+                                    <span class="slds-badge slds-theme--warning" style="{!IF(groupFamily.grp.hasAct != groupFamily.grp.hasPub, 'display:inline-block;', 'display:none;')}">new</span>
+                                </h3>
+                            </div>
+    
+                            <div style="clear:both;padding:6px;"></div>
+                            
+                            <!-- Group Information -->
+                            <!-- Iteration to the field sets in the group (field set) -->
+                            <apex:repeat value="{!fieldSetListMap['Group__c']}" var="sectionName">
+                                <div style="border: 1px solid #D8DDE6;">
+                                    <div style="height: 20px; margin-top: 10px; margin-bottom: 10px;">
+                                        <button id="{!sectionName}groupbtn" style="float: left; margin-left: 10px;" class="slds-button slds-button--icon slds-m-right--x-small" type="button" 
+                                                data-toggle="collapse" data-target="#{!sectionName}group" aria-expanded="false" aria-controls="{!sectionName}group"
+                                                onclick="if(!$('#{!sectionName}group').hasClass('in')){document.getElementById('{!sectionName}groupright').classList.remove('slds-show');document.getElementById('{!sectionName}groupright').classList.add('slds-hide'); document.getElementById('{!sectionName}groupdown').classList.add('slds-show');document.getElementById('{!sectionName}groupdown').classList.remove('slds-hide');}else{document.getElementById('{!sectionName}groupdown').classList.remove('slds-show');document.getElementById('{!sectionName}groupdown').classList.add('slds-hide');document.getElementById('{!sectionName}groupright').classList.add('slds-show');document.getElementById('{!sectionName}groupright').classList.remove('slds-hide');}; ">
+                                            <svg id="{!sectionName}groupright" aria-hidden="true" class="slds-button__icon slds-button__icon--medium slds-show">
+                                                <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#chevronright')}"></use>
+                                            </svg>
+                                            <svg id="{!sectionName}groupdown" aria-hidden="true" class="slds-button__icon slds-button__icon--medium slds-hide">
+                                                <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#chevrondown')}"></use>
+                                            </svg>
+                                            <span class="slds-assistive-text">Toggle</span>
+                                        </button>
+                                        <b>{!fieldSetAPItoLabelMap['Group__c'][sectionName]}</b>
+                                    </div>
+                                    <div id="{!sectionName}group">
+                                        <table class="slds-table slds-table--bordered">
+                                            <thead>
+                                                <tr scope="col">
+                                                    <th class="slds-truncate slds-size--1-of-3" scope="col">Field</th>
+                                                    <th class="slds-truncate slds-size--1-of-3" scope="col">Current Value</th>
+                                                    <th class="slds-truncate slds-size--1-of-3" style="{!IF(AND(groupFamily.grp.hasAct, isVersionOne == false), '', 'display:none;')}" scope="col">{!IF(pendingGroupVersion == '','Active Record Value','Pending Record Value')}</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <!-- Iteration to the fields in the group (field set member) -->
+                                                <apex:repeat value="{!groupFamily.grp.cObj[sectionName]}" var="groupRcord">
+                                                    <tr class="slds-hint-parent">
+                                                        <td class="slds-truncate slds-size--1-of-3">
+                                                            <apex:image id="syncImage" value="{!$Resource.syncICO}" width="25" height="25" rendered="{!CONTAINS(groupSyncFields, groupRcord.fieldLabel)}" />
+                                                            <apex:image id="lockedImage" value="{!$Resource.lockICO}" width="25" height="25" rendered="{!CONTAINS(groupLockedFields, groupRcord.fieldLabel)}" />
+                                                            <strong>
+                                                                <apex:outputText style="margin-left: {!IF(!CONTAINS(groupSyncFields, groupRcord.fieldLabel) && !CONTAINS(groupLockedFields, groupRcord.fieldLabel), '30px', '0px')};" value="{!SUBSTITUTE(groupRcord.fieldLabel, ' ID', '')}" />
+                                                            </strong>
+                                                        </td>
+                                                        <td class="slds-truncate slds-size--1-of-3">
+                                                            <apex:outputPanel rendered="{!groupFamily.grp.hasPub && groupRcord.fieldType != 'REFERENCE'}">
+                                                                <apex:inputCheckbox styleClass="select-value" html-data-key="group-{!groupRcord.fieldAPI}" style="margin-right:6px;" value="{!groupRcord.pubSelect}" rendered="{!AND(groupRcord.pubValue != groupRcord.actValue, groupFamily.grp.hasPub, groupFamily.grp.hasAct, NOT(CONTAINS(forcedReadOnlyFieldsMap['Group__c'], groupRcord.fieldLabel)))}" />
+                                                                <span class="output-bind"><apex:outputText value="{!groupRcord.pubValue}" /></span>
+                                                            </apex:outputPanel>
+                                                            <apex:outputPanel rendered="{!groupFamily.grp.hasPub && groupRcord.fieldType == 'REFERENCE'}">
+                                                                <span class="output-bind"><apex:outputField value="{!referenceMap[groupFamily.grp.pubRecordId][groupRcord.fieldAPI]}" /></span>
+                                                            </apex:outputPanel>
+                                                        </td>
+                                                        <td class="slds-truncate slds-size--1-of-3" style="{!IF(AND(groupFamily.grp.hasAct, isVersionOne == false), '', 'display:none;')}">
+                                                            <apex:outputPanel rendered="{!groupFamily.grp.hasAct && groupRcord.fieldType != 'REFERENCE' && NOT(CONTAINS(groupSyncFields, groupRcord.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Group__c'], groupRcord.fieldLabel))}">
+                                                                <apex:inputCheckbox styleClass="select-value" html-data-key="group-{!groupRcord.fieldAPI}" style="margin-right:6px;" value="{!groupRcord.actSelect}" rendered="{!AND(groupRcord.pubValue != groupRcord.actValue, groupFamily.grp.hasPub, groupFamily.grp.hasAct)}" />
+                                                                <span class="output-bind"><apex:outputText value="{!groupRcord.actValue}" /></span>
+                                                            </apex:outputPanel>
+                                                            <apex:outputPanel rendered="{!groupFamily.grp.hasAct && groupRcord.fieldType == 'REFERENCE' && NOT(CONTAINS(groupSyncFields, groupRcord.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Group__c'], groupRcord.fieldLabel))}">
+                                                                <span class="output-bind"><apex:outputField value="{!referenceMap[groupFamily.grp.actRecordId][groupRcord.fieldAPI]}" /></span>
+                                                            </apex:outputPanel>
+                                                            <apex:outputPanel rendered="{!groupFamily.grp.hasAct && (CONTAINS(groupSyncFields, groupRcord.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Group__c'], groupRcord.fieldLabel))}">
+                                                                <span class="output-bind">
+                                                                    <apex:image value="{!$Resource.syncICO}" width="25" height="25" />
+                                                                </span>
+                                                            </apex:outputPanel>
+                                                        </td>
+                                                    </tr>
+                                                </apex:repeat>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </apex:repeat>
+                            <!--End of Group container-->
+                        </div>
+                    </div>
+                    
+                    <apex:outputPanel rendered="{!IF(groupFamily.sectionList.size != 0, true, false)}">
+                        <apex:variable value="{!0}" var="count" />
+                        <apex:repeat value="{!groupFamily.sectionList}" var="secKey" id="secSection">
+                            <div class="slds-grid">
+                                <div id="{!secKey.section.uniqueIdentifier}" aria-labelledby="tab-default-1" class="slds-col gu-flip-panel" role="tabpanel" style="display:none;">
+                                    <!--Start of Section container-->
+                                    <div class="slds-col slds-has-flexi-truncate">
+                                        <h3 class="slds-text-heading--medium slds-truncate" title="Contacts (will truncate)" style="margin-bottom:20px;">
+                                            Section {!secKey.section.recordName}&nbsp;
+                                            <span class="slds-badge slds-theme--success" style="{!IF(OR(secKey.section.containsChange, secKey.section.hasAct = false, secKey.section.hasPub = false), 'display:none;', 'display:inline-block;')}">same</span>
+                                            <span class="slds-badge slds-theme--error" style="{!IF(secKey.section.containsChange, 'display:inline-block;', 'display:none;')}">change</span>
+                                            <!--<span class="slds-badge slds-theme--error" style="{!IF(secKey.section.hasChangedChild, 'display:inline-block;', 'display:none;')}">changed product</span>-->
+                                            <span class="slds-badge slds-theme--warning" style="{!IF(secKey.section.hasAct != secKey.section.hasPub, 'display:inline-block;', 'display:none;')}">new</span>
+                                            <!--<span class="slds-badge slds-theme--warning" style="{!IF(secKey.section.hasNewChild, 'display:inline-block;', 'display:none;')}">new product</span>-->
+                                        </h3>
+                                    </div>
+                            
+                                    <apex:outputPanel rendered="{!IF(AND(secKey.section.hasAct != secKey.section.hasPub, isVersionOne == false), TRUE, FALSE)}">
+                                        <div class="slds-box slds-box slds-theme--warning slds-theme--alert-texture slds-grid">
+                                            <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                                                <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#info')}"></use>
+                                            </svg>
+                                            <div class="slds-col slds-align-middle" data-reactid=".2h.4.0.2.1">
+                                                <h2 class="slds-text-heading--small" data-reactid=".28.4.0.2.1.0">This record is only available in the <strong>{!IF(secKey.section.hasAct, if( pendingGroupVersion == '', 'Active Version','Pending Version'), 'Draft Version')}</strong>. Would you like to include it?</h2>
+                                                <!--<p data-reactid=".28.4.0.2.1.1">Yes: <apex:inputCheckbox style="margin-left:5px;" value="{!secKey.section.publishWithRec}" /></p>-->
+                                                <div style="clear:both;padding:4px;"></div>
+                                                <div class="onoffswitch">
+                                                    <apex:inputCheckbox id="onoffswitch" styleClass="onoffswitch-checkbox" value="{!secKey.section.publishWithRec}" />
+                                                    <label class="onoffswitch-label" for="pWizard:wizardForm:secSection:{!count}:onoffswitch">
+                                                        <span class="onoffswitch-inner"></span>
+                                                        <span class="onoffswitch-switch"></span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div style="clear:both;padding:12px;"></div>
+                                    </apex:outputPanel>
+                                    
+                                    <!-- Section Information -->
+                                    <!-- Iteration to the field sets in the section (field set) -->
+                                    <apex:repeat value="{!fieldSetListMap['Section__c']}" var="sectionName">
+                                        <div style="border: 1px solid #D8DDE6;">
+                                            <div style="height: 20px; margin-top: 10px; margin-bottom: 10px;">
+                                                <button id="{!sectionName}{!secKey.section.recordName}btn" style="float: left; margin-left: 10px;" class="slds-button slds-button--icon slds-m-right--x-small" type="button" 
+                                                        data-toggle="collapse" data-target="#{!sectionName}{!secKey.section.recordName}" aria-expanded="false" aria-controls="{!sectionName}{!secKey.section.recordName}"
+                                                        onclick="if($('#{!sectionName}section').hasClass('in')){document.getElementById('{!sectionName}{!secKey.section.recordName}right').classList.remove('slds-show');document.getElementById('{!sectionName}{!secKey.section.recordName}right').classList.add('slds-hide'); document.getElementById('{!sectionName}{!secKey.section.recordName}down').classList.add('slds-show');document.getElementById('{!sectionName}{!secKey.section.recordName}down').classList.remove('slds-hide');}else{document.getElementById('{!sectionName}{!secKey.section.recordName}down').classList.remove('slds-show');document.getElementById('{!sectionName}{!secKey.section.recordName}down').classList.add('slds-hide');document.getElementById('{!sectionName}{!secKey.section.recordName}right').classList.add('slds-show');document.getElementById('{!sectionName}{!secKey.section.recordName}right').classList.remove('slds-hide');}; ">
+                                                    <svg id="{!sectionName}{!secKey.section.recordName}right" aria-hidden="true" class="slds-button__icon slds-button__icon--medium slds-show">
+                                                        <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#chevronright')}"></use>
+                                                    </svg>
+                                                    <svg id="{!sectionName}{!secKey.section.recordName}down" aria-hidden="true" class="slds-button__icon slds-button__icon--medium slds-hide">
+                                                        <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#chevrondown')}"></use>
+                                                    </svg>
+                                                    <span class="slds-assistive-text">Toggle</span>
+                                                </button>
+                                                <b>{!fieldSetAPItoLabelMap['Section__c'][sectionName]}</b>
+                                            </div>
+                                            <div id="{!sectionName}{!secKey.section.recordName}">
+                                                <table class="slds-table slds-table--bordered">
+                                                    <thead>
+                                                        <tr scope="col">
+                                                            <th class="slds-truncate slds-size--1-of-3" scope="col">Field</th>
+                                                            <th class="slds-truncate slds-size--1-of-3" scope="col" style="{!IF(secKey.section.hasPub, '', 'display:none;')}">Current Value</th>
+                                                            <th class="slds-truncate slds-size--1-of-3" scope="col" style="{!IF(AND(secKey.section.hasAct, isVersionOne == false), '', 'display:none;')}">{!IF(pendingGroupVersion == '','Active Record Value','Pending Record Value')}</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <apex:repeat value="{!secKey.section}" var="secRecord">
+                                                            <!-- Iteration to the fields in the section (field set member) -->
+                                                            <apex:repeat value="{!secRecord.cObj[sectionName]}" var="secComp">
+                                                                <tr class="slds-hint-parent">
+                                                                    <td class="slds-truncate slds-size--1-of-3">
+                                                                        <apex:image id="syncImage" value="{!$Resource.syncICO}" width="25" height="25" rendered="{!CONTAINS(sectionSyncFields, secComp.fieldLabel)}" />
+                                                                        <apex:image id="lockedImage" value="{!$Resource.lockICO}" width="25" height="25" rendered="{!CONTAINS(sectionLockedFields, secComp.fieldLabel)}" />
+                                                                        <strong><apex:outputText value="{!secComp.fieldLabel}" /></strong>
+                                                                    </td>
+                                                                    <td class="slds-truncate slds-size--1-of-3" style="{!IF(secKey.section.hasPub, '', 'display:none;')}">
+                                                                        <apex:outputPanel rendered="{!secRecord.hasPub && secComp.fieldType != 'REFERENCE'}">
+                                                                            <apex:inputCheckbox styleClass="select-value" html-data-key="section-{!secComp.fieldAPI}-{!secKey.section.uniqueIdentifier}" style="margin-right:6px;" value="{!secComp.pubSelect}" rendered="{!AND(secComp.pubValue != secComp.actValue, secRecord.hasPub, secRecord.hasAct, NOT(CONTAINS(forcedReadOnlyFieldsMap['Section__c'], secComp.fieldLabel)))}" />
+                                                                            <span class="output-bind"><apex:outputText value="{!secComp.pubValue}" /></span>
+                                                                        </apex:outputPanel>
+                                                                        <apex:outputPanel rendered="{!secRecord.hasPub && secComp.fieldType == 'REFERENCE'}">
+                                                                            <span class="output-bind"><apex:outputField value="{!referenceMap[secRecord.pubRecordId][secComp.fieldAPI]}" /></span>
+                                                                        </apex:outputPanel>
+                                                                    </td>
+                                                                    <td class="slds-truncate slds-size--1-of-3" style="{!IF(AND(secKey.section.hasAct, isVersionOne == false), '', 'display:none;')}">
+                                                                        <apex:outputPanel rendered="{!secRecord.hasAct && secComp.fieldType != 'REFERENCE' && NOT(CONTAINS(sectionSyncFields, secComp.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Section__c'], secComp.fieldLabel))}">
+                                                                            <apex:inputCheckbox styleClass="select-value" html-data-key="section-{!secComp.fieldAPI}-{!secKey.section.uniqueIdentifier}" style="margin-right:6px;" value="{!secComp.actSelect}" rendered="{!AND(secComp.pubValue != secComp.actValue, secRecord.hasPub, secRecord.hasAct)}" />
+                                                                            <span class="output-bind"><apex:outputText value="{!secComp.actValue}" /></span>
+                                                                        </apex:outputPanel>
+                                                                        <apex:outputPanel rendered="{!secRecord.hasAct && secComp.fieldType == 'REFERENCE' && NOT(CONTAINS(sectionSyncFields, secComp.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Section__c'], secComp.fieldLabel))}">
+                                                                            <span class="output-bind"><apex:outputField value="{!referenceMap[secRecord.actRecordId][secComp.fieldAPI]}" /></span>
+                                                                        </apex:outputPanel>
+                                                                        <apex:outputPanel rendered="{!secRecord.hasAct && (CONTAINS(sectionSyncFields, secComp.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Section__c'], secComp.fieldLabel))}">
+                                                                            <span class="output-bind">
+                                                                                <apex:image value="{!$Resource.syncICO}" width="25" height="25" />
+                                                                            </span>
+                                                                        </apex:outputPanel>
+                                                                    </td>
+                                                                </tr>
+                                                            </apex:repeat>
+                                                        </apex:repeat>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </apex:repeat>
+                                </div>
+                            </div>
+                            
+                            <!--SECTION PRODUCT LINK-->
+                            <apex:outputPanel rendered="{!IF(secKey.splList.size != 0, true, false)}">
+                                <apex:variable value="{!0}" var="splcount" />
+                                <apex:repeat value="{!secKey.splList}" var="splKey" id="splSection">
+                                    <div class="slds-grid">
+                                        <div id="spl{!splKey.spl.uniqueIdentifier}" class="slds-col gu-flip-panel" style="display:none;">
+                                            <!--Start of Section Product Link container-->
+                                            <div class="slds-col slds-has-flexi-truncate">
+                                                <h3 class="slds-text-heading--medium slds-truncate" title="Contacts (will truncate)" style="margin-bottom:20px;">
+                                                    Product Code: {!splKey.spl.recordName}&nbsp;
+                                                    <span class="slds-badge slds-theme--success" style="{!IF(OR(splKey.spl.containsChange, splKey.spl.hasAct = false, splKey.spl.hasPub = false), 'display:none;', 'display:inline-block;')}">same</span>
+                                                    <span class="slds-badge slds-theme--error" style="{!IF(splKey.spl.containsChange, 'display:inline-block;', 'display:none;')}">change</span>
+                                                    <span class="slds-badge slds-theme--warning" style="{!IF(splKey.spl.hasAct != splKey.spl.hasPub, 'display:inline-block;', 'display:none;')}">new</span>
+                                                </h3>
+                                            </div>
+                                            
+                                            <apex:outputPanel rendered="{!IF(AND(splKey.spl.hasAct != splKey.spl.hasPub, isVersionOne == false), TRUE, FALSE)}">
+                                                <div class="slds-box slds-box slds-theme--warning slds-theme--alert-texture slds-grid">
+                                                    <svg aria-hidden="true" class="slds-icon slds-icon--small slds-m-right--small slds-col slds-no-flex">
+                                                        <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#info')}"></use>
+                                                    </svg>
+                                                    <div class="slds-col slds-align-middle" data-reactid=".2h.4.0.2.1">
+                                                        <h2 class="slds-text-heading--small" data-reactid=".28.4.0.2.1.0">This record is only available in the <strong>{!IF(splKey.spl.hasAct, if( pendingGroupVersion == '', 'Active Version','Pending Version'), 'Draft Version')}</strong>. Would you like to include it?</h2>
+                                                        <!--<p data-reactid=".28.4.0.2.1.1">Yes: <apex:inputCheckbox style="margin-left:5px;" value="{!splKey.spl.publishWithRec}" /></p>-->
+                                                        <div style="clear:both;padding:4px;"></div>
+                                                        <div class="onoffswitch">
+                                                            <apex:inputCheckbox id="onoffswitch" styleClass="onoffswitch-checkbox" value="{!splKey.spl.publishWithRec}" />
+                                                            <label class="onoffswitch-label" for="pWizard:wizardForm:secSection:{!count}:splSection:{!splcount}:onoffswitch">
+                                                                <span class="onoffswitch-inner"></span>
+                                                                <span class="onoffswitch-switch"></span>
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div style="padding:12px;"></div>
+                                            </apex:outputPanel>
+                                            
+                                            <!-- Section Product Link Information -->
+                                            <!-- Iteration to the field sets in the section product link (field set) -->
+                                            <apex:repeat value="{!fieldSetListMap['Section_Product_Link__c']}" var="sectionName">
+                                                <div style="border: 1px solid #D8DDE6;">
+                                                    <div style="height: 20px; margin-top: 10px; margin-bottom: 10px;">
+                                                        <button id="{!sectionName}{!splKey.spl.recordName}btn" style="float: left; margin-left: 10px;" class="slds-button slds-button--icon slds-m-right--x-small" type="button" 
+                                                                data-toggle="collapse" data-target="#{!sectionName}{!splKey.spl.recordName}" aria-expanded="false" aria-controls="{!sectionName}{!splKey.spl.recordName}"
+                                                                onclick="if(!$('#{!sectionName}{!splKey.spl.recordName}').hasClass('in')){document.getElementById('{!sectionName}{!splKey.spl.recordName}right').classList.remove('slds-show');document.getElementById('{!sectionName}{!splKey.spl.recordName}right').classList.add('slds-hide'); document.getElementById('{!sectionName}{!splKey.spl.recordName}down').classList.add('slds-show');document.getElementById('{!sectionName}{!splKey.spl.recordName}down').classList.remove('slds-hide');}else{document.getElementById('{!sectionName}{!splKey.spl.recordName}down').classList.remove('slds-show');document.getElementById('{!sectionName}{!splKey.spl.recordName}down').classList.add('slds-hide');document.getElementById('{!sectionName}{!splKey.spl.recordName}right').classList.add('slds-show');document.getElementById('{!sectionName}{!splKey.spl.recordName}right').classList.remove('slds-hide');}; ">
+                                                            <svg id="{!sectionName}{!splKey.spl.recordName}right" aria-hidden="true" class="slds-button__icon slds-button__icon--medium slds-show">
+                                                                <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#chevronright')}"></use>
+                                                            </svg>
+                                                            <svg id="{!sectionName}{!splKey.spl.recordName}down" aria-hidden="true" class="slds-button__icon slds-button__icon--medium slds-hide">
+                                                                <use xlink:href="{!URLFOR($Resource.SLDS0120,'assets/icons/utility-sprite/svg/symbols.svg#chevrondown')}"></use>
+                                                            </svg>
+                                                            <span class="slds-assistive-text">Toggle</span>
+                                                        </button>
+                                                        <b>{!fieldSetAPItoLabelMap['Section_Product_Link__c'][sectionName]}</b>
+                                                    </div>
+                                                    <div id="{!sectionName}{!splKey.spl.recordName}">
+                                                        <table class="slds-table slds-table--bordered" style="clear:both;">
+                                                            <thead>
+                                                                <tr class="slds-hint-parent">
+                                                                    <th class="slds-truncate slds-size--1-of-3">Field</th>
+                                                                    <th class="slds-truncate slds-size--1-of-3" style="{!IF(splKey.spl.hasPub, '', 'display:none;')}">Current Value</th>
+                                                                    <th class="slds-truncate slds-size--1-of-3" style="{!IF(splKey.spl.hasAct, '', 'display:none;')}">{!IF(pendingGroupVersion == '','Active Record Value','Pending Record Value')}</th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                                <apex:repeat value="{!splKey.spl}" var="splRecord">
+                                                                    <!-- Iteration to the fields in the group (field set member) -->
+                                                                    <apex:repeat value="{!splRecord.cObj[sectionName]}" var="splComp">
+                                                                        <tr>
+                                                                            <td class="slds-truncate slds-size--1-of-3">
+                                                                                <apex:image id="syncImage" value="{!$Resource.syncICO}" width="25" height="25" rendered="{!CONTAINS(splSyncFields, splComp.fieldLabel)}" />
+                                                                                <apex:image id="lockedImage" value="{!$Resource.lockICO}" width="25" height="25" rendered="{!CONTAINS(splLockedFields, splComp.fieldLabel)}" />
+                                                                                <strong><apex:outputText value="{!splComp.fieldLabel}" /></strong>
+                                                                            </td>
+                                                                            <td class="slds-truncate slds-size--1-of-3" style="{!IF(splKey.spl.hasPub, '', 'display:none;')}">
+                                                                                <apex:outputPanel rendered="{!splRecord.hasPub && (splComp.fieldType != 'REFERENCE' && splComp.fieldAPI != 'Name')}">
+                                                                                    <apex:inputCheckbox styleClass="select-value" html-data-key="spl-{!splComp.fieldAPI}-{!splKey.spl.uniqueIdentifier}" style="margin-right:6px;" value="{!splComp.pubSelect}" rendered="{!AND(splComp.pubValue != splComp.actValue, splRecord.hasPub, splRecord.hasAct, NOT(CONTAINS(forcedReadOnlyFieldsMap['Section_Product_Link__c'], splComp.fieldLabel)))}" />
+                                                                                    <span class="output-bind"><apex:outputText value="{!splComp.pubValue}" /></span>
+                                                                                </apex:outputPanel>
+                                                                                <apex:outputPanel rendered="{!splRecord.hasPub && splComp.fieldType == 'REFERENCE' && splComp.fieldAPI != 'Name'}">
+                                                                                    <span class="output-bind"><apex:outputField value="{!referenceMap[splRecord.pubRecordId][splComp.fieldAPI]}" /></span>
+                                                                                </apex:outputPanel>
+                                                                                <!-- OutputLink for the Name field -->
+                                                                                <apex:outputPanel rendered="{!splRecord.hasPub && splComp.fieldAPI == 'Name'}">
+                                                                                    <span class="output-bind">
+                                                                                        <apex:outputLink value="/{!splRecord.pubRecordId}">{!splComp.pubValue}</apex:outputLink>
+                                                                                    </span>
+                                                                                </apex:outputPanel>
+                                                                            </td>
+                                                                            <td class="slds-truncate slds-size--1-of-3" style="{!IF(splKey.spl.hasAct, '', 'display:none;')}">
+                                                                                <apex:outputPanel rendered="{!splRecord.hasAct && splComp.fieldType != 'REFERENCE' && splComp.fieldAPI != 'Name' && NOT(CONTAINS(splSyncFields, splComp.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Section_Product_Link__c'], splComp.fieldLabel))}">
+                                                                                    <apex:inputCheckbox styleClass="select-value" html-data-key="spl-{!splComp.fieldAPI}-{!splKey.spl.uniqueIdentifier}" style="margin-right:6px;" value="{!splComp.actSelect}" rendered="{!AND(splComp.pubValue != splComp.actValue, splRecord.hasPub, splRecord.hasAct)}" />
+                                                                                    <span class="output-bind"><apex:outputText value="{!splComp.actValue}" /></span>
+                                                                                </apex:outputPanel>
+                                                                                <apex:outputPanel rendered="{!splRecord.hasAct && splComp.fieldType == 'REFERENCE' && splComp.fieldAPI != 'Name' && NOT(CONTAINS(splSyncFields, splComp.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Section_Product_Link__c'], splComp.fieldLabel))}">
+                                                                                    <span class="output-bind"><apex:outputField value="{!referenceMap[splRecord.actRecordId][splComp.fieldAPI]}" /></span>
+                                                                                </apex:outputPanel>
+                                                                                <!-- OutputLink for the Name field -->
+                                                                                <apex:outputPanel rendered="{!splRecord.hasAct && splComp.fieldAPI == 'Name' && NOT(CONTAINS(splSyncFields, splComp.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Section_Product_Link__c'], splComp.fieldLabel))}">
+                                                                                    <span class="output-bind">
+                                                                                        <apex:outputLink value="/{!splRecord.pubRecordId}">{!splComp.pubValue}</apex:outputLink>
+                                                                                    </span>
+                                                                                </apex:outputPanel>
+                                                                                <apex:outputPanel rendered="{!splRecord.hasAct && (CONTAINS(splSyncFields, splComp.fieldLabel) || CONTAINS(forcedReadOnlyFieldsMap['Section_Product_Link__c'], splComp.fieldLabel))}">
+                                                                                    <span class="output-bind">
+                                                                                        <apex:image value="{!$Resource.syncICO}" width="25" height="25" />
+                                                                                    </span>
+                                                                                </apex:outputPanel>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </apex:repeat>
+                                                                </apex:repeat>
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </apex:repeat>
+                                        </div>
+                                    </div>
+                                    <apex:variable value="{!splcount+1}" var="splcount" />
+                                </apex:repeat>
+                            </apex:outputPanel>
+                            <apex:variable value="{!count+1}" var="count" />
+                        </apex:repeat>
+                    </apex:outputPanel>
+    
+                    <div class="btnHolder">
+                        <apex:commandButton styleClass="slds-button slds-button--brand" action="{!publishGroup}" value="Publish" />
+                        <apex:commandButton styleClass="slds-button slds-button--neutral" action="{!Cancel}" value="Cancel" style="margin-left:8px;" />
+                    </div>
+
+                </main>
+            </div>
+        </apex:form>
+    </html>
+</apex:page>

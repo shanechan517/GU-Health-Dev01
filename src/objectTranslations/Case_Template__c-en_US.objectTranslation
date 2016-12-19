@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Case Template</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Case Template</value>
+    </caseValues>
+    <fields>
+        <label><!-- Assigned To --></label>
+        <name>Assigned_To__c</name>
+        <picklistValues>
+            <masterLabel>AM</masterLabel>
+            <translation><!-- AM --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Account Support</masterLabel>
+            <translation><!-- Account Support --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial</masterLabel>
+            <translation><!-- Commercial --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Compliance</masterLabel>
+            <translation><!-- Compliance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Marketing</masterLabel>
+            <translation><!-- Marketing --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SSC</masterLabel>
+            <translation><!-- SSC --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Systems</masterLabel>
+            <translation><!-- Systems --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web BA</masterLabel>
+            <translation><!-- Web BA --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Wellness Manager</masterLabel>
+            <translation><!-- Wellness Manager --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Code --></label>
+        <name>Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dependency --></label>
+        <name>Dependency__c</name>
+    </fields>
+    <fields>
+        <label><!-- Description --></label>
+        <name>Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Dup Checker --></label>
+        <name>Dup_Checker__c</name>
+    </fields>
+    <fields>
+        <label><!-- ExternalID --></label>
+        <name>ExternalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fixed SLA --></label>
+        <name>Fixed_SLA__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group --></label>
+        <name>Group__c</name>
+        <relationshipLabel><!-- Case Templates --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Organisation Size --></label>
+        <name>Organisation_Size__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA1 --></label>
+        <name>SLA1__c</name>
+    </fields>
+    <fields>
+        <label><!-- SLA2 --></label>
+        <name>SLA2__c</name>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+    </fields>
+    <layouts>
+        <layout>Child Template</layout>
+        <sections>
+            <label><!-- Case Particulars --></label>
+            <section>Case Particulars</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Parent Template</layout>
+        <sections>
+            <label><!-- Case Particulars --></label>
+            <section>Case Particulars</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- SLA Information --></label>
+            <section>SLA Information</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Child --></label>
+        <name>Child</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Parent --></label>
+        <name>Parent</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- If the SLA days are not fixed, the SLA Days 2 field &amp; the Organisation Size fields are required --></errorMessage>
+        <name>Fixed_SLA_Days</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A Parent Case must have a code of 0. --></errorMessage>
+        <name>Parent_Case_Code</name>
+    </validationRules>
+</CustomObjectTranslation>

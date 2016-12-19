@@ -1,0 +1,84 @@
+<apex:page standardController="Section__c" showChat="false" showHeader="false" sidebar="false">
+    
+    <apex:stylesheet value="{!URLFOR($Resource.bootstrap, '/bootstrap-3.3.5-dist/css/bootstrap.min.css')}" />
+    
+    <style>
+        .higher-row h4, .higher-row h3, .higher-row h5{
+            color:#fff !important;
+        }
+        .lower-row h4, .lower-row h3, .lower-row h5{
+            color:#333 !important;
+        }
+        i{
+            padding: 8px;
+            display: inline-block;
+            -moz-border-radius: 100px;
+            -webkit-border-radius: 100px;
+            border-radius: 100px;
+            color:#fff;
+        }
+        i.active, i.pending{
+            background-color:#BAD964;
+        }
+        span.active, span.pending{
+            color:#BAD964;
+        }
+        i.draft{
+            background-color:#0B93DB;
+        }
+        span.draft{
+            color:#0B93DB;
+        }
+        i.closed{
+            background-color:#E66859;
+        }
+        span.closed{
+            color:#E66859;
+        }
+        i.discarded{
+            background-color:#56c1f7;
+        }
+        span.discarded{
+            color:#56c1f7;
+        }
+        .lower-row{
+            background-color:#fff;
+            border-left:2px solid #3D96BD;
+            border-right:2px solid #3D96BD;
+            border-bottom:2px solid #3D96BD;
+            border-bottom-left-radius:8px;
+            border-bottom-right-radius:8px;
+        }
+        .higher-row{
+        	background-color:#3D96BD;
+            border-top-left-radius:8px;
+            border-top-right-radius:8px;
+        }
+        .lower-row, .higher-row{
+        	margin-right:0px !important;
+            margin-left:0px !important;
+        }
+        .higher-p{
+        	padding-top:12px;
+        }
+    </style>
+    
+    <div class="row text-left higher-row">
+        <div class="col-xs-6">
+            <p class="higher-p"><h5>Company Name: {!Section__c.Client_Name__c}</h5></p>
+        </div>
+        <div class="col-xs-6 text-right">
+            <p class="higher-p"><h5>Group Number: {!Section__c.Group_Number__c}</h5></p>
+    		<p><h5>Section Number: {!Section__c.Section_Number__c}</h5></p>
+        </div>
+    </div>
+    <div class="row text-left lower-row">
+        <div class="col-xs-6">
+            <p><h3>Version Status: <i class="{!LOWER(Section__c.Status__c)}"></i>&nbsp;<span class="{!LOWER(Section__c.Status__c)}">{!Section__c.Status__c}</span></h3></p>
+        </div>
+        <div class="col-xs-6 text-right">
+            <p><h3>Version {!Section__c.Version__c}</h3></p>
+        </div>
+	</div>
+    
+</apex:page>

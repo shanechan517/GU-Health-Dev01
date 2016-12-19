@@ -1,0 +1,6 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<div><font color="#333333" face="arial"><b>{!Case.Related_Record_Type__c} |&nbsp;{!Case.Related_Record__c}</b></font></div><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333"><div><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333"><br></font></font></div>All cases relating to case {!Case.</font></font><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333">CaseNumber} have been completed.<br><br>Please log into Salesforce and verify that all actions have been completed successfully.<br><br>{!Case.Link}<br></font></font>]]></td>
+</tr>
+</table>

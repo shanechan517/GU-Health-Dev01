@@ -1,0 +1,42 @@
+<apex:component >
+    
+    <style>
+        .underConst{
+            padding:0px 24px;
+            background-color:#5CDEFF;
+            border-radius:12px;
+            border:1px solid #53C8E6;
+        }
+        .underConstInner{
+            margin:auto;
+        }
+        .imgIcon{
+            margin:-4px 15px 0px 0px;
+            width:40px;
+            float:left;
+        }
+        .header{
+            font-size:14pt;
+            font-weight:bold;
+            float:left;
+            margin-top:4px;
+        }
+        .text{
+            float:left;
+            display:none;
+        }
+    </style>
+    
+    <apex:outputPanel rendered="true">
+        
+        <div style="clear:both;padding:2px;"></div>
+        
+        <div class="underConst">
+            <img src="{!$Resource.replacedIco}" align="left" class="imgIcon" />
+            <span class="header">{!$Label.CAT_Replaced}</span><br /><br />
+            <span class="text">This record is for client maintenance. Once the changes have been finalised the record can be published to replace/take over from the source Group record (the record it was cloned from).</span>
+        </div>
+        
+    </apex:outputpanel>
+    
+</apex:component>

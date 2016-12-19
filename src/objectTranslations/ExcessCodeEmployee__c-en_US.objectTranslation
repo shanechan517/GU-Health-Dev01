@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>ExcessCodeEmployee</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>ExcessCodesEmployee</value>
+    </caseValues>
+    <fields>
+        <label><!-- Ancillary Excess Description --></label>
+        <name>Ancillary_Excess_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- External_ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Hospital Excess Description --></label>
+        <name>Hospital_Excess_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- System Description --></label>
+        <name>System_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type Description --></label>
+        <name>Type_Description__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Type__c</name>
+        <picklistValues>
+            <masterLabel>A</masterLabel>
+            <translation><!-- A --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>H</masterLabel>
+            <translation><!-- H --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>M</masterLabel>
+            <translation><!-- M --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>ExcessCode Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

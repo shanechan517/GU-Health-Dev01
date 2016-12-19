@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to team that case has been blocked</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GUHealth</letterhead>
+    <name>Case Blocked</name>
+    <style>freeForm</style>
+    <subject>Case Blocked - {!Case.Related_Record_Type__c} | {!Case.Related_Record__c}</subject>
+    <textOnly>{!Case.Related_Record_Type__c} | {!Case.Related_Record__c}
+
+Another case has caused your case to be blocked. This could be because they could not complete their case or because a case that it was dependent on was not completely correctly and they have insufficient data etc...
+
+Please log into Salesforce and ensure your team does not begin this case until further notice. The account manager will begin the process again once the incident has been resolved.
+
+{!Case.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

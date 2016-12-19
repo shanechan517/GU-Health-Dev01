@@ -1,0 +1,905 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Groups</value>
+    </caseValues>
+    <fields>
+        <label><!-- Account Manager Reports --></label>
+        <name>Account_Manager_Reports__c</name>
+        <picklistValues>
+            <masterLabel>Membership List</masterLabel>
+            <translation><!-- Membership List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>SLA Reports</masterLabel>
+            <translation><!-- SLA Reports --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Account Support --></label>
+        <name>Account_Support__c</name>
+        <relationshipLabel><!-- Groups (Account Support) --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Application Instructions Specific --></label>
+        <name>Application_frequency_information__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the type of book layout required to display the products. --></help>
+        <label><!-- Book layout --></label>
+        <name>Book_layout__c</name>
+        <picklistValues>
+            <masterLabel>Mix and match</masterLabel>
+            <translation><!-- Mix and match --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Standard</masterLabel>
+            <translation><!-- Standard --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade</masterLabel>
+            <translation><!-- Upgrade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Broker Name --></label>
+        <name>Broker_Name_From_Opp__c</name>
+    </fields>
+    <fields>
+        <label><!-- Claims Reports --></label>
+        <name>Claims_Reports__c</name>
+        <picklistValues>
+            <masterLabel>Dental &amp; Ancillary</masterLabel>
+            <translation><!-- Dental &amp; Ancillary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dental &amp; Ancillary by Product</masterLabel>
+            <translation><!-- Dental &amp; Ancillary by Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Dental &amp; Ancillary with Counts</masterLabel>
+            <translation><!-- Dental &amp; Ancillary with Counts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hosp &amp; Medical</masterLabel>
+            <translation><!-- Hosp &amp; Medical --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hosp &amp; Medical YTD</masterLabel>
+            <translation><!-- Hosp &amp; Medical YTD --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hosp &amp; Medical by Prod with MBS &amp; Excess</masterLabel>
+            <translation><!-- Hosp &amp; Medical by Prod with MBS &amp; Excess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hosp &amp; Medical by Product</masterLabel>
+            <translation><!-- Hosp &amp; Medical by Product --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hosp &amp; Medical with Counts</masterLabel>
+            <translation><!-- Hosp &amp; Medical with Counts --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Top 10 Dental &amp; Ancillary</masterLabel>
+            <translation><!-- Top 10 Dental &amp; Ancillary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Client Id --></label>
+        <name>Client_Id__c</name>
+    </fields>
+    <fields>
+        <help><!-- File name of the logo supplied by client [location and size and format to be confirmed] to appear in the book --></help>
+        <label><!-- Client Logo File Name --></label>
+        <name>Client_Logo_File_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client --></label>
+        <name>Client_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Client logo required --></label>
+        <name>Client_logo_on_application_booklet__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clone of Id --></label>
+        <name>Clone_of_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Clone of --></label>
+        <name>Clone_of__c</name>
+        <relationshipLabel><!-- Copies --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- This is the date that the record was closed. If this date is populated and is less then todays date (or the same date) then the record will be closed. --></help>
+        <label><!-- Closed Date --></label>
+        <name>Closed_on__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commercial Analyst --></label>
+        <name>Commercial_Analyst__c</name>
+    </fields>
+    <fields>
+        <label><!-- Commercial Financial Summary --></label>
+        <name>Commercial_Financial_Summary__c</name>
+        <picklistValues>
+            <masterLabel>Dental &amp; Ancillary Claims Report</masterLabel>
+            <translation><!-- Dental &amp; Ancillary Claims Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Financial Analyais Report</masterLabel>
+            <translation><!-- Financial Analyais Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Hospital &amp; Medical Claims Report</masterLabel>
+            <translation><!-- Hospital &amp; Medical Claims Report --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Commercial Regular Reports --></label>
+        <name>Commercial_Regular_Reports__c</name>
+        <picklistValues>
+            <masterLabel>Membership Bridge Report</masterLabel>
+            <translation><!-- Membership Bridge Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Membership Movement Report</masterLabel>
+            <translation><!-- Membership Movement Report --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Payroll Report</masterLabel>
+            <translation><!-- Payroll Report --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Company Rights --></label>
+        <name>Company_Rights__c</name>
+        <picklistValues>
+            <masterLabel>Full</masterLabel>
+            <translation><!-- Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>No Excess</masterLabel>
+            <translation><!-- No Excess --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- DRG Reports --></label>
+        <name>DRG_Reports__c</name>
+        <picklistValues>
+            <masterLabel>DRG Standard (all)</masterLabel>
+            <translation><!-- DRG Standard (all) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DRG for Customer (Dependants)</masterLabel>
+            <translation><!-- DRG for Customer (Dependants) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>DRG for Employee (Client)</masterLabel>
+            <translation><!-- DRG for Employee (Client) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expanded DRG Standard (all)</masterLabel>
+            <translation><!-- Expanded DRG Standard (all) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expanded DRG for Customer (Dependants)</masterLabel>
+            <translation><!-- Expanded DRG for Customer (Dependants) --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Expanded DRG for Employee (Client)</masterLabel>
+            <translation><!-- Expanded DRG for Employee (Client) --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Prevent the system from calculating the renewal date automatically (this can be used in special circumstances where the renewal date needs to be manually set to a date that does not meet standard procedural requirements e.g. can not wait 12 months) --></help>
+        <label><!-- Do Not Calculate Renewal Date --></label>
+        <name>Do_Not_Calculate_Renewal_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Date that appears in the book to indicate when the plan is effective from. E.g. &apos;The enclosed information is effective from &lt;date&gt;&apos; --></help>
+        <label><!-- Health Plan Effective Date --></label>
+        <name>Effective_Date_for_Application__c</name>
+    </fields>
+    <fields>
+        <help><!-- Manually enter the process start date --></help>
+        <label><!-- Group Start Date --></label>
+        <name>Effective_end_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- External ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <help><!-- Additional plan information from the Client to appear in the book. No special characters or returns in text. --></help>
+        <label><!-- Client Supplied Plan Wording --></label>
+        <name>Extra_brochure_wording3__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra application wording 1 --></label>
+        <name>Extra_brochure_wording6__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra application wording 2 --></label>
+        <name>Extra_brochure_wording7__c</name>
+    </fields>
+    <fields>
+        <label><!-- Extra application wording 3 --></label>
+        <name>Extra_brochure_wording8__c</name>
+    </fields>
+    <fields>
+        <help><!-- Select if a AON or HICA Broker panel is included in the book --></help>
+        <label><!-- Broker Wording Panel --></label>
+        <name>Extra_broker_page_in_booklet__c</name>
+        <picklistValues>
+            <masterLabel>Aon Corporate</masterLabel>
+            <translation><!-- Aon Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Aon Voluntary</masterLabel>
+            <translation><!-- Aon Voluntary --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HICA Corporate</masterLabel>
+            <translation><!-- HICA Corporate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>HICA Voluntary</masterLabel>
+            <translation><!-- HICA Voluntary --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates the freecall number to appear in the book. --></help>
+        <label><!-- FreeCall number --></label>
+        <name>FreeCall_number__c</name>
+        <picklistValues>
+            <masterLabel>1300 551 004</masterLabel>
+            <translation><!-- 1300 551 004 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1300 787 230</masterLabel>
+            <translation><!-- 1300 787 230 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1300 791 757</masterLabel>
+            <translation><!-- 1300 791 757 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1300 794 624</masterLabel>
+            <translation><!-- 1300 794 624 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1800 005 315</masterLabel>
+            <translation><!-- 1800 005 315 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1800 249 966</masterLabel>
+            <translation><!-- 1800 249 966 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1800 633 819</masterLabel>
+            <translation><!-- 1800 633 819 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1800 681 926</masterLabel>
+            <translation><!-- 1800 681 926 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>1800 814 159</masterLabel>
+            <translation><!-- 1800 814 159 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Unique code to indicate which group the GU health plan applies to, e.g. &apos;BAE&apos; for GU Health Plan, group 83082. Appears on last page of the book. --></help>
+        <label><!-- GU Health Plan Code --></label>
+        <name>GU_Health_Plan_Code__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Directory --></label>
+        <name>Group_Directory__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the health plan name for title page, e.g. AON Corporate Health Plan --></help>
+        <label><!-- Group Name Web --></label>
+        <name>Group_Name_Web__c</name>
+    </fields>
+    <fields>
+        <help><!-- This field needs to be 5 digits long and all numeric --></help>
+        <label><!-- Group Number --></label>
+        <name>Group_Number__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the long technical name, e.g. AON Corporation Australia Limited --></help>
+        <label><!-- Group Whics Name --></label>
+        <name>Group_Whics_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Indicates the hours of operation applicable for this group to appear in book. --></help>
+        <label><!-- Hours of Operation --></label>
+        <name>Hours_of_Operation__c</name>
+        <picklistValues>
+            <masterLabel>8.30am to 5pm (EST), Monday to Friday</masterLabel>
+            <translation><!-- 8.30am to 5pm (EST), Monday to Friday --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>8am to 7pm (EST), Monday to Friday</masterLabel>
+            <translation><!-- 8am to 7pm (EST), Monday to Friday --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Indicates how a member may join the Group. This determines what join information is included in the book. --></help>
+        <label><!-- How to Join/Transfer --></label>
+        <name>How_to_Join_Transfer__c</name>
+        <picklistValues>
+            <masterLabel>Join Online</masterLabel>
+            <translation><!-- Join Online --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Join Standard - No Web Code</masterLabel>
+            <translation><!-- Join Standard - No Web Code --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Join Standard - Web Code Download App</masterLabel>
+            <translation><!-- Join Standard - Web Code Download App --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Manual App Only</masterLabel>
+            <translation><!-- Manual App Only --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Is Publish Wizard --></label>
+        <name>IsPublishWizard__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Is_Active__c</name>
+    </fields>
+    <fields>
+        <label><!-- OMS Available --></label>
+        <name>Join_Online_available__c</name>
+    </fields>
+    <fields>
+        <label><!-- Manual Book Required --></label>
+        <name>Manual_Book_Required__c</name>
+    </fields>
+    <fields>
+        <label><!-- Marketing brochures not for distribution --></label>
+        <name>Marketing_brochures_not_for_distribution__c</name>
+    </fields>
+    <fields>
+        <help><!-- AM to record if manual book is required for this group (ie not generated via TH in SF), and/or what Client Wording is on the company rights page (company specifc - currently 4 groups) --></help>
+        <label><!-- Marketing comments --></label>
+        <name>Marketing_comments__c</name>
+    </fields>
+    <fields>
+        <label><!-- Members --></label>
+        <name>Members__c</name>
+    </fields>
+    <fields>
+        <label><!-- Membership Reports --></label>
+        <name>Membership_Reports__c</name>
+        <picklistValues>
+            <masterLabel>Active policies by group</masterLabel>
+            <translation><!-- Active policies by group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cigna Membership List</masterLabel>
+            <translation><!-- Cigna Membership List --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Cigna Membership List with Dep</masterLabel>
+            <translation><!-- Cigna Membership List with Dep --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Service Limit Summary/Limit Util Extras</masterLabel>
+            <translation><!-- Service Limit Summary/Limit Util Extras --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Opportunity Status --></label>
+        <name>Opportunity_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Type --></label>
+        <name>Opportunity_Type__c</name>
+    </fields>
+    <fields>
+        <label><!-- Opportunity/Renewal --></label>
+        <name>Opportunity__c</name>
+        <relationshipLabel><!-- Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- The Date where the very first group was opened, regardless of version (from WHICS) --></help>
+        <label><!-- Original Start Date --></label>
+        <name>Original_Start_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- Payroll Contact for Operations --></help>
+        <label><!-- Payroll Contact --></label>
+        <name>Payroll_Contact__c</name>
+        <relationshipLabel><!-- Groups --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Postal Address --></label>
+        <name>Postal_Address__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rate Code --></label>
+        <name>Rate_Code__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that the group is due for renewal. --></help>
+        <label><!-- Renewal Date --></label>
+        <name>Real_Renewal_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Rebate Reports --></label>
+        <name>Rebate_Reports__c</name>
+        <picklistValues>
+            <masterLabel>Cigna Rebate</masterLabel>
+            <translation><!-- Cigna Rebate --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>GU Rebate</masterLabel>
+            <translation><!-- GU Rebate --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- The date that this record was superseded by publishing a newer version (this is a system field and can not be edited). --></help>
+        <label><!-- Discard Date --></label>
+        <name>Renewal_Date__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the number of months before the next renewal. --></help>
+        <label><!-- Renewal Frequency --></label>
+        <name>Renewal_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>12</masterLabel>
+            <translation><!-- 12 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>6</masterLabel>
+            <translation><!-- 6 --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>9</masterLabel>
+            <translation><!-- 9 --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Renewal Owner --></label>
+        <name>Renewal_Owner__c</name>
+        <relationshipLabel><!-- Groups (Renewal Owner) --></relationshipLabel>
+    </fields>
+    <fields>
+        <help><!-- A renewal can only be generated from a record once. If you require a renewal date to be generated a second time, please contact a system administrator --></help>
+        <label><!-- Renewal Process Status --></label>
+        <name>Renewal_Process_Status__c</name>
+    </fields>
+    <fields>
+        <help><!-- When the renewal was created (either manually or automatically). Once this field is populated, the scheduler will not clone it automatically --></help>
+        <label><!-- Renewal Processed Date --></label>
+        <name>Renewal_Processed_Time__c</name>
+    </fields>
+    <fields>
+        <help><!-- This is the date that the system will create a new renewal (if one has not been created manually already). --></help>
+        <label><!-- Renewal Trigger Date --></label>
+        <name>Renewal_Trigger_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report End Date --></label>
+        <name>Report_End_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Report Frequency --></label>
+        <name>Report_Frequency__c</name>
+        <picklistValues>
+            <masterLabel>Annually</masterLabel>
+            <translation><!-- Annually --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Monthly</masterLabel>
+            <translation><!-- Monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Nine-monthly</masterLabel>
+            <translation><!-- Nine-monthly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Quarterly</masterLabel>
+            <translation><!-- Quarterly --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Six-monthly</masterLabel>
+            <translation><!-- Six-monthly --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Report Start Date --></label>
+        <name>Report_Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Required by --></label>
+        <name>Required_by__c</name>
+    </fields>
+    <fields>
+        <label><!-- Requires Specific Reporting Template --></label>
+        <name>Requires_Specific_Reporting_Template__c</name>
+        <picklistValues>
+            <masterLabel>No</masterLabel>
+            <translation><!-- No --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Yes</masterLabel>
+            <translation><!-- Yes --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <help><!-- Return address to appear in books for applications --></help>
+        <label><!-- Return Address Line 1 --></label>
+        <name>Return_Address_Line_1__c</name>
+    </fields>
+    <fields>
+        <help><!-- Return address to appear in books for applications --></help>
+        <label><!-- Return Address Line 2 --></label>
+        <name>Return_Address_Line_2__c</name>
+    </fields>
+    <fields>
+        <help><!-- Broker name to appear in book to receive applications (if applicable) --></help>
+        <label><!-- Return Broker Name --></label>
+        <name>Return_Broker_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Return address to appear in books for applications --></help>
+        <label><!-- Return City --></label>
+        <name>Return_City__c</name>
+    </fields>
+    <fields>
+        <help><!-- Client name to appear in book to receive applications (if applicable) --></help>
+        <label><!-- Return Client Name --></label>
+        <name>Return_Client_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Contact name to appear in book to receive applications (if applicable) --></help>
+        <label><!-- Return Contact Name --></label>
+        <name>Return_Contact_Name__c</name>
+    </fields>
+    <fields>
+        <help><!-- Return email address to appear in book for applications --></help>
+        <label><!-- Return Email --></label>
+        <name>Return_Email__c</name>
+    </fields>
+    <fields>
+        <help><!-- Return address to appear in books for applications --></help>
+        <label><!-- Return Fax --></label>
+        <name>Return_Fax__c</name>
+    </fields>
+    <fields>
+        <help><!-- Return phone number to appear in book for applications --></help>
+        <label><!-- Return Phone --></label>
+        <name>Return_Phone__c</name>
+    </fields>
+    <fields>
+        <help><!-- Return address to appear in books for applications --></help>
+        <label><!-- Return Postcode --></label>
+        <name>Return_Postcode__c</name>
+    </fields>
+    <fields>
+        <help><!-- Return address to appear in books for applications --></help>
+        <label><!-- Return State --></label>
+        <name>Return_State__c</name>
+    </fields>
+    <fields>
+        <help><!-- Alternative return address or contact information for applications (e.g. enter block text to appear in books; no special characters or returns between text) --></help>
+        <label><!-- Alternative Return Address --></label>
+        <name>Return_application_instructions__c</name>
+    </fields>
+    <fields>
+        <label><!-- Review date --></label>
+        <name>Review_date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Source --></label>
+        <name>Source__c</name>
+    </fields>
+    <fields>
+        <label><!-- Special Features --></label>
+        <name>Special_Features__c</name>
+    </fields>
+    <fields>
+        <label><!-- Publish Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Street Address --></label>
+        <name>Street_Address__c</name>
+    </fields>
+    <fields>
+        <help><!-- confirms if product rates blended (if yes) or state by state (if no) --></help>
+        <label><!-- Type of Rates --></label>
+        <name>Type_of_Rates__c</name>
+        <picklistValues>
+            <masterLabel>Blended</masterLabel>
+            <translation><!-- Blended --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Blended and State by State</masterLabel>
+            <translation><!-- Blended and State by State --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>State by state</masterLabel>
+            <translation><!-- State by state --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Waiting Period Waiver Comments --></label>
+        <name>Waiting_Period_Waiver_Comments__c</name>
+    </fields>
+    <fields>
+        <help><!-- Waiting periods are full (12 months), half (6 months) or none (no waits). --></help>
+        <label><!-- Waiting Periods --></label>
+        <name>Waiting_Periods__c</name>
+        <picklistValues>
+            <masterLabel>Full</masterLabel>
+            <translation><!-- Full --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Half</masterLabel>
+            <translation><!-- Half --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Warnings &amp; Alerts --></label>
+        <name>Warnings_Alerts__c</name>
+    </fields>
+    <fields>
+        <label><!-- Web Reports --></label>
+        <name>Web_Reports__c</name>
+        <picklistValues>
+            <masterLabel>Join Online Data</masterLabel>
+            <translation><!-- Join Online Data --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Registration Info</masterLabel>
+            <translation><!-- Web Registration Info --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Web Uptime</masterLabel>
+            <translation><!-- Web Uptime --></translation>
+        </picklistValues>
+    </fields>
+    <layouts>
+        <layout>Closed Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Address  Information --></label>
+            <section>Address  Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Group Arrangements --></label>
+            <section>Group Arrangements</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing / Brochure --></label>
+            <section>Marketing / Brochure</section>
+        </sections>
+        <sections>
+            <label><!-- Record Dates --></label>
+            <section>Record Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Renewal Information --></label>
+            <section>Renewal Information</section>
+        </sections>
+        <sections>
+            <label><!-- Reporting --></label>
+            <section>Reporting</section>
+        </sections>
+        <sections>
+            <label><!-- VF Page --></label>
+            <section>VF Page</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Draft Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Address  Information --></label>
+            <section>Address  Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Group Arrangements --></label>
+            <section>Group Arrangements</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing / Brochure --></label>
+            <section>Marketing / Brochure</section>
+        </sections>
+        <sections>
+            <label><!-- Record Dates --></label>
+            <section>Record Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Renewal Information --></label>
+            <section>Renewal Information</section>
+        </sections>
+        <sections>
+            <label><!-- Reporting --></label>
+            <section>Reporting</section>
+        </sections>
+        <sections>
+            <label><!-- VF Page --></label>
+            <section>VF Page</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Group Layout</layout>
+        <sections>
+            <label><!-- Additional Information --></label>
+            <section>Additional Information</section>
+        </sections>
+        <sections>
+            <label><!-- Address  Information --></label>
+            <section>Address  Information</section>
+        </sections>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Group Arrangements --></label>
+            <section>Group Arrangements</section>
+        </sections>
+        <sections>
+            <label><!-- Marketing / Brochure --></label>
+            <section>Marketing / Brochure</section>
+        </sections>
+        <sections>
+            <label><!-- Record Dates --></label>
+            <section>Record Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Renewal Information --></label>
+            <section>Renewal Information</section>
+        </sections>
+        <sections>
+            <label><!-- Reporting --></label>
+            <section>Reporting</section>
+        </sections>
+        <sections>
+            <label><!-- VF Page --></label>
+            <section>VF Page</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <label><!-- Draft --></label>
+        <name>Draft</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Group --></label>
+        <name>Group</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Replaced --></label>
+        <name>Replaced</name>
+    </recordTypes>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- Client Logo File Name is mandatory --></errorMessage>
+        <name>Client_Logo_File_Name_is_mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can not change the Group Number once it has been set. If there has been an error during data entry please contact Administrative Support. --></errorMessage>
+        <name>Editing_Group_Number</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Free call number is madatory --></errorMessage>
+        <name>FreeCall_number_is_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The group number is not correctly formatted.
+It must be 5 characters long and all numerical. --></errorMessage>
+        <name>GroupNumberFormatting</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Cannot publish group without Group Number --></errorMessage>
+        <name>GroupNumberisMandatoryIfNotDraft</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Hours of Operation is mandatory --></errorMessage>
+        <name>Hours_of_Operation_is_mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- The only field you can edit on an active record is the Close Date. If you wish to make changes, please create a Client Maintenance copy using the button below. --></errorMessage>
+        <name>Lock_Active_Group</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You can not make any changes to Closed groups --></errorMessage>
+        <name>Lock_Close_Group</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Marketing Comments is mandatory if &apos;Manual Book Required&apos; is set --></errorMessage>
+        <name>Marketing_Comt_Mandatory_if_Manual_Bk</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- No special characters or returns. --></errorMessage>
+        <name>No_Special_Characters</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Field is required when selecting the &quot;Do Not Calculate Renewal Date&quot; checkbox --></errorMessage>
+        <name>RenewalDateMandatoryOnCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Renewal Information fields cannot be changed in Draft --></errorMessage>
+        <name>RenewalInformationCannotBUpdatedInDraft</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- User can only add/edit group number in draft if version 1 --></errorMessage>
+        <name>UserCanOnlyUpdateGroupNumberInDraft</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- User unable to change group number in draft record if not version 1 --></errorMessage>
+        <name>User_unable_to_change_group_number_in_dr</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Clone_Group --></label>
+        <name>Clone_Group</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_Group_Down --></label>
+        <name>Clone_Group_Down</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Clone_for_Client_Maintanence --></label>
+        <name>Clone_for_Client_Maintanence</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Close --></label>
+        <name>Close</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Discard --></label>
+        <name>Discard</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Publish --></label>
+        <name>Publish</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Publishv2 --></label>
+        <name>Publishv2</name>
+    </webLinks>
+</CustomObjectTranslation>

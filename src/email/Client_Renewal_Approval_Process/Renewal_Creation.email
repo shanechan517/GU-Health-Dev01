@@ -1,0 +1,6 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<div><b style="font-family: arial; font-size: 16px; background-color: rgb(255, 255, 255);"><font color="#333333" face="arial">{!Opportunity.Account} -&nbsp;{!Opportunity.RecordType}</font><span style="color: rgb(51, 51, 51);">&nbsp;- {!Opportunity.Name}</span></b></div><font face="Arial,Sans-Serif"><div><font face="Arial,Sans-Serif"><br></font></div>A new renewal has been created in the system for {!Opportunity.Account}. Please use the link below to view the record.</font><p class="MsoNormal" style="margin-bottom: 0pt;"><font face="Arial,Sans-Serif">&nbsp;</font></p><p class="MsoNormal" style="margin-bottom: 0pt;"><font face="Arial,Sans-Serif">{!Opportunity.Link}</font></p>]]></td>
+</tr>
+</table>

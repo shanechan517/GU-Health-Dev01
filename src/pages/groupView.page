@@ -1,0 +1,256 @@
+<apex:page standardController="Group__c" extensions="groupExtension" id="groupPage" title="Group - {!Group__c.Name}">
+   
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+   <apex:stylesheet value="{!$Resource.uicssfix}" />
+   
+   <title>Group - {!Group__c.Name}</title>
+
+   <style>
+       .fewerMore{
+          display:none !important;
+       }
+       .errorArea{
+          padding:8px 0px;
+       }
+       .syncField{
+          background-image: url('{!$Resource.syncICO}');
+       }
+       .lockedField{
+          background-image: url('{!$Resource.lockICO}');
+       }
+       .syncField, .lockedField{
+          background-repeat: no-repeat;
+       		background-size: 20px;
+          padding-left:20px !important;
+       }
+       .keyArea{
+          float: right;
+          color: #666;
+       		margin-bottom:-100px;
+       }
+       .keyInfo{
+          padding-left:26px;
+          min-height: 20px;
+          padding-top: 4px !important;
+          padding: 0;
+          margin: 0px;
+       }
+   </style>
+   
+   <script>
+       $( document ).ready(function() {
+            //run the init function on load
+            initFunction();
+       
+       });
+       
+       function initFunction(){
+           
+           
+           if("{!Group__c.Opportunity_Type__c}" == "Client Maintenance"){
+               $( "td.labelCol:contains('Opportunity/Renewal')" ).each(function() {
+                   $(this).html($(this).html().replace('Opportunity/Renewal','Client Maintenance'));
+               });
+           }else if("{!Group__c.Opportunity_Type__c}" == "Opportunity"){
+               $( "td.labelCol:contains('Opportunity/Renewal')" ).each(function() {
+                   $(this).html($(this).html().replace('Opportunity/Renewal','Opportunity'));
+               });
+           }else if("{!Group__c.Opportunity_Type__c}" == "Renewal"){
+               $( "td.labelCol:contains('Opportunity/Renewal')" ).each(function() {
+                   $(this).html($(this).html().replace('Opportunity/Renewal','Renewal'));
+               });
+           }
+                           
+                            
+           $("h3:contains('Copies')").parent("td").siblings(".pbButton").html('');
+           
+           $("h3:contains('Cases')").parent("td").siblings(".pbButton").html('<input value="New Cases" class="btn" id="casesBtn" name="casesBtn" title="New Cases" type="button" style="padding:0px 3px;" />');
+           
+           $( "#casesBtn" ).click(function() {
+               window.location.replace("caseTemplateBuilder?oid={!Id}&sObjectType=Group&aid={!Group__c.Client_Id__c}");
+           });
+           
+           $( "td.labelCol" ).each(function() {
+               if($( this ).html() == 'Client'){
+                   $( this ).next().addClass('clientRealName');
+               }
+           });
+           
+           $(".clientRealName:contains('{!Group__c.Client_Name__c}')").html('<a href="/{!Group__c.Client_Id__c}">{!Group__c.Client_Name__c}</a>'); 
+           
+           var syncList = JSON.parse('{!syncFields}');
+           //syncList = syncList.replace('&','&amp;');
+           for(var i = 0; i < syncList.length; i++){
+               $( "td.labelCol" ).each(function() {
+                   if( $( this ).text() == syncList[i]){
+                       $( this ).addClass('syncField');
+                   }else if($( this ).children(".helpButton").length){
+                       if($( this ).children(".helpButton").html().split('<img')[0] == syncList[i]){
+                           $( this ).addClass('syncField');   
+                       }
+                   }
+               });
+           }
+           
+           
+           
+           var lockedList = JSON.parse('{!lockedFields}');
+           for(var i = 0; i < lockedList.length; i++){
+               $( "td.labelCol" ).each(function() {
+                   if($( this ).html() == lockedList[i]){
+                       $( this ).addClass('lockedField');
+                   }else if($( this ).children(".helpButton").length){
+                       if($( this ).children(".helpButton").html().split('<img')[0] == lockedList[i]){
+                           $( this ).addClass('lockedField');   
+                       }
+                   }
+               });
+           }
+
+           if('{!Group__c.Is_Active__c}' == 'Pending'){
+              $('.btn[value="Publish"]').hide();
+              $('.btn[value=" Clone "]').hide();
+           }
+
+       }   
+   </script>
+	
+    <div class="keyArea">
+        <p class="syncField keyInfo">Sync Field</p>
+        <p class="lockedField keyInfo">Locked Field</p>
+    </div>
+    
+   <apex:sectionHeader title="Group" subtitle="{!Group__c.Name}"/>
+   
+   <chatter:feedWithFollowers entityId="{!Group__c.Id}" />
+   
+   <apex:outputPanel id="jserror">
+       <div class="errorArea">
+           <apex:pageMessages />
+       </div>
+   </apex:outputPanel>
+   
+   <apex:detail subject="{!Group__c.Id}" relatedList="true" title="false" inlineEdit="true" oncomplete="populateTables();" id="groupDetail"/>
+       
+   <apex:form >
+       <apex:actionFunction action="{!populateTables}" rerender="OuterGroupList" oncomplete="initFunction()" name="populateTables" id="populateTables"/>
+       <apex:actionFunction name="showMessage" action="{!showMessage}" rerender="jserror">
+            <apex:param name="errorLevel" assignTo="{!errorLevel}" value="" />
+            <apex:param name="messageName" assignTo="{!messageName}" value="" />
+       </apex:actionFunction>
+   </apex:form>
+
+   <apex:outputPanel id="OuterGroupList">
+   <apex:outputPanel id="GroupList" layout="block" styleclass="bRelatedList GroupList">
+       <apex:pageBlock id="blockgRelatedList" title="Version History">
+    
+                <apex:form id="formTwoRelatedList">
+                    <apex:outputPanel layout="block"
+                        rendered="{!gList.size == 0}"
+                        style="border: 1px solid #D4DADC; padding: 5px 2px 4px 5px;">
+    
+                        <span>No records to disay</span>
+                    </apex:outputPanel>
+    
+                    <apex:pageBlockTable id="tableNewRelatedList"
+                        value="{!gList}"
+                        var="g"
+                        rendered="{!gList.size != 0}">
+    
+                        <apex:column headerValue="Version" >
+                            <apex:outputLink value="../{!g.Id}">Version {!g.Version__c}</apex:outputLink>
+                        </apex:column>
+                        
+                        <apex:column headerValue="Group Number">
+                            <apex:outputField id="groupNo"
+                                value="{!g.Group_Number__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Publish Date">
+                            <apex:outputField id="gStartDate"
+                                value="{!g.Start_Date__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Discard Date">
+                            <apex:outputField id="gEndDate"
+                                value="{!g.Renewal_Date__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Closed Date">
+                            <apex:outputField id="gClosedDate"
+                                value="{!g.Closed_on__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Status">
+                            <apex:outputField id="gStatus"
+                                value="{!g.Is_Active__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Type" >
+                            <apex:outputField id="gType"
+                                value="{!g.Opportunity_Type__c}" />
+                        </apex:column>
+                        
+                    </apex:pageBlockTable>
+                    
+                </apex:form>
+    
+            </apex:pageBlock>
+            
+        </apex:outputPanel>
+        
+        <apex:outputPanel id="SectionList" layout="block" styleclass="bRelatedList SectionList">
+        
+            <apex:pageBlock id="blocknRelatedList"
+                title="Closed Sections">
+    
+                <apex:form id="formNewRelatedList">
+                    <apex:outputPanel layout="block"
+                        rendered="{!sList.size == 0}"
+                        style="border: 1px solid #D4DADC; padding: 5px 2px 4px 5px;">
+    
+                        <span>{!sMapMessage}</span>
+                    </apex:outputPanel>
+    
+                    <apex:pageBlockTable id="tableNewRelatedList"
+                        value="{!sList}"
+                        var="s"
+                        rendered="{!sList.size != 0}">
+    
+                        <apex:column headerValue="Section Name" >
+                            <apex:outputLink value="../{!s.Id}">{!s.Name}</apex:outputLink>
+                        </apex:column>
+                        
+                        <apex:column headerValue="Section Number" >
+                            <apex:outputText value="{!s.Section_Number__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Start Date" >
+                            <apex:outputField value="{!s.Date_On__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Date Closed" >
+                            <apex:outputField value="{!s.Date_Closed__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Last Group Version" >
+                            <apex:outputLink value="../{!s.Group__c}">Version {!s.Group_Version__c}</apex:outputLink>
+                        </apex:column>
+                        
+                        <apex:column headerValue="Last Group Status" >
+                            <apex:outputField value="{!s.Group__r.Is_Active__c}" />
+                        </apex:column>
+                        
+                    </apex:pageBlockTable>
+                    
+                </apex:form>
+    
+            </apex:pageBlock>
+            
+        </apex:outputPanel>
+        </apex:outputPanel>
+   
+</apex:page>

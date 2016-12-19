@@ -1,0 +1,98 @@
+<apex:page standardController="Linked_Documents__c">
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+   
+   <script>
+       $( document ).ready(function() {
+           $("#fileLocation").parent("td:first").addClass("urlTD");
+           $(".urlField").appendTo(".urlTD");
+       });
+       
+       function copyOverFile(file){
+           $(".urlField").val($("#fileLocation").val());
+           $("#fileLocation").val('');
+       }
+   </script>
+   
+   <style>
+       .urlField{
+           margin-left: -160px;
+       }
+   </style>
+   
+   <apex:form id="linkForm">
+        <apex:sectionHeader title="Notes and Document Link Edit" subtitle="New Notes and Document Link" rendered="{!IF(Linked_Documents__c.Id == null, true, false)}"/>
+        <apex:sectionHeader title="Notes and Document Link Edit" subtitle="{!Linked_Documents__c.Name}" rendered="{!IF(Linked_Documents__c.Id != null, true, false)}"/>
+        <apex:pageBlock id="pgBlock" mode="edit" title="Notes and Document Link Edit">
+            <apex:pageBlockButtons location="both">
+                <apex:commandButton value="Save" action="{!Save}" />
+                <apex:commandButton value="Cancel" action="{!Cancel}"/>
+            </apex:pageBlockButtons>
+            <apex:pageBlockSection id="pgBlockSectionAcctInfo" title="Related To" collapsible="false" columns="2" >
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Contact</apex:outputLabel>                   
+                    <apex:inputField id="docContact" value="{!Linked_Documents__c.Contact__c}" />
+                </apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Opportunity</apex:outputLabel>
+                    <apex:inputField id="docOpportunity" value="{!Linked_Documents__c.Opportunity__c}" />
+                </apex:pageBlockSectionItem>
+               
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Company</apex:outputLabel>                   
+                    <apex:inputField id="docCompany" value="{!Linked_Documents__c.Company__c}" />
+                </apex:pageBlockSectionItem>
+            </apex:pageBlockSection>
+           
+            <apex:pageBlockSection id="pgDocInfo" title="Document Information" collapsible="false" columns="2">
+                <apex:pageBlockSectionItem ></apex:pageBlockSectionItem>
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Status</apex:outputLabel>                   
+                    <apex:inputField id="docStatus" value="{!Linked_Documents__c.Status__c}" />
+                </apex:pageBlockSectionItem>                
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Title</apex:outputLabel>                   
+                    <apex:inputField id="docTitle" value="{!Linked_Documents__c.Name}" required="true" />
+                </apex:pageBlockSectionItem>              
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Document Type</apex:outputLabel>                   
+                    <apex:inputField id="docDocType" value="{!Linked_Documents__c.Document_Type__c}" />
+                </apex:pageBlockSectionItem>
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >File Name</apex:outputLabel>                   
+                    <apex:inputField id="docFileName" value="{!Linked_Documents__c.File_Name__c}" />
+                </apex:pageBlockSectionItem>              
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Document Version</apex:outputLabel>                   
+                    <apex:inputField id="docDocVersion" value="{!Linked_Documents__c.Document_Version__c}" />
+                </apex:pageBlockSectionItem>
+
+            </apex:pageBlockSection>
+           
+            <apex:pageBlockSection id="pgDocLinks" title="Link to the Document" collapsible="false" columns="1">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Location in Network Drive</apex:outputLabel>                   
+                    <apex:inputField id="docLocation" value="{!Linked_Documents__c.Location_in_Network_Drive__c}" />
+                </apex:pageBlockSectionItem>               
+                
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Document URL</apex:outputLabel>                   
+                    <input type="file" name="fileLocation" id="fileLocation" onchange="copyOverFile(this.value)" />
+                </apex:pageBlockSectionItem>  
+            </apex:pageBlockSection>  
+            
+            <apex:pageBlockSection id="pgDocNotes" title="Notes (Optional)" collapsible="false" columns="2">
+                <apex:pageBlockSectionItem >
+                    <apex:outputLabel >Notes</apex:outputLabel>                   
+                    <apex:inputField id="docNotes" value="{!Linked_Documents__c.Notes__c}" />
+                </apex:pageBlockSectionItem>   
+            </apex:pageBlockSection>          
+        </apex:pageBlock>       
+        <apex:inputField id="docURL" value="{!Linked_Documents__c.Document_URL__c}" styleClass="urlField" />
+    </apex:form>
+
+</apex:page>

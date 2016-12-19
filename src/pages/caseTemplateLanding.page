@@ -1,0 +1,321 @@
+<apex:page standardController="Case" extensions="caseTemplateLanding" tabStyle="Case" title="New Cases">
+    
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+   
+   <script>
+       $( document ).ready(function() {
+           init();
+       });
+       
+       function init(){
+           $(".selectBtn").click( function(){
+               var id = $( this ).attr('data-id');
+               var object = $( this ).attr('data-object');
+               var account = $( this ).attr('data-account');
+               location.replace("caseTemplateBuilder?oid="+id+"&sObjectType="+object+"&account="+account);
+           }
+        );
+       }
+   </script>
+    
+    <style>
+        .pageLinz{
+            margin: 10px -16px 0px -16px;
+            border: 0; 
+            border-top: 1px solid #ccc;
+            height: 1px;
+        }
+        #selectedRecord{ 
+            cursor: pointer; 
+            cursor: hand; 
+        }
+        .groupArea{
+            border-top: thick;
+            border-style: solid;
+            -moz-border-top-colors: none;
+            -moz-border-right-colors: #DDD;
+            -moz-border-bottom-colors: #DDD;
+            -moz-border-left-colors: #DDD;
+            border-width: 3px 1px 1px 1px;
+            border-color:#B7A752;
+            padding:10px 16px;
+            border-radius:4px;
+            background-color: #F8F8F8;
+        }
+        .selectArea{
+            margin:10px auto;
+        }
+        .selectList{
+            padding:8px 12px;
+        }
+        .groupArea{
+            border-top: thick;
+            border-style: solid;
+            -moz-border-top-colors: none;
+            -moz-border-right-colors: #DDD;
+            -moz-border-bottom-colors: #DDD;
+            -moz-border-left-colors: #DDD;
+            border-width: 3px 1px 1px 1px;
+            border-color:#B7A752;
+            padding:10px 16px;
+            border-radius:4px;
+            background-color: #F8F8F8;
+            margin-top:22px;
+        }
+        .innerCase{
+            margin: 12px 16px;
+            background-color:#f8f8f8;
+            padding:10px 14px;
+            border-radius:8px;
+            border: 1px solid #999;
+            color:#616365 !important;
+        }
+        .innerCase h3{
+            font-family: Calibri;
+            font-size: 16pt;
+        }
+        .innerCase label{
+            width: 100px;
+            display: inline-block;
+            font-weight: bold;
+            border-right: 1px solid #eee;
+            margin-right: 25px;
+        }
+        #sTemp{
+            font-size: 10pt;
+            padding-top: 6px;
+            font-weight: bold;
+            color: #333;
+            font-family: Arial,Helvetica,sans-serif;
+            margin-right: 10px;
+            float: left;
+            width: 370px;
+            text-align: right;
+        }
+        .half{
+            width: 45%;
+            display: inline-block;
+            margin: 8px 0px;
+        }
+        .buttonArea{
+            text-align:center;
+            margin-top:10px;
+        }
+        .errorArea{
+            background-color: #FF4D4D;
+            color: #FFF;
+            padding:10px 28px;
+            border-radius:8px;
+            margin-top:12px;
+            margin-bottom: 22px;
+            font-weight: bold;
+        }
+        .searchbtn{
+            background: none repeat scroll 0% 0% transparent !important;
+            border: none !important;
+            width: 22px;
+            margin: 0px;
+            float: left;
+            padding-top:4px 0px 0px 0px !important;
+        }
+        .searchBox{
+            padding: 6px 8px;
+            min-width: 200px;
+            margin-right: 10px;
+            float: left;
+        }
+    </style>
+    
+    <apex:form >
+    
+    <apex:sectionHeader title="Case" subtitle="Case Builder"/>
+    
+    <apex:outputPanel id="errorArea">
+    <apex:outputPanel rendered="{!error}">
+        <div class="errorArea">
+            <apex:outputText value="{!errorMsg}" />
+        </div>
+    </apex:outputPanel>
+    </apex:outputPanel>
+    
+    <p>This page allows you to search for the record that you wish to create cases for. Simply select an object type and type in the Clients name that the record is associated to and the search will return all records (if any) that match the criteria.</p>
+    <p>From there simply select which record you wish to use and we can continue to the next page which generates the actual cases via preloaded templates.</p>
+    
+    <div class="groupArea">
+        
+        <h2 style="font-size:11.5pt">Search Criteria</h2>
+        
+        <hr class="pageLinz" />
+        
+        <p>Please complete the following fields to locate the record you wish to create cases for.</p>
+        
+        <apex:actionRegion >
+        <div class="selectArea">
+            
+            <label id="sTemp">Which object do these cases relate to?:</label>
+            <apex:selectList value="{!objectName}" multiselect="false" size="1" styleClass="selectList">
+                <apex:selectOptions value="{!ListOfObjects}" />
+            </apex:selectList>
+            
+        </div>
+            
+        <div class="searchArea">
+            
+            <label id="sTemp">Enter Clients Name:</label>
+            <apex:inputText value="{!searchCriteria}" id="sc" styleClass="searchBox" />
+            
+            <div style="clear:both;padding:4px;"></div>
+            
+            <label id="sTemp">&nbsp;</label>
+            <apex:commandButton value="Search" action="{!searchSF}" rerender="resultArea, errorArea" oncomplete="init()" status="searchStatus" style="margin-right:5px;" />
+            <apex:actionStatus id="searchStatus"><apex:facet name="start">Searching...</apex:facet></apex:actionStatus>
+            
+            <div style="clear:both;padding:10px;"></div>
+            
+        </div>
+        
+        <apex:outputPanel id="resultArea">
+            <div class="resultArea">
+                
+                <!-- OPPORTUNITY AND RENEWAL TABLE -->
+                <apex:outputpanel rendered="{!IF(AND(OR(objectName == 'Opportunity', objectName == 'Renewal', objectName == 'Client Maintenance'), searchOpportunity != null, resultSize > 0), true, false)}">
+                    
+                    <apex:pageBlock title="Search Results - {!objectName}" id="tableAreaOp">
+            
+                        <apex:pageBlockTable value="{!searchOpportunity}" var="o">
+                            
+                            <apex:column value="{!o.Name}"/> 
+                            
+                            <apex:column value="{!o.Account.name}"/>
+                            
+                            <apex:column value="{!o.CloseDate}"/>
+                            
+                            <apex:column value="{!o.CreatedDate}"/>
+                            
+                            <apex:column value="{!o.Owner.Alias}"/>
+                            
+                            <apex:column >
+                                <apex:facet name="header">Select Record</apex:facet>
+                                <input type="button" id="selectedRecord" class="selectBtn" data-id="{!o.Id}" data-object="{!objectName}" data-account="{!o.AccountId}" value="Create Cases" />
+                            </apex:column>
+                
+                        </apex:pageBlockTable> 
+                
+                    </apex:pageBlock> 
+                
+                </apex:outputPanel>
+                <!--END OPPORTUNITY AND RENEWAL TABLE -->
+                
+                <!-- CLIENT TABLE -->
+                <apex:outputpanel rendered="{!IF(AND(objectName == 'Client', searchClient != null, resultSize > 0), true, false)}">
+            
+                    <apex:pageBlock title="Search Results - {!objectName}" id="tableAreaC">
+            
+                        <apex:pageBlockTable value="{!searchClient}" var="o">
+                            
+                            <apex:column value="{!o.Name}"/> 
+                            
+                            <apex:column headerValue="Type" value="{!o.RecordType.Name}"/>
+                            
+                            <apex:column value="{!o.Phone}"/>
+                            
+                            <apex:column headerValue="State" value="{!o.BillingState}"/>
+                            
+                            <apex:column value="{!o.Owner.Alias}"/>
+                            
+                            <apex:column headerValue="Broker Name" value="{!o.Default_Broker__r.Name}"/>
+                            
+                            <apex:column >
+                                <apex:facet name="header">Select Record</apex:facet>
+                                <input type="button" id="selectedRecord" class="selectBtn" data-id="{!o.Id}" data-account="{!o.Id}" data-object="{!objectName}" value="Create Cases" />
+                            </apex:column>
+                
+                        </apex:pageBlockTable> 
+                
+                    </apex:pageBlock> 
+                
+                </apex:outputPanel>
+                <!--END CLIENT TABLE -->
+                
+                <!-- GROUP TABLE -->
+                <apex:outputpanel rendered="{!IF(AND(objectName == 'Group', searchGroup != null, resultSize > 0), true, false)}">
+            
+                    <apex:pageBlock title="Search Results - {!objectName}" id="tableAreaG">
+            
+                        <apex:pageBlockTable value="{!searchGroup}" var="o">
+                            
+                            <apex:column value="{!o.Name}"/> 
+                            
+                            <apex:column value="{!o.Client_Name__c}"/>
+                            
+                            <apex:column value="{!o.Group_Number__c}"/>
+                            
+                            <apex:column value="{!o.Rate_Code__c}"/>
+                            
+                            <apex:column value="{!o.Start_Date__c}"/>
+                            
+                            <apex:column value="{!o.Is_Active__c}"/>
+                            
+                            <apex:column >
+                                <apex:facet name="header">Select Record</apex:facet>
+                                <input type="button" id="selectedRecord" class="selectBtn" data-id="{!o.Id}" data-account="{!o.Client_Id__c}" data-object="{!objectName}" value="Create Cases" />
+                            </apex:column>
+                
+                        </apex:pageBlockTable> 
+                
+                    </apex:pageBlock> 
+                
+                </apex:outputPanel>
+                <!--END GROUP TABLE -->
+                
+                <!-- SECTION TABLE -->
+                <apex:outputpanel rendered="{!IF(AND(objectName == 'Section', searchSection != null, resultSize > 0), true, false)}">
+            
+                    <apex:pageBlock title="Search Results - {!objectName}" id="tableAreaS">
+            
+                        <apex:pageBlockTable value="{!searchSection}" var="o">
+                            
+                            <apex:column value="{!o.Name}"/> 
+                            
+                            <apex:column value="{!o.Client_Name__c}"/>
+                            
+                            <apex:column value="{!o.Date_Closed__c}"/>
+                            
+                            <apex:column value="{!o.Group__r.Name}"/>
+                            
+                            <apex:column value="{!o.Member__c}"/>
+                            
+                            <apex:column >
+                                <apex:facet name="header">Select Record</apex:facet>
+                                <input type="button" id="selectedRecord" class="selectBtn" data-id="{!o.Id}" data-account="{!o.Client_Id__c}" data-object="{!objectName}" value="Create Cases" />
+                            </apex:column>
+                
+                        </apex:pageBlockTable> 
+                
+                    </apex:pageBlock> 
+                
+                </apex:outputPanel>
+                <!--END SECTION TABLE -->
+                
+                <!-- NO RESULTS TABLE -->
+                <apex:outputpanel rendered="{!IF(AND(OR(searchOpportunity != null,searchClient != null,searchGroup != null,searchSection != null,searchProduct != null), resultSize == 0), true, false)}">
+            
+                    <p><i>There were no results found. Please expand on your search criteria and try again.</i></p>
+                
+                </apex:outputPanel>
+                <!--END NO RESULTS TABLE -->
+                
+            </div>
+            
+        </apex:outputPanel>
+        
+        </apex:actionRegion>
+        
+    </div>
+        
+    </apex:form>
+    
+</apex:page>

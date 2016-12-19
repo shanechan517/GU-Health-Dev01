@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Group__c.Is_Active__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Group__c.Group_Whics_Name__c</field>
+    </columns>
+    <columns>
+        <field>Section__c.How_to_Join_Transfer_toDel__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Group__c.How_to_Join_Transfer__c</field>
+    </columns>
+    <description>Compare How to join transfer field in section to group</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Section__c.Group_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>FK_$Group__c.Version__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>How to join transfer field change</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Section__c@Section__c.Group__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>FK_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

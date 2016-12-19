@@ -1,0 +1,552 @@
+<apex:page controller="caseTemplateBuilder" tabStyle="Case" docType="html-5.0" title="New Cases">
+    
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+   
+   <script>
+       $( document ).ready(function() {
+           $(".selectList").attr("readonly","readonly");
+           hideLoading();
+       });
+       
+       function showLoading(){
+            $(".loading").show();
+        }
+        
+        function hideLoading(){
+            $(".loading").hide();
+        }
+   </script>
+    
+    <style>
+        .pageLinz{
+            margin: 10px -16px 0px -16px;
+            border: 0; 
+            border-top: 1px solid #ccc;
+            height: 1px;
+        }
+        #selectedRecord{ 
+            cursor: pointer; 
+            cursor: hand; 
+        }
+        .groupArea{
+            border-top: thick;
+            border-style: solid;
+            -moz-border-top-colors: none;
+            -moz-border-right-colors: #DDD;
+            -moz-border-bottom-colors: #DDD;
+            -moz-border-left-colors: #DDD;
+            border-width: 3px 1px 1px 1px;
+            border-color:#B7A752;
+            padding:10px 16px;
+            border-radius:4px;
+            background-color: #F8F8F8;
+        }
+        .selectArea{
+            margin:10px auto;
+        }
+        .selectList{
+            padding:8px 12px;
+        }
+        .caseArea{
+            border-top: thick;
+            border-style: solid;
+            -moz-border-top-colors: none;
+            -moz-border-right-colors: #DDD;
+            -moz-border-bottom-colors: #DDD;
+            -moz-border-left-colors: #DDD;
+            border-width: 3px 1px 1px 1px;
+            border-color:#B7A752;
+            padding:10px 16px;
+            border-radius:4px;
+            background-color: #F8F8F8;
+            margin-top:22px;
+        }
+        .innerCase{
+            margin: 12px 16px;
+            background-color:#f8f8f8;
+            padding:10px 14px;
+            border-radius:4px;
+            border: 1px solid #999;
+            color:#616365 !important;
+            font-family: Arial,Helvetica,sans-serif;
+        }
+        .innerCase h3{
+            font-family: Arial,Helvetica,sans-serif;
+            font-size: 1.3em;
+            color:#000;
+        }
+        .innerCase label{
+            width: 100px;
+            display: inline-block;
+            font-weight: bold;
+            border-right: 1px solid #eee;
+            margin-right: 25px;
+            color:#000;
+        }
+        #sTemp{
+            font-size: 10pt;
+            padding-top: 6px;
+            font-weight: bold;
+            color: #333;
+            font-family: Arial,Helvetica,sans-serif;
+            margin-right: 10px;
+            float: left;
+            width: 370px;
+            text-align: right;
+        }
+        .half{
+            width: 45%;
+            display: inline-block;
+            margin: 8px 0px;
+        }
+        .buttonArea{
+            text-align:center;
+            margin-top:10px;
+        }
+        .errorArea{
+            background-color: #FF4D4D;
+            color: #FFF;
+            padding:10px 28px;
+            border-radius:8px;
+            margin-top:12px;
+            margin-bottom: 22px;
+            font-weight: bold;
+        }
+        .searchbtn{
+            background: none repeat scroll 0% 0% transparent !important;
+            border: none !important;
+            width: 22px;
+            margin: 0px;
+            float: left;
+            padding-top:4px 0px 0px 0px !important;
+        }
+        .searchBox{
+            padding: 6px 8px;
+            min-width: 200px;
+            margin-right: 10px;
+            float: left;
+        }
+        .loading {
+            position: fixed;
+            top:0em;
+            right:0em;
+            z-index: 3000;
+            min-height: 100%;
+            width: 100%;
+            padding-top: 20%;
+            background: rgba(255, 255, 255, 0.7) !important;
+        }
+        .loading .circleG2{
+            margin:auto;
+        }
+        .loading .holder{
+            width:100px;
+            margin:auto;
+        }
+        #circleG{
+            width:46.666666666666664px;
+            display: inline-block;
+            margin-left: 20px;
+        }
+        
+        .circleG, .circleG2{
+            background-color:#FFFFFF;
+            float:left;
+            height:10px;
+            margin-left:5px;
+            width:10px;
+            -moz-animation-name:bounce_circleG;
+            -moz-animation-duration:1.9500000000000002s;
+            -moz-animation-iteration-count:infinite;
+            -moz-animation-direction:linear;
+            -moz-border-radius:7px;
+            -webkit-animation-name:bounce_circleG;
+            -webkit-animation-duration:1.9500000000000002s;
+            -webkit-animation-iteration-count:infinite;
+            -webkit-animation-direction:linear;
+            -webkit-border-radius:7px;
+            -ms-animation-name:bounce_circleG;
+            -ms-animation-duration:1.9500000000000002s;
+            -ms-animation-iteration-count:infinite;
+            -ms-animation-direction:linear;
+            -ms-border-radius:7px;
+            -o-animation-name:bounce_circleG;
+            -o-animation-duration:1.9500000000000002s;
+            -o-animation-iteration-count:infinite;
+            -o-animation-direction:linear;
+            -o-border-radius:7px;
+            animation-name:bounce_circleG;
+            animation-duration:1.9500000000000002s;
+            animation-iteration-count:infinite;
+            animation-direction:linear;
+            border-radius:7px;
+        }
+        
+        #circleG_1{
+            -moz-animation-delay:0.39s;
+            -webkit-animation-delay:0.39s;
+            -ms-animation-delay:0.39s;
+            -o-animation-delay:0.39s;
+            animation-delay:0.39s;
+        }
+        
+        #circleG_2{
+            -moz-animation-delay:0.9099999999999999s;
+            -webkit-animation-delay:0.9099999999999999s;
+            -ms-animation-delay:0.9099999999999999s;
+            -o-animation-delay:0.9099999999999999s;
+            animation-delay:0.9099999999999999s;
+        }
+        
+        #circleG_3{
+            -moz-animation-delay:1.1700000000000002s;
+            -webkit-animation-delay:1.1700000000000002s;
+            -ms-animation-delay:1.1700000000000002s;
+            -o-animation-delay:1.1700000000000002s;
+            animation-delay:1.1700000000000002s;
+        }
+        
+        @-moz-keyframes bounce_circleG{
+        0%{
+        }
+        
+        50%{
+            background-color:#B7A752}
+        
+        100%{
+        }
+        
+        }
+        
+        @-webkit-keyframes bounce_circleG{
+        0%{
+        }
+        
+        50%{
+        background-color:#B7A752}
+        
+        100%{
+        }
+        
+        }
+        
+        @-ms-keyframes bounce_circleG{
+        0%{
+        }
+        
+        50%{
+        background-color:#B7A752}
+        
+        100%{
+        }
+        
+        }
+        
+        @-o-keyframes bounce_circleG{
+        0%{
+        }
+        
+        50%{
+        background-color:#B7A752}
+        
+        100%{
+        }
+        
+        }
+        
+        @keyframes bounce_circleG{
+        0%{
+        }
+        
+        50%{
+        background-color:#B7A752}
+        
+        100%{
+        }
+        
+        }
+    </style>
+    
+    <div class="loading">
+        <div class="holder">
+            <div id="circleG2"><div id="circleG_1" class="circleG"></div><div id="circleG_2" class="circleG"></div><div id="circleG_3" class="circleG"></div></div>   
+        </div>
+    </div>
+    <apex:actionStatus id="caseSkip" onstart="showLoading();" onstop="hideLoading();"/>
+    
+    <apex:form >
+    
+    <apex:sectionHeader title="Case" subtitle="Case Builder"/>
+    
+    <apex:outputPanel id="errorArea">
+    <apex:outputPanel rendered="{!error}">
+        <div class="errorArea">
+            <apex:outputText value="{!errorMsg}" />
+        </div>
+    </apex:outputPanel>
+    </apex:outputPanel>
+            
+    <!-- OPPORTUNITY AND RENEWAL TABLE -->
+    <apex:outputpanel rendered="{!IF(AND(OR(objectName == 'Opportunity', objectName == 'Renewal'), searchOpportunity != null), true, false)}">
+
+        <apex:pageBlock title="Target Record" id="tableAreaOp">
+
+            <apex:pageBlockTable value="{!searchOpportunity}" var="o">
+                
+                <apex:column value="{!o.Name}"/> 
+                
+                <apex:column value="{!o.Account.name}"/>
+                
+                <apex:column value="{!o.CloseDate}"/>
+                
+                <apex:column value="{!o.CreatedDate}"/>
+                
+                <apex:column value="{!o.Owner.Alias}"/>
+    
+            </apex:pageBlockTable> 
+    
+        </apex:pageBlock> 
+    
+    </apex:outputPanel>
+    <!--END OPPORTUNITY AND RENEWAL TABLE -->
+    
+    <!-- CLIENT TABLE -->
+    <apex:outputpanel rendered="{!IF(AND(objectName == 'Client', searchClient != null), true, false)}">
+
+        <apex:pageBlock title="Target Record" id="tableAreaC">
+
+            <apex:pageBlockTable value="{!searchClient}" var="o">
+                
+                <apex:column value="{!o.Name}"/> 
+                
+                <apex:column headerValue="Type" value="{!o.RecordType.Name}"/>
+                
+                <apex:column value="{!o.Phone}"/>
+                
+                <apex:column headerValue="State" value="{!o.BillingState}"/>
+                
+                <apex:column value="{!o.Owner.Alias}"/>
+                
+                <apex:column headerValue="Broker Name" value="{!o.Default_Broker__r.Name}"/>
+    
+            </apex:pageBlockTable> 
+    
+        </apex:pageBlock> 
+    
+    </apex:outputPanel>
+    <!--END CLIENT TABLE -->
+    
+    <!-- GROUP TABLE -->
+    <apex:outputpanel rendered="{!IF(AND(objectName == 'Group', searchGroup != null), true, false)}">
+
+        <apex:pageBlock title="Target Record" id="tableAreaG">
+
+            <apex:pageBlockTable value="{!searchGroup}" var="o">
+                
+                <apex:column value="{!o.Name}"/> 
+                
+                <apex:column value="{!o.Client_Name__c}"/>
+                
+                <apex:column value="{!o.Group_Number__c}"/>
+                
+                <apex:column value="{!o.Rate_Code__c}"/>
+                
+                <apex:column value="{!o.Start_Date__c}"/>
+                
+                <apex:column value="{!o.Is_Active__c}"/>
+    
+            </apex:pageBlockTable> 
+    
+        </apex:pageBlock> 
+    
+    </apex:outputPanel>
+    <!--END GROUP TABLE -->
+    
+    <!-- SECTION TABLE -->
+    <apex:outputpanel rendered="{!IF(AND(objectName == 'Section', searchSection != null), true, false)}">
+
+        <apex:pageBlock title="Target Record" id="tableAreaS">
+
+            <apex:pageBlockTable value="{!searchSection}" var="o">
+                
+                <apex:column value="{!o.Name}"/> 
+                
+                <apex:column value="{!o.Client_Name__c}"/>
+                
+                <apex:column value="{!o.Date_Closed__c}"/>
+                
+                <apex:column value="{!o.Group__r.Name}"/>
+                
+                <apex:column value="{!o.Member__c}"/>
+    
+            </apex:pageBlockTable> 
+    
+        </apex:pageBlock> 
+    
+    </apex:outputPanel>
+    <!--END SECTION TABLE -->
+    
+    <!-- PRODUCT TABLE -->
+    <apex:outputpanel rendered="{!IF(AND(objectName == 'Product', searchProduct != null), true, false)}">
+
+        <apex:pageBlock title="Target Record" id="tableAreaP">
+
+            <apex:pageBlockTable value="{!searchProduct}" var="o">
+                
+                <apex:column value="{!o.Name}"/> 
+                
+                <apex:column value="{!o.Product_Code__c}"/> 
+                
+                <apex:column value="{!o.Product_Name_System__c}"/> 
+                
+                <apex:column value="{!o.Product_Type__c}"/> 
+                
+                <apex:column value="{!o.Rate_Code__c}"/> 
+                
+                <apex:column value="{!o.Start_Date__c}"/> 
+    
+            </apex:pageBlockTable> 
+    
+        </apex:pageBlock> 
+    
+    </apex:outputPanel>
+    <!--END PRODUCT TABLE -->
+    
+    <div style="clear:both;padding:10px;"></div>
+    
+    <div class="groupArea">
+        
+        <h2 style="font-size:11.5pt">Available Templates</h2>
+        
+        <hr class="pageLinz" />
+        
+        <p>Select from the drop down menu to access the available templates to be created.</p>
+        
+        <div style="clear:both;padding:5px;"></div>
+        
+        <apex:actionRegion >
+            <div class="selectArea" style="display:none;">
+                
+                <label id="sTemp">Which object do these cases relate to?:</label>
+                <apex:selectList value="{!objectName}" multiselect="false" size="1" styleClass="selectList">
+                    <apex:selectOptions value="{!ListOfObjects}" />
+                    <apex:actionSupport event="onchange" action="{!populateCTG}" rerender="selectTemplate, cases, errorArea" />
+                </apex:selectList>
+                
+            </div>
+        </apex:actionRegion>
+        
+        <apex:outputPanel id="selectTemplate">
+        <apex:outputPanel rendered="{!IF(ctgListSize>0, true, false)}">
+        
+            <div class="selectArea">
+                
+                <apex:actionRegion >
+                    <label id="sTemp">Select a template:</label>
+                    <apex:selectList value="{!selectedTemplate}" multiselect="false" size="1" styleClass="selectList" style="margin-right:5px;">
+                        <apex:selectOptions value="{!Groups}" />
+                        <apex:actionSupport event="onchange" action="{!findCaseTemplates}" rerender="cases, errorArea" status="caseSkip" />
+                    </apex:selectList>
+                    <apex:actionStatus id="searchStatus"><apex:facet name="start">Loading...</apex:facet></apex:actionStatus>
+                </apex:actionRegion>
+                
+            </div>
+        
+        </apex:outputPanel>
+        
+        <apex:outputPanel rendered="{!IF(ctgListSize==0, true, false)}">
+            <p><i>There are no available templates for the object {!objectName}.</i></p>
+        </apex:outputPanel>
+        </apex:outputPanel>
+        
+    </div>
+    
+    <apex:outputPanel id="cases">
+    <apex:outputPanel rendered="{!IF(AND(newcasesSize == 0, selectedTemplate != null), true, false)}">
+        <p style="margin-bottom:20px;"><i>No case templates have been found...</i></p>
+    </apex:outputpanel>
+    <apex:outputPanel rendered="{!IF(newcasesSize > 0, true, false)}">
+        
+        <div class="caseArea">
+
+        <h2 style="font-size:11.5pt">Cases Start Date</h2>
+        
+        <hr class="pageLinz" />
+        
+        <p>The cases will kick off on the following date:</p>
+        
+        <apex:inputField style="padding: 4px 6px;" value="{!newCases[0].Estimated_Start_Date__c}"><apex:actionSupport event="onchange" action="{!recalcSLAs}" status="caseSkip" rerender="cases, errorArea" /></apex:inputField>
+        
+        </div>
+        
+        <div class="caseArea">
+
+        <h2 style="font-size:11.5pt">Cases to be created</h2>
+        
+        <hr class="pageLinz" />
+        
+        <p>The following cases will be created.</p>
+        
+        <div style="clear:both;padding:5px;"></div>
+            
+            <div class="buttonArea">
+                <apex:commandButton value="Submit" styleClass="commandButton" action="{!submit}"/>
+            </div>
+            
+            <apex:repeat value="{!newCases}" var="ncKey">
+            <apex:repeat value="{!newCases[ncKey]}" var="nc">
+                
+                <apex:outputPanel rendered="{!IF(nc.Code__c<>0, true, false)}">
+                
+                    <div class="innerCase">
+                        
+                        <h3>{!nc.Subject}</h3>
+                        
+                        <div style="clear:both;padding:8px;"></div>
+                        
+                        <div><label id="caseLabel">Description</label>
+                        <apex:outputText value="{!nc.Description}" escape="false" /></div>
+                        
+                        <div class="half"><label id="caseLabel">Code</label>
+                        <apex:outputText value="{!nc.Code__c}" /></div>
+                        
+                        <div class="half"><label id="caseLabel">Dependency</label>
+                        <apex:outputText value="{!nc.Dependancy__c}" /></div>
+                        
+                        <div class="half"><label id="caseLabel">Assigned to</label>
+                        <apex:outputText value="{!nc.Team__c}" /></div>
+                        
+                        <div class="half"><label id="caseLabel">Task</label>
+                        <apex:outputText value="{!nc.Type}" /></div>
+                        
+                        <div class="half"><label id="caseLabel">Estimated Start Date</label>
+                        <apex:outputField value="{!nc.Estimated_Start_Date__c}" /></div>
+                        
+                        <div class="half"><label id="caseLabel">Estimated End Date</label>
+                        <apex:outputField value="{!nc.Estimated_Close_Date__c}" /></div>
+                        
+                        <div><label id="caseLabel">Skip case?</label>
+                        <apex:inputCheckbox value="{!nc.Skip_Case__c}"><apex:actionSupport event="onchange" action="{!recalcSLAs}" status="caseSkip" rerender="cases, errorArea" /></apex:inputCheckbox></div>
+                        
+                    </div>
+                    
+                </apex:outputPanel>
+            
+            </apex:repeat>
+            </apex:repeat>
+            
+            <div class="buttonArea">
+                <apex:commandButton value="Submit" styleClass="commandButton" action="{!submit}" rerender="errorArea"/>
+            </div>
+            
+        </div>
+    
+    </apex:outputPanel>
+    </apex:outputPanel>
+    
+    </apex:form>
+    
+</apex:page>

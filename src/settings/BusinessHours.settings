@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessHoursSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <businessHours>
+        <active>true</active>
+        <default>true</default>
+        <fridayEndTime>18:00:00.000Z</fridayEndTime>
+        <fridayStartTime>08:00:00.000Z</fridayStartTime>
+        <mondayEndTime>18:00:00.000Z</mondayEndTime>
+        <mondayStartTime>08:00:00.000Z</mondayStartTime>
+        <name>GU Default</name>
+        <thursdayEndTime>18:00:00.000Z</thursdayEndTime>
+        <thursdayStartTime>08:00:00.000Z</thursdayStartTime>
+        <timeZoneId>Australia/Sydney</timeZoneId>
+        <tuesdayEndTime>18:00:00.000Z</tuesdayEndTime>
+        <tuesdayStartTime>08:00:00.000Z</tuesdayStartTime>
+        <wednesdayEndTime>18:00:00.000Z</wednesdayEndTime>
+        <wednesdayStartTime>08:00:00.000Z</wednesdayStartTime>
+    </businessHours>
+    <holidays>
+        <activityDate>2015-10-02</activityDate>
+        <description>VIC Only - Friday before the AFL Grand Final</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>AFL Grand Final</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-09-30</activityDate>
+        <description>VIC - Friday Before the AFL Grand Final</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>AFL Grand Final</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2015-12-28</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW (the Monday following Boxing Day)</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Additional Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-04-25</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Anzac Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-04-25</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Anzac Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>true</isRecurring>
+        <name>Australia Day</name>
+        <recurrenceDayOfMonth>26</recurrenceDayOfMonth>
+        <recurrenceMonthOfYear>January</recurrenceMonthOfYear>
+        <recurrenceStartDate>2016-01-26</recurrenceStartDate>
+        <recurrenceType>RecursYearly</recurrenceType>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-08-01</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Bank Holiday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-08-07</activityDate>
+        <description>NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Bank Holiday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2015-12-26</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Boxing Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-12-26</activityDate>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Boxing Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-12-26</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Boxing Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2015-12-25</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Christmas Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-12-25</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Christmas Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-12-27</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>NSW (Substitute for Sunday 25 December)</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Christmas Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-12-27</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC (Substitute for Sunday 25 December)</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Christmas Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-28</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Easter Monday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-04-17</activityDate>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Easter Monday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-26</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Easter Saturday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-27</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Easter Sunday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-25</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Good Friday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-04-14</activityDate>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Good Friday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2015-10-05</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Labour Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-10-02</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Labour Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-03-13</activityDate>
+        <description>VIC</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Labour Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-10-03</activityDate>
+        <description>NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Labour Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-03-14</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Labour Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2015-11-03</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Melbourne Cup</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-11-07</activityDate>
+        <description>VIC</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Melbourne Cup</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-11-01</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Melbourne Cup</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-01-02</activityDate>
+        <description>NSW (Additional Day as New Year&apos;s Day fall on a weekend (Sunday 01/01/2017)</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>New Year&apos;s Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-01-02</activityDate>
+        <description>VIC (Additional Day as New Year&apos;s Day fall on a weekend (Sunday 01/01/2017)</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>New Year&apos;s Day</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2016-06-13</activityDate>
+        <businessHours>GU Default</businessHours>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Queen&apos;s Birthday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+    <holidays>
+        <activityDate>2017-06-12</activityDate>
+        <description>VIC and NSW</description>
+        <endTime>18:00:00.000Z</endTime>
+        <isRecurring>false</isRecurring>
+        <name>Queen&apos;s Birthday</name>
+        <startTime>08:00:00.000Z</startTime>
+    </holidays>
+</BusinessHoursSettings>

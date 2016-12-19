@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Section Product Link</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Section Product Links</value>
+    </caseValues>
+    <fields>
+        <label><!-- Base or Upgrade --></label>
+        <name>Base_or_Upgrade__c</name>
+        <picklistValues>
+            <masterLabel>Base</masterLabel>
+            <translation><!-- Base --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Upgrade</masterLabel>
+            <translation><!-- Upgrade --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Cover Code --></label>
+        <name>CoverCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Date closed --></label>
+        <name>Date_closed__c</name>
+    </fields>
+    <fields>
+        <label><!-- External_ID --></label>
+        <name>External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Fixed Amount Funded --></label>
+        <name>Fixed_Amount_Funded__c</name>
+    </fields>
+    <fields>
+        <label><!-- GSPL Number --></label>
+        <name>GSPL_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Number --></label>
+        <name>Group_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Status --></label>
+        <name>Group_Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Group Version --></label>
+        <name>Group_Version__c</name>
+    </fields>
+    <fields>
+        <label><!-- Is Publish Wizard --></label>
+        <name>IsPublishWizard__c</name>
+    </fields>
+    <fields>
+        <label><!-- LHC --></label>
+        <name>LHC__c</name>
+    </fields>
+    <fields>
+        <label><!-- Percentage Funded --></label>
+        <name>Percentage_Funded__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Code --></label>
+        <name>ProductCode__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Broker Code --></label>
+        <name>Product_Broker_Code__c</name>
+        <relationshipLabel><!-- Section Product Links --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Product External ID --></label>
+        <name>Product_External_ID__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Product uId --></label>
+        <name>Product_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product Name --></label>
+        <name>Product_Name__c</name>
+    </fields>
+    <fields>
+        <label><!-- Product --></label>
+        <name>Product__c</name>
+        <relationshipLabel><!-- Sections --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Rebate --></label>
+        <name>Rebate__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Broker Commision --></label>
+        <name>Section_Broker_Commision__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Id --></label>
+        <name>Section_Id__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section Number --></label>
+        <name>Section_Number__c</name>
+    </fields>
+    <fields>
+        <label><!-- Section --></label>
+        <name>Section__c</name>
+        <relationshipLabel><!-- Products --></relationshipLabel>
+    </fields>
+    <fields>
+        <label><!-- Shared Key --></label>
+        <name>SharedKey__c</name>
+    </fields>
+    <fields>
+        <label><!-- Start Date --></label>
+        <name>Start_Date__c</name>
+    </fields>
+    <fields>
+        <label><!-- Status --></label>
+        <name>Status__c</name>
+    </fields>
+    <fields>
+        <label><!-- Version --></label>
+        <name>Version__c</name>
+    </fields>
+    <fields>
+        <help><!-- The date that the section product link is withdrawn from --></help>
+        <label><!-- Withdrawn Date --></label>
+        <name>Withdrawn_Date__c</name>
+    </fields>
+    <layouts>
+        <layout>Section Product Link Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- Hierarchical Information --></label>
+            <section>Hierarchical Information</section>
+        </sections>
+        <sections>
+            <label><!-- Important Dates --></label>
+            <section>Important Dates</section>
+        </sections>
+        <sections>
+            <label><!-- Link Information --></label>
+            <section>Link Information</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+    <validationRules>
+        <errorMessage><!-- You can only close a section product link via a draft --></errorMessage>
+        <name>Close_SPL_in_Draft_Only</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Closed Date cannot be before Start Date --></errorMessage>
+        <name>Closed_Date_cannot_be_before_Start_Date</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Start date is required if Date Closed is populated --></errorMessage>
+        <name>Start_Date_is_required_if_Date_closed</name>
+    </validationRules>
+</CustomObjectTranslation>

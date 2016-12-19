@@ -1,0 +1,114 @@
+<apex:page standardController="Opportunity" extensions="opportunityExtension" title="{!Opportunity.RecordType.Name} - {!Opportunity.Name}">
+   
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+   <apex:stylesheet value="{!$Resource.uicssfix}" />
+   
+   <script>
+       $( document ).ready(function() {
+           
+           initFunction();
+           
+       });
+       
+       function initFunction(){
+           var recordTypeName = '{!Opportunity.RecordType.Name}';
+           
+           $("h3:contains('Cases')").parent("td").siblings(".pbButton").html('<input value="New Cases" class="btn" id="casesBtn" name="casesBtn" title="New Cases" type="button" style="padding:0px 3px;" />');
+           
+           if(recordTypeName == 'Renewal'){
+               $('<style> .btn[name="edit"]{ display:none !important;} </style>').appendTo(".bPageTitle");
+               
+               $("h3:contains('Opportunity Field History')").html("Renewal Field History");
+               
+               $( "td.labelCol:contains('Opportunity')" ).each(function() {
+                   $(this).html($(this).html().replace('Opportunity','Renewal'));
+               });
+               $( "h2.mainTitle:contains('Opportunity')" ).each(function() {
+                   $(this).html($(this).html().replace('Opportunity','Renewal'));
+               });
+               $( "h1.pageType:contains('Opportunity')" ).each(function() {
+                   $(this).html($(this).html().replace('Opportunity','Renewal'));
+               });
+               
+               //This is to change the tabStyle css. It is not dynamic on a visualforce page so we ned to inject css.
+               $('<style> .opportunityTab .primaryPalette,.individualPalette .Custom18Block .primaryPalette{background-color:#319431 !important;border-color:#319431 !important;} </style>').appendTo(".bPageTitle");
+               $('<style> .opportunityTab .secondaryPalette,.individualPalette .Custom18Block .secondaryPalette{border-color:#319431} </style>').appendTo(".bPageTitle");
+               $('<style> .opportunityTab .tertiaryPalette,.individualPalette .Custom18Block .tertiaryPalette,.layoutEdit .individualPalette .Custom18Block .tertiaryPalette{border-color:#7eb47e !important;} </style>').appendTo(".bPageTitle");
+               $('<style> .opportunityTab .bgdPalette{background-color:#319431 !important;}  </style>').appendTo(".bPageTitle");
+               $('<style> .opportunityTab .brdPalette{border-top-color:#319431 !important;} </style>').appendTo(".bPageTitle");
+               //$('<style> .opportunityTab .listViewport .subNav .linkBar, .opportunityTab .mComponent .cHeader, .opportunityTab .genericTable, .opportunityTab .bSubBlock, .opportunityTab .bPageBlock{border-top: 3px solid #319431 !important;} </style>').appendTo(".bPageTitle");
+               
+               $("#tabBar").children("li:contains('Renewals')").addClass("zen-active primaryPalette");
+
+               $( ".labelCol" ).each(function() {
+                    if($(this).html() == 'Estimated Implementation Date'){
+                        $(this).html('Estimated Change Date');
+                    }else if($(this).text() == 'Renewal Date'){
+                        $(this).text('Next Renewal Date');
+                    }
+               });
+               
+               $( "#casesBtn" ).click(function() {
+                   window.location.replace("caseTemplateBuilder?oid={!Id}&sObjectType=Renewal&aid={!Opportunity.AccountId}");
+               });
+           
+           }else if(recordTypeName == 'Client Maintenance'){
+               
+               $('<style> .btn[name="edit"]{ display:none !important;} </style>').appendTo(".bPageTitle");
+               
+               $("h3:contains('Opportunity Field History')").html("Client Maintenance Field History");
+               
+               $( "td.labelCol:contains('Opportunity')" ).each(function() {
+                   $(this).html($(this).html().replace('Opportunity','Client Maintenance'));
+               });
+               $( "h2.mainTitle:contains('Opportunity')" ).each(function() {
+                   $(this).html($(this).html().replace('Opportunity','Client Maintenance'));
+               });
+               $( "h1.pageType:contains('Opportunity')" ).each(function() {
+                   $(this).html($(this).html().replace('Opportunity','Client Maintenance'));
+               });
+               
+               //This is to change the tabStyle css. It is not dynamic on a visualforce page so we ned to inject css.
+               $('<style> .opportunityTab .primaryPalette,.individualPalette .Custom18Block .primaryPalette{background-color:#335687 !important;border-color:#335687 !important;} </style>').appendTo(".bPageTitle");
+               $('<style> .opportunityTab .secondaryPalette,.individualPalette .Custom18Block .secondaryPalette{border-color:#335687} </style>').appendTo(".bPageTitle");
+               $('<style> .opportunityTab .tertiaryPalette,.individualPalette .Custom18Block .tertiaryPalette,.layoutEdit .individualPalette .Custom18Block .tertiaryPalette{border-color:#6d87a8 !important;} </style>').appendTo(".bPageTitle");
+               $('<style> .opportunityTab .bgdPalette{background-color:#335687 !important;}  </style>').appendTo(".bPageTitle");
+               $('<style> .opportunityTab .brdPalette{border-top-color:#335687 !important;} </style>').appendTo(".bPageTitle");
+               
+               $("#tabBar").children("li:contains('Client Maintenance')").addClass("zen-active primaryPalette");
+
+               $( ".labelCol" ).each(function() {
+                    if($(this).html() == 'Estimated Implementation Date'){
+                        $(this).html('Estimated Change Date');
+                    }else if($(this).text() == 'Renewal Date'){
+                        $(this).text('Next Renewal Date');
+                    }
+               });
+               
+               $( "#casesBtn" ).click(function() {
+                   window.location.replace("caseTemplateBuilder?oid={!Id}&sObjectType=ClientMaintenance&aid={!Opportunity.AccountId}");
+               });
+               
+           }else{
+               
+               $("#tabBar").children("li:contains('Opportunities')").addClass("zen-active primaryPalette");
+               
+               $( "#casesBtn" ).click(function() {
+                   window.location.replace("caseTemplateBuilder?oid={!Id}&sObjectType=Opportunity&aid={!Opportunity.AccountId}");
+               });
+               
+           }
+       }
+       
+   </script>
+      
+   <apex:sectionHeader title="Opportunity" subtitle="{!Opportunity.Name}"/>
+   
+   <chatter:feedWithFollowers entityId="{!Opportunity.Id}" />
+   
+   <apex:detail subject="{!Opportunity.Id}" relatedList="true" title="false" inlineEdit="true" oncomplete="initFunction()"/> 
+   
+</apex:page>

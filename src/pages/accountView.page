@@ -1,0 +1,366 @@
+<apex:page standardController="Account" extensions="accountExtension" id="accPage" title="Company - {!Account.Name}">
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+   <apex:stylesheet value="{!$Resource.uicssfix}" />
+   
+   <style>
+   .pbHeader table{
+      border-top-width: 0px !important;
+      border-right-width: 0px !important;
+      border-bottom-width: 0px !important;
+      border-left-width: 0px !important;
+      padding: 0px !important;
+   }
+   .fewerMore{
+       display:none;
+   }
+   </style>
+   
+   <apex:sectionHeader title="Account" subtitle="{!Account.Name}"/>
+   
+   <chatter:feedWithFollowers entityId="{!Account.Id}" />
+   
+   <apex:detail subject="{!Account.Id}" relatedList="true" title="false" inlineEdit="true" oncomplete="initFunction()"/> 
+   
+   <apex:outputPanel id="OpportunityList"
+        layout="block"
+        styleclass="bRelatedList OpportunityList" rendered="{!IF(OR(Account.RecordType.Name == 'Client',Account.RecordType.Name == 'Prospect'), True, False)}">
+        
+        <apex:pageBlock id="blocknRelatedList"
+            title="Opportunities">
+
+            <apex:form id="formNewRelatedList">
+                <apex:outputPanel layout="block"
+                    rendered="{!newList.size == 0}"
+                    style="border: 1px solid #D4DADC; padding: 5px 2px 4px 5px;">
+
+                    <span>No records to display</span>
+                </apex:outputPanel>
+
+                <apex:pageBlockTable id="tableNewRelatedList"
+                    value="{!newList}"
+                    var="newOp"
+                    rendered="{!newList.size != 0}">
+
+                    <apex:column headerValue="Opportunity Name" >
+                        <apex:outputLink value="../{!newOp.Id}">{!newOp.name}</apex:outputLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Opportunity Number">
+                        <apex:outputField id="newOpOpNo"
+                            value="{!newOp.Opportunity_Number__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Created By Alias">
+                        <apex:outputField id="newOpCBA"
+                            value="{!newOp.CreatedBy.Alias}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Stage">
+                        <apex:outputField id="newOpStage"
+                            value="{!newOp.StageName}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Estimated Implimentation Date">
+                        <apex:outputField id="newOpEID"
+                            value="{!newOp.CloseDate}" />
+                    </apex:column>
+                    
+                    
+                </apex:pageBlockTable>
+                
+            </apex:form>
+
+        </apex:pageBlock>
+        
+        <apex:outputPanel rendered="{!IF(Account.RecordType.Name == 'Client', True, False)}">
+        
+            <apex:pageBlock id="blockRelatedList"
+                title="Renewals">
+    
+                <apex:form id="formRelatedList">
+                    <apex:outputPanel layout="block"
+                        rendered="{!renewalList.size == 0}"
+                        style="border: 1px solid #D4DADC; padding: 5px 2px 4px 5px;">
+    
+                        <span>No records to display</span>
+                    </apex:outputPanel>
+    
+                    <apex:pageBlockTable id="tableRelatedList"
+                        value="{!renewalList}"
+                        var="renewalOp"
+                        rendered="{!renewalList.size != 0}">
+    
+                        <apex:column headerValue="Renewal Name" >
+                            <apex:outputLink value="../{!renewalOp.Id}">{!renewalOp.name}</apex:outputLink>
+                        </apex:column>
+                        
+                        <apex:column headerValue="Renewal Number">
+                            <apex:outputField id="fieldOpNo"
+                                value="{!renewalOp.Opportunity_Number__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Created By Alias">
+                            <apex:outputField id="fieldCBA"
+                                value="{!renewalOp.CreatedBy.Alias}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Stage">
+                            <apex:outputField id="fieldStage"
+                                value="{!renewalOp.StageName}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Estimated Implimentation Date">
+                            <apex:outputField id="fieldEID"
+                                value="{!renewalOp.CloseDate}" />
+                        </apex:column>
+                        
+                        
+                    </apex:pageBlockTable>
+                    
+                </apex:form>
+    
+            </apex:pageBlock>
+    
+            <apex:pageBlock id="blockCMRelatedList"
+                title="Client Maintenance">
+    
+                <apex:form id="formCMRelatedList">
+                    <apex:outputPanel layout="block"
+                        rendered="{!cmList.size == 0}"
+                        style="border: 1px solid #D4DADC; padding: 5px 2px 4px 5px;">
+    
+                        <span>No records to display</span>
+                    </apex:outputPanel>
+    
+                    <apex:pageBlockTable id="tableCMRelatedList"
+                        value="{!cmList}"
+                        var="cmOp"
+                        rendered="{!cmList.size != 0}">
+    
+                        <apex:column headerValue="Client Maintenance Name" >
+                            <apex:outputLink value="../{!cmOp.Id}">{!cmOp.name}</apex:outputLink>
+                        </apex:column>
+                        
+                        <apex:column headerValue="Client Maintenance Number">
+                            <apex:outputField id="fieldOpNo"
+                                value="{!cmOp.Opportunity_Number__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Created By Alias">
+                            <apex:outputField id="fieldCBA"
+                                value="{!cmOp.CreatedBy.Alias}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Stage">
+                            <apex:outputField id="fieldStage"
+                                value="{!cmOp.StageName}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Estimated Implimentation Date">
+                            <apex:outputField id="fieldEID"
+                                value="{!cmOp.CloseDate}" />
+                        </apex:column>
+                        
+                        
+                    </apex:pageBlockTable>
+                    
+                </apex:form>
+    
+            </apex:pageBlock>
+            
+            <apex:pageBlock id="blockgRelatedList"
+                title="Active Groups">
+    
+                <apex:form id="formTwoRelatedList">
+                    <apex:outputPanel layout="block"
+                        rendered="{!gList.size == 0}"
+                        style="border: 1px solid #D4DADC; padding: 5px 2px 4px 5px;">
+    
+                        <span>No records to display</span>
+                    </apex:outputPanel>
+    
+                    <apex:pageBlockTable id="tableNewRelatedList"
+                        value="{!gList}"
+                        var="g"
+                        rendered="{!gList.size != 0}">
+                        
+                        <apex:column headerValue="Version">
+                            <apex:outputField id="gVersion"
+                                value="{!g.Version__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Group Name Brochure" >
+                            <apex:outputLink value="../{!g.Id}">{!g.name}</apex:outputLink>
+                        </apex:column>
+                        
+                        <apex:column headerValue="Group Number">
+                            <apex:outputField id="groupNo"
+                                value="{!g.Group_Number__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Group Start Date">
+                            <apex:outputField id="gStartDate"
+                                value="{!g.Start_Date__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Rate Code">
+                            <apex:outputField id="gRateCode"
+                                value="{!g.Rate_Code__c}" />
+                        </apex:column>
+                        
+                        <apex:column headerValue="Status">
+                            <apex:outputField id="gStatus"
+                                value="{!g.Is_Active__c}" />
+                        </apex:column>
+    
+                    </apex:pageBlockTable>
+                    
+                </apex:form>
+    
+            </apex:pageBlock>
+            
+        </apex:outputPanel>
+        
+        <apex:pageBlock id="blockallgRelatedList"
+            title="All Groups & Versions">
+
+            <apex:form id="formThreeRelatedList">
+                <apex:outputPanel layout="block"
+                    rendered="{!allgList.size == 0}"
+                    style="border: 1px solid #D4DADC; padding: 5px 2px 4px 5px;">
+
+                    <span>No records to display</span>
+                </apex:outputPanel>
+
+                <apex:pageBlockTable id="tableNewRelatedList"
+                    value="{!allgList}"
+                    var="g"
+                    rendered="{!allgList.size != 0}">
+                    
+                    <apex:column headerValue="Version">
+                        <apex:outputField id="gVersion"
+                            value="{!g.Version__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Group Name Brochure" >
+                        <apex:outputLink value="../{!g.Id}">{!g.name}</apex:outputLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Group Number">
+                        <apex:outputField id="groupNo"
+                            value="{!g.Group_Number__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Group Start Date">
+                        <apex:outputField id="gStartDate"
+                            value="{!g.Start_Date__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Rate Code">
+                        <apex:outputField id="gRateCode"
+                            value="{!g.Rate_Code__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Status">
+                        <apex:outputField id="gStatus"
+                            value="{!g.Is_Active__c}" />
+                    </apex:column>
+
+                </apex:pageBlockTable>
+                
+            </apex:form>
+
+        </apex:pageBlock>
+    </apex:outputPanel>
+    
+    <apex:outputPanel rendered="{!IF(Account.RecordType.Name == 'Broker', True, False)}">
+        
+        <apex:pageBlock id="blockboRelatedList"
+            title="Brokered Opportunities">
+
+            <apex:form id="formNewRelatedList">
+                <apex:outputPanel layout="block"
+                    rendered="{!brokerList.size == 0}"
+                    style="border: 1px solid #D4DADC; padding: 5px 2px 4px 5px;">
+
+                    <span>No records to display</span>
+                </apex:outputPanel>
+
+                <apex:pageBlockTable id="tableNewRelatedList"
+                    value="{!brokerList}"
+                    var="newOp"
+                    rendered="{!brokerList.size != 0}">
+
+                    <apex:column headerValue="Opportunity Name" >
+                        <apex:outputLink value="../{!newOp.Id}">{!newOp.name}</apex:outputLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Client Name" >
+                        <apex:outputLink value="../{!newOp.AccountId}">{!newOp.Account.Name}</apex:outputLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Opportunity Number">
+                        <apex:outputField id="newOpOpNo"
+                            value="{!newOp.Opportunity_Number__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Created By Alias">
+                        <apex:outputField id="newOpCBA"
+                            value="{!newOp.CreatedBy.Alias}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Stage">
+                        <apex:outputField id="newOpStage"
+                            value="{!newOp.StageName}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Estimated Implimentation Date">
+                        <apex:outputField id="newOpEID"
+                            value="{!newOp.CloseDate}" />
+                    </apex:column>
+                    
+                    
+                </apex:pageBlockTable>
+                
+            </apex:form>
+
+        </apex:pageBlock>
+        
+    </apex:outputPanel>
+    
+    <div style="clear:both;" class="endDiv"></div>
+    
+    <!-- The following script removes unwanted style class names so that the page block resembles a native related list block -->
+    <script type="text/javascript">
+       $( document ).ready(function() {
+              
+           initFunction();
+           
+       });
+       
+       function initFunction(){
+            $("#blocknRelatedList").attr("id","blockRelatedList");
+            $(".fewerMore").insertAfter(".endDiv");
+            $(".OpportunityList").appendTo("#{!recordId}_RelatedContactList");
+            
+            $("h2.mainTitle:contains('Renewals')").parent("td").siblings().html('<input value="New Renewal" class="btn" id="renewalBtn" name="renewalBtn" title="New Renewal" type="button" style="padding:0px 3px;display:none;" />');
+            $("h2.mainTitle:contains('Opportunities')").parent("td").siblings().html('<input value="New Opportunity" class="btn" id="opportunityBtn" name="opportunityBtn" title="New Opportunity" type="button" style="padding:0px 3px;" />');
+            $("h2.mainTitle:contains('Brokered Opportunities')").parent("td").siblings().html('');
+            
+            $( "#renewalBtn" ).click(function() {
+                window.location.replace("../006/e?retURL=%2F006%2Fo&RecordType={!renewalId}&accid={!recordId}&ent=Opportunity");
+            });
+            $( "#opportunityBtn" ).click(function() {
+                window.location.replace("../006/e?retURL=%2F006%2Fo&RecordType={!opportunityId}&accid={!recordId}&ent=Opportunity");
+            });
+            $("h3:contains('Cases')").parent("td").siblings(".pbButton").html('<input value="New Cases" class="btn" id="casesBtn" name="casesBtn" title="New Cases" type="button" style="padding:0px 3px;" />');
+            $( "#casesBtn" ).click(function() {
+                window.location.replace("caseTemplateBuilder?oid={!Id}&sObjectType=Client&aid={!Id}");
+            });
+            document.getElementById('{!$Component.blockRelatedList}').className='bPageBlock secondaryPalette';
+       }
+    </script> 
+</apex:page>

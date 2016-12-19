@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email is sent to Owner &amp; Account manager that a Renewal has been created</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GUHealth</letterhead>
+    <name>Renewal Creation</name>
+    <style>freeForm</style>
+    <subject>Renewal Created - {!Opportunity.Account} - {!Opportunity.RecordType} - {!Opportunity.Name}</subject>
+    <textOnly>{!Opportunity.Account} - {!Opportunity.RecordType} - {!Opportunity.Name}
+
+A new renewal has been created in the system for {!Opportunity.Account}. Please use the link below to view the record.
+
+
+{!Opportunity.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

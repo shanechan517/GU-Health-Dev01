@@ -1,0 +1,14 @@
+<apex:page standardController="Section_Product__c" title="Product - {!Section_Product__c.Name}">
+   
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+   
+   <apex:sectionHeader title="Product" subtitle="{!Section_Product__c.Name}"/>
+   
+   <chatter:feedWithFollowers entityId="{!Section_Product__c.Id}" />
+   
+   <apex:detail subject="{!Section_Product__c.Id}" relatedList="true" title="false" inlineEdit="true"/> 
+   
+</apex:page>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_$Group__c.Version__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Group__c.Group_Whics_Name__c</field>
+    </columns>
+    <columns>
+        <field>Section__c.Group_Directory_todel__c</field>
+    </columns>
+    <columns>
+        <field>Section__c.Group_Directory__c</field>
+    </columns>
+    <columns>
+        <field>FK_$Group__c.Group_Directory__c</field>
+    </columns>
+    <description>R1 Compare group directory in section to group directory in group.</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Section__c.Group_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Group directory field value check</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Section__c@Section__c.Group__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>CUST_NAME</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>FK_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

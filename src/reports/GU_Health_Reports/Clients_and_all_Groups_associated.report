@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Group__c.Version__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Opportunity_Type__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Is_Active__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Commercial_Analyst__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Account_Support__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Start_Date__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Real_Renewal_Date__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Renewal_Process_Status__c</field>
+    </columns>
+    <description>Clients with all groups, grouped by Client name and Group Number</description>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Group__c.Client_Name__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Group__c.Group_Number__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Clients and all Groups associated</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Group__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Group__c.Version__c</sortColumn>
+    <sortOrder>Desc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Group__c.Closed_on__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

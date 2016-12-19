@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to requester that cases have been blocked</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GUHealth</letterhead>
+    <name>Parent Case Blocked</name>
+    <style>freeForm</style>
+    <subject>Cases Blocked - {!Case.Related_Record_Type__c} | {!Case.Related_Record__c}</subject>
+    <textOnly>{!Case.Related_Record_Type__c} | {!Case.Related_Record__c}
+
+All cases relating to case {!Case.CaseNumber} have been blocked.
+
+To find out which case caused the issue and what needs to be done to resolve the issue please log into Salesforce and review the case comments of the case that has status &quot;Case Aborted&quot;.
+
+Once the issue has been resolved simply create the same set of cases again but this time skip the steps that have already been successfully completed.
+
+{!Case.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

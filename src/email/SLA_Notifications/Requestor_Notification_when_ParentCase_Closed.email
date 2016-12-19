@@ -1,0 +1,6 @@
+<table height="400" width="550" cellpadding="5" border="0" cellspacing="5" >
+<tr height="400" valign="top" >
+<td style=" color:#000000; font-size:12pt; background-color:#FFFFFF; font-family:arial; bLabel:main; bEditID:r3st1;" tEditID="c1r1" locked="0" aEditID="c1r1" >
+<![CDATA[<b style="color: rgb(51, 51, 51); font-size: medium;">{!Case.Related_Record_Type__c} |&nbsp;{!Case.Related_Record__c}</b><br><br><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333">The following request (case) has been completed:</font></font><br><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333">{!Case.CaseNumber}</font></font><div><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333"><br></font></font></div><div><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333">To view the case (and reach the record you requested the cases for) please use the following link:</font></font></div><div><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333">{!Case.Link}</font></font></div>]]></td>
+</tr>
+</table>

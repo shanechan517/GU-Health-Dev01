@@ -1,0 +1,594 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>sectionProductView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Products associated to Sections from WHICS</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fields>
+        <fullName>Ambulance__c</fullName>
+        <externalId>false</externalId>
+        <label>Ambulance</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Emergency Transport Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Covered</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Ancillary_Date_Withdrawn__c</fullName>
+        <externalId>false</externalId>
+        <label>Ancillary Date Withdrawn</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Base_Upgrade__c</fullName>
+        <description>Select if relevant to SplitPay groups. This information ensures products displayed as base or upgrade in book.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select if relevant to SplitPay groups. This information ensures products displayed as base or upgrade in book.</inlineHelpText>
+        <label>Base or Upgrade Product</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Add On</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Code__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Broker Code</label>
+        <referenceTo>Broker_Code__c</referenceTo>
+        <relationshipName>Section_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Clone_of__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Clone of</label>
+        <referenceTo>Section_Product__c</referenceTo>
+        <relationshipName>Section_Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Cover_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Cover Code</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Date_closed__c</fullName>
+        <externalId>false</externalId>
+        <label>Del Date closed</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Display_Product_in_Book__c</fullName>
+        <externalId>false</externalId>
+        <label>Display Product in Book</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Yes, as withdrawn product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Excess_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee Excess Code :ThisWillBeDeleted</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employee_Excess_Code_lkp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Lookup for employee excess code</description>
+        <externalId>false</externalId>
+        <label>Employee Excess Code</label>
+        <referenceTo>ExcessCodeEmployee__c</referenceTo>
+        <relationshipLabel>Products</relationshipLabel>
+        <relationshipName>Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Employee_Excess_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Employee Excess Description</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Employer_Excess_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Employer Excess Code  :ThisWillBeDeleted</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Employer_Excess_Code_lkp__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Employer Excess Code</label>
+        <referenceTo>ExcessCodeEmployer__c</referenceTo>
+        <relationshipLabel>Products</relationshipLabel>
+        <relationshipName>Products</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Employer_Excess_Description__c</fullName>
+        <externalId>false</externalId>
+        <label>Employer Excess Description</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Fixed_Amount_Funded__c</fullName>
+        <externalId>false</externalId>
+        <label>Fixed Amount Funded</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Currency</type>
+    </fields>
+    <fields>
+        <fullName>Hospital_Date_Withdrawn__c</fullName>
+        <externalId>false</externalId>
+        <label>Hospital Date Withdrawn</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>LHC__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Del LHC</label>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Medical_Date_Withdrawn__c</fullName>
+        <externalId>false</externalId>
+        <label>Medical Date Withdrawn</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Overseas_Visitor_status__c</fullName>
+        <externalId>false</externalId>
+        <label>Overseas Visitor status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>RHCA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Non-RHCA</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Percentage_Funded__c</fullName>
+        <externalId>false</externalId>
+        <label>Percentage Funded</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>2</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Product_Code__c</fullName>
+        <description>Unique code used to identify the product.</description>
+        <externalId>false</externalId>
+        <label>Product Code</label>
+        <length>50</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Long_Name__c</fullName>
+        <description>Long description for product</description>
+        <externalId>false</externalId>
+        <label>Product Long Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Name_System__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Name System (Long)</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>TextArea</type>
+    </fields>
+    <fields>
+        <fullName>Product_Name_Web__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Name Web</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Product_Type__c</fullName>
+        <externalId>false</externalId>
+        <label>Product Type</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Ancillary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hospital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Medical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ancillary &amp; Medical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ancillary &amp; Hospital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Ancillary, Medical &amp; Hospital</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Rate_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Rebate__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Del Rebate</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Resident_status__c</fullName>
+        <externalId>false</externalId>
+        <label>Resident status</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Resident</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Overseas Visitor</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <defaultValue>TODAY()</defaultValue>
+        <externalId>false</externalId>
+        <label>Del Start Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+OR(
+AND(
+NOT(ISBLANK(Hospital_Date_Withdrawn__c)),
+Hospital_Date_Withdrawn__c &lt;= TODAY()),
+AND(
+NOT(ISBLANK(Medical_Date_Withdrawn__c)),
+Medical_Date_Withdrawn__c &lt;= TODAY()),
+AND(
+NOT(ISBLANK(Ancillary_Date_Withdrawn__c)),
+Ancillary_Date_Withdrawn__c &lt;= TODAY()))
+,&apos;Component Withdrawn&apos;,&apos;Active&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Tax_statement_required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Tax statement required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Withdrawn_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Del Withdrawn Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <label>Product</label>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Cover_Code__c</columns>
+        <columns>Product_Code__c</columns>
+        <columns>Rate_Code__c</columns>
+        <columns>Status__c</columns>
+        <columns>Withdrawn_Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Date_closed__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>All1</fullName>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <nameField>
+        <label>Product Name System (Short)</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Products</pluralLabel>
+    <searchLayouts>
+        <customTabListAdditionalFields>Broker_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Cover_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Product_Code__c</customTabListAdditionalFields>
+        <customTabListAdditionalFields>Status__c</customTabListAdditionalFields>
+        <lookupDialogsAdditionalFields>Cover_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Product_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Rate_Code__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Status__c</lookupDialogsAdditionalFields>
+        <searchFilterFields>NAME</searchFilterFields>
+        <searchFilterFields>Product_Code__c</searchFilterFields>
+        <searchFilterFields>Cover_Code__c</searchFilterFields>
+        <searchFilterFields>Rate_Code__c</searchFilterFields>
+        <searchResultsAdditionalFields>Product_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Cover_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Status__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Product_Type__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Base_Upgrade__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Ambulance_is_mandatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>ISPICKVAL( Ambulance__c , &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Ambulance__c</errorDisplayField>
+        <errorMessage>Ambulance is mandatory</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Overseas_Visitor_Validation</fullName>
+        <active>false</active>
+        <description>Mandatory when Resident status = Overseas Visitor</description>
+        <errorConditionFormula>AND(
+INCLUDES(Resident_status__c, &apos;Overseas Visitor&apos;),
+ISNULL(Overseas_Visitor_status__c)
+)</errorConditionFormula>
+        <errorMessage>Overseas Visitor Status is mandatory when Resident Status equals &apos;Overseas Visitor&apos;</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>When_Product_type_Chng_on_Cover_Code_set</fullName>
+        <active>true</active>
+        <errorConditionFormula>Cover_Code__c != null &amp;&amp;   ISCHANGED(Product_Type__c)</errorConditionFormula>
+        <errorDisplayField>Product_Type__c</errorDisplayField>
+        <errorMessage>Cannot change Product Type when Cover Code is set. To change Product Type, clear the value for Cover Code and Save changes with new Product and then re-apply Cover Code as applicable</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Related_Sections</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <encodingKey>UTF-8</encodingKey>
+        <hasMenubar>false</hasMenubar>
+        <hasScrollbars>true</hasScrollbars>
+        <hasToolbar>false</hasToolbar>
+        <height>600</height>
+        <isResizable>true</isResizable>
+        <linkType>url</linkType>
+        <masterLabel>Related Sections</masterLabel>
+        <openType>newWindow</openType>
+        <position>none</position>
+        <protected>false</protected>
+        <showsLocation>false</showsLocation>
+        <showsStatus>false</showsStatus>
+        <url>/00O28000003gqeh?pv0={!Section_Product__c.Id}</url>
+    </webLinks>
+</CustomObject>

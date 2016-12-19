@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseValues>
+        <plural>false</plural>
+        <value>Case Template Group</value>
+    </caseValues>
+    <caseValues>
+        <plural>true</plural>
+        <value>Case Template Groups</value>
+    </caseValues>
+    <fields>
+        <label><!-- ExternalID --></label>
+        <name>ExternalID__c</name>
+    </fields>
+    <fields>
+        <label><!-- IsActive --></label>
+        <name>IsActive__c</name>
+    </fields>
+    <fields>
+        <label><!-- Number of Children --></label>
+        <name>Number_of_Children__c</name>
+    </fields>
+    <fields>
+        <label><!-- Object --></label>
+        <name>Object__c</name>
+        <picklistValues>
+            <masterLabel>Client</masterLabel>
+            <translation><!-- Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Maintenance</masterLabel>
+            <translation><!-- Client Maintenance --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Group</masterLabel>
+            <translation><!-- Group --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>None</masterLabel>
+            <translation><!-- None --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Opportunity</masterLabel>
+            <translation><!-- Opportunity --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Renewal</masterLabel>
+            <translation><!-- Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Section</masterLabel>
+            <translation><!-- Section --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Stages --></label>
+        <name>Stages__c</name>
+        <picklistValues>
+            <masterLabel>Approved by Broker/Client</masterLabel>
+            <translation><!-- Approved by Broker/Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Awaiting Approval</masterLabel>
+            <translation><!-- Awaiting Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Background / Validation</masterLabel>
+            <translation><!-- Background / Validation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Agreement Active</masterLabel>
+            <translation><!-- Client Agreement Active --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Client Agreement Expired</masterLabel>
+            <translation><!-- Client Agreement Expired --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Unsuccessful</masterLabel>
+            <translation><!-- Closed Unsuccessful --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed Won</masterLabel>
+            <translation><!-- Closed Won --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Closed/Declined</masterLabel>
+            <translation><!-- Closed/Declined --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Analysis</masterLabel>
+            <translation><!-- Commercial Analysis --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Commercial Quote</masterLabel>
+            <translation><!-- Commercial Quote --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>In Preparation</masterLabel>
+            <translation><!-- In Preparation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Negotiation with Client/Broker</masterLabel>
+            <translation><!-- Negotiation with Client/Broker --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>New Agreement Renewal</masterLabel>
+            <translation><!-- New Agreement Renewal --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Non Standard Process Approval</masterLabel>
+            <translation><!-- Non Standard Process Approval --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Advising Broker/Client</masterLabel>
+            <translation><!-- Ready for Advising Broker/Client --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Finalise Docs</masterLabel>
+            <translation><!-- Ready for Finalise Docs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Negotiation</masterLabel>
+            <translation><!-- Ready for Negotiation --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Ready for Uploading Docs</masterLabel>
+            <translation><!-- Ready for Uploading Docs --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Rejected from Approval Process</masterLabel>
+            <translation><!-- Rejected from Approval Process --></translation>
+        </picklistValues>
+        <picklistValues>
+            <masterLabel>Tender Document</masterLabel>
+            <translation><!-- Tender Document --></translation>
+        </picklistValues>
+    </fields>
+    <fields>
+        <label><!-- Subject --></label>
+        <name>Subject__c</name>
+    </fields>
+    <layouts>
+        <layout>Case Template Group Layout</layout>
+        <sections>
+            <label><!-- Custom Links --></label>
+            <section>Custom Links</section>
+        </sections>
+        <sections>
+            <label><!-- related Objects/Stages --></label>
+            <section>related Objects/Stages</section>
+        </sections>
+    </layouts>
+    <startsWith>Consonant</startsWith>
+</CustomObjectTranslation>

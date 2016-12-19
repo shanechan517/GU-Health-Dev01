@@ -1,0 +1,165 @@
+<apex:page standardController="Section__c" extensions="sectionExtension" title="Section - {!Section__c.Name}">
+   
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-1.11.1.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery-ui.js')}"/>
+   <apex:includeScript value="{!URLFOR($Resource.jq, '/js/jquery.validate.js')}"/>
+   <apex:stylesheet value="{!URLFOR($Resource.jq, '/css/jquery-ui.css')}" />
+   
+   <script>
+       $( document ).ready(function() {
+              
+           initFunction();
+           
+       });
+       
+       function initFunction(){
+           $("h3:contains('Cases')").parent("td").siblings(".pbButton").html('<input value="New Cases" class="btn" id="casesBtn" name="casesBtn" title="New Cases" type="button" style="padding:0px 3px;" />');
+           
+           $( "#casesBtn" ).click(function() {
+               window.location.replace("caseTemplateBuilder?oid={!Id}&sObjectType=Section&aid={!Section__c.Client_Id__c}");
+           });
+           
+           $( "td.labelCol" ).each(function() {
+               if($( this ).html() == 'Broker Name'){
+                   $( this ).next().addClass('brokerName');
+               }
+           });
+
+           $( "th.zen-deemphasize" ).each(function() {
+               if($( this ).html() == 'Section Product Link: Section Product Link Name'){
+                   $( this ).html('Section Product Link Name');
+               }
+           });
+           
+           $(".brokerName:contains('{!Section__c.Broker_Name__c}')").html('<a href="/{!Section__c.Broker_Id__c}">{!Section__c.Broker_Name__c}</a>');
+           
+           var syncList = JSON.parse('{!syncFields}');
+           for(var i = 0; i < syncList.length; i++){
+               $( "td.labelCol" ).each(function() {
+                   if($( this ).text() == syncList[i]){
+                       $( this ).addClass('syncField');
+                   }else if($( this ).children(".helpButton").length){
+                       if($( this ).children(".helpButton").html().split('<img')[0] == syncList[i]){
+                           $( this ).addClass('syncField');   
+                       }
+                   }
+               });
+           }
+           
+           var lockedList = JSON.parse('{!lockedFields}');
+           for(var i = 0; i < lockedList.length; i++){
+               $( "td.labelCol" ).each(function() {
+                   if($( this ).html() == lockedList[i]){
+                       $( this ).addClass('lockedField');
+                   }else if($( this ).children(".helpButton").length){
+                       if($( this ).children(".helpButton").html().split('<img')[0] == lockedList[i]){
+                           $( this ).addClass('lockedField');   
+                       }
+                   }
+               });
+           }
+       }
+       
+   </script>
+   
+   <style>
+    .fewerMore{
+       display:none;
+    }
+    .syncField{
+       background-image: url('{!$Resource.syncICO}');
+    }
+    .lockedField{
+       background-image: url('{!$Resource.lockICO}');
+    }
+    .syncField, .lockedField{
+      background-repeat: no-repeat;
+        background-size: 20px;
+      padding-left:20px !important;
+    }
+    .keyArea{
+        float: right;
+        color: #666;
+        margin-bottom:-100px;
+     }
+     .keyInfo{
+        padding-left:26px;
+        min-height: 20px;
+        padding-top: 4px !important;
+        padding: 0;
+        margin: 0px;
+     }
+   </style>
+   
+    <div class="keyArea">
+        <p class="syncField keyInfo">Sync Field</p>
+        <p class="lockedField keyInfo">Locked Field</p>
+    </div>
+    
+   <apex:sectionHeader title="Section" subtitle="{!Section__c.Name}"/>
+   
+   <chatter:feedWithFollowers entityId="{!Section__c.Id}" />
+   
+   <apex:detail subject="{!Section__c.Id}" relatedList="true" title="false" inlineEdit="true" oncomplete="initFunction()"/> 
+   
+   <apex:outputPanel id="SectionProductLinkList"
+        layout="block"
+        styleclass="bRelatedList SectionProductLinkList">
+        
+        <apex:pageBlock id="blocknRelatedList"
+            title="Closed Products">
+
+            <apex:form id="formNewRelatedList">
+                <apex:outputPanel layout="block"
+                    rendered="{!splList.size == 0}"
+                    style="border: 1px solid #D4DADC; padding: 5px 2px 4px 5px;">
+
+                    <span>{!splMapMessage}</span>
+                </apex:outputPanel>
+
+                <apex:pageBlockTable id="tableNewRelatedList"
+                    value="{!splList}"
+                    var="spl"
+                    rendered="{!splList.size != 0}">
+
+                    <apex:column headerValue="Product Name" >
+                        <apex:outputLink value="../{!spl.Product__c}">{!spl.Product__r.Name}</apex:outputLink>
+                    </apex:column>
+                    
+                    <apex:column headerValue="Product Code" >
+                        <apex:outputText value="{!spl.Product__r.Product_Code__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Start Date" >
+                        <apex:outputField value="{!spl.Start_Date__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Date Closed" >
+                        <apex:outputField value="{!spl.Date_closed__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Rate Code" >
+                        <apex:outputText value="{!spl.Product__r.Rate_Code__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Product Type" >
+                        <apex:outputText value="{!spl.Product__r.Product_Type__c}" />
+                    </apex:column>
+                    
+                    <apex:column headerValue="Base or Upgrade" >
+                        <apex:outputText value="{!spl.Base_or_Upgrade__c}" />    
+                    </apex:column>
+                    
+                    <apex:column headerValue="Final Group Version" >
+                        <apex:outputLink value="../{!spl.Section__r.Group__c}">Version {!FLOOR(spl.Section__r.Group_Version__c)}</apex:outputLink>
+                    </apex:column>
+                    
+                </apex:pageBlockTable>
+                
+            </apex:form>
+
+        </apex:pageBlock>
+        
+    </apex:outputPanel>
+   
+</apex:page>

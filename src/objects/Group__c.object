@@ -1,0 +1,3701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <actionOverrides>
+        <actionName>Accept</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>CancelEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Clone</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Delete</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Edit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Follow</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>List</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>New</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>SaveEdit</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>Tab</actionName>
+        <type>Default</type>
+    </actionOverrides>
+    <actionOverrides>
+        <actionName>View</actionName>
+        <content>groupView</content>
+        <skipRecordTypeSelect>false</skipRecordTypeSelect>
+        <type>Visualforce</type>
+    </actionOverrides>
+    <allowInChatterGroups>false</allowInChatterGroups>
+    <compactLayoutAssignment>SYSTEM</compactLayoutAssignment>
+    <deploymentStatus>Deployed</deploymentStatus>
+    <description>Groups from WHICS</description>
+    <enableActivities>true</enableActivities>
+    <enableBulkApi>true</enableBulkApi>
+    <enableFeeds>false</enableFeeds>
+    <enableHistory>true</enableHistory>
+    <enableReports>true</enableReports>
+    <enableSearch>true</enableSearch>
+    <enableSharing>true</enableSharing>
+    <enableStreamingApi>true</enableStreamingApi>
+    <fieldSets>
+        <fullName>CompareFields</fullName>
+        <description>Fields for the publish wizard</description>
+        <displayedFields>
+            <field>Group_Whics_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Rate_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Original_Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Closed_on__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Compare Fields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>SyncFields</fullName>
+        <description>In the version synchronization or non-WHICS fields</description>
+        <displayedFields>
+            <field>Group_Name_Web__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type_of_Rates__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Members__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Join_Online_available__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Group_Directory__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Waiting_Periods__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Waiting_Period_Waiver_Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Special_Features__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Warnings_Alerts__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Effective_end_date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Requires_Specific_Reporting_Template__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Report_Frequency__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Report_Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Report_End_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Required_by__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Commercial_Financial_Summary__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Commercial_Regular_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Membership_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Rebate_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Claims_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DRG_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Web_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Account_Manager_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Marketing_brochures_not_for_distribution__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Application_frequency_information__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FreeCall_number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Hours_of_Operation__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Broker_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Client_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Contact_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Address_Line_1__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Address_Line_2__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_City__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_State__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Postcode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Fax__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Email__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Phone__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_application_instructions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Effective_Date_for_Application__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Client_logo_on_application_booklet__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Client_Logo_File_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_broker_page_in_booklet__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_brochure_wording3__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_brochure_wording6__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_brochure_wording7__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_brochure_wording8__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Company_Rights__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>GU_Health_Plan_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Book_layout__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Manual_Book_Required__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Marketing_comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>How_to_Join_Transfer__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>SyncFields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>WHICSFields</fullName>
+        <description>Fields that can only be edited in draft records</description>
+        <displayedFields>
+            <field>Group_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Group_Whics_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Rate_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Original_Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Closed_on__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>WHICS Fields</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>X_001_Group</fullName>
+        <description>Publish Wizard Visualforce page</description>
+        <displayedFields>
+            <field>Name</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Broker_Name_From_Opp__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Client_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Group_Name_Web__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Group_Number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Group_Whics_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Opportunity__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Rate_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Type_of_Rates__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Version__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Group Information</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>X_002_Group</fullName>
+        <description>Publish Wizard Visualforce page</description>
+        <displayedFields>
+            <field>Account_Support__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Group_Directory__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>How_to_Join_Transfer__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Join_Online_available__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Additional Information</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>X_003_Group</fullName>
+        <description>Publish Wizard Visualforce page</description>
+        <displayedFields>
+            <field>Special_Features__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Waiting_Periods__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Waiting_Period_Waiver_Comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Warnings_Alerts__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Group Arrangements</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>X_004_Group</fullName>
+        <description>Publish Wizard Visualforce page</description>
+        <displayedFields>
+            <field>Original_Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Closed_on__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Record Dates</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>X_005_Group</fullName>
+        <description>Publish Wizard Visualforce page</description>
+        <displayedFields>
+            <field>Real_Renewal_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Renewal Information</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>X_006_Group</fullName>
+        <description>Publish Wizard Visualforce page</description>
+        <displayedFields>
+            <field>Requires_Specific_Reporting_Template__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Report_Frequency__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Report_Start_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Report_End_Date__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Required_by__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Commercial_Financial_Summary__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Commercial_Regular_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Membership_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Rebate_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Claims_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>DRG_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Web_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Account_Manager_Reports__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Reporting</label>
+    </fieldSets>
+    <fieldSets>
+        <fullName>X_007_Group</fullName>
+        <description>Publish Wizard Visualforce page</description>
+        <displayedFields>
+            <field>Marketing_brochures_not_for_distribution__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Application_frequency_information__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>FreeCall_number__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Hours_of_Operation__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Effective_Date_for_Application__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Client_logo_on_application_booklet__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Client_Logo_File_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_broker_page_in_booklet__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_brochure_wording3__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Broker_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Client_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Contact_Name__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Address_Line_1__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Address_Line_2__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_City__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_State__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Postcode__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Fax__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Email__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_Phone__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Return_application_instructions__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Book_layout__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Manual_Book_Required__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Marketing_comments__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_brochure_wording6__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_brochure_wording7__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Extra_brochure_wording8__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>Company_Rights__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <displayedFields>
+            <field>GU_Health_Plan_Code__c</field>
+            <isFieldManaged>false</isFieldManaged>
+            <isRequired>false</isRequired>
+        </displayedFields>
+        <label>Marketing / Brochure</label>
+    </fieldSets>
+    <fields>
+        <fullName>Account_Manager_Reports__c</fullName>
+        <externalId>false</externalId>
+        <label>Account Manager Reports</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Membership List</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>SLA Reports</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Account_Support__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Account Support</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Application_frequency_information__c</fullName>
+        <description>Additional text used by marketing on brochures</description>
+        <externalId>false</externalId>
+        <label>Application Instructions Specific</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Book_layout__c</fullName>
+        <description>Indicates the type of book layout required to display the products.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the type of book layout required to display the products.</inlineHelpText>
+        <label>Book layout</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Standard</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Mix and match</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Broker_Name_From_Opp__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Broker__r.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Broker Name</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Claims_Reports__c</fullName>
+        <externalId>false</externalId>
+        <label>Claims Reports</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Hosp &amp; Medical</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hosp &amp; Medical with Counts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hosp &amp; Medical by Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hosp &amp; Medical by Prod with MBS &amp; Excess</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hosp &amp; Medical YTD</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dental &amp; Ancillary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dental &amp; Ancillary with Counts</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dental &amp; Ancillary by Product</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Top 10 Dental &amp; Ancillary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Client_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Logo_File_Name__c</fullName>
+        <description>File name of the logo supplied by client [location and size and format to be confirmed] to appear in the book</description>
+        <externalId>false</externalId>
+        <inlineHelpText>File name of the logo supplied by client [location and size and format to be confirmed] to appear in the book</inlineHelpText>
+        <label>Client Logo File Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_Name__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.Account.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Client</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Client_logo_on_application_booklet__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Set to True when the clients logo is included on marketing booklets.</description>
+        <externalId>false</externalId>
+        <label>Client logo required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Clone_of_Id__c</fullName>
+        <externalId>false</externalId>
+        <formula>Clone_of__r.Id</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Clone of Id</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Clone_of__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Clone of</label>
+        <referenceTo>Group__c</referenceTo>
+        <relationshipLabel>Copies</relationshipLabel>
+        <relationshipName>Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Closed_on__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date that the record was closed. If this date is populated and is less then todays date (or the same date) then the record will be closed.</inlineHelpText>
+        <label>Closed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Commercial_Analyst__c</fullName>
+        <description>Derived from parent opportunity</description>
+        <externalId>false</externalId>
+        <formula>IF(
+NOT(ISBLANK(Opportunity__r.Commercial_Analyst__c)),
+Opportunity__r.Commercial_Analyst__r.LastName &amp; &apos;, &apos; &amp; Opportunity__r.Commercial_Analyst__r.FirstName,
+&apos;&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Commercial Analyst</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Commercial_Financial_Summary__c</fullName>
+        <externalId>false</externalId>
+        <label>Commercial Financial Summary</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Financial Analyais Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Hospital &amp; Medical Claims Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Dental &amp; Ancillary Claims Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Commercial_Regular_Reports__c</fullName>
+        <externalId>false</externalId>
+        <label>Commercial Regular Reports</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Payroll Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Membership Movement Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Membership Bridge Report</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Company_Rights__c</fullName>
+        <description>Set to True when the company has rights to obtain member data.</description>
+        <externalId>false</externalId>
+        <label>Company Rights</label>
+        <picklist>
+            <picklistValues>
+                <fullName>No Excess</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>DRG_Reports__c</fullName>
+        <externalId>false</externalId>
+        <label>DRG Reports</label>
+        <picklist>
+            <picklistValues>
+                <fullName>DRG Standard (all)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DRG for Employee (Client)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>DRG for Customer (Dependants)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expanded DRG Standard (all)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expanded DRG for Employee (Client)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Expanded DRG for Customer (Dependants)</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Do_Not_Calculate_Renewal_Date__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <inlineHelpText>Prevent the system from calculating the renewal date automatically (this can be used in special circumstances where the renewal date needs to be manually set to a date that does not meet standard procedural requirements e.g. can not wait 12 months)</inlineHelpText>
+        <label>Do Not Calculate Renewal Date</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Effective_Date_for_Application__c</fullName>
+        <description>Date that appears in the book to indicate when the plan is effective from. E.g. &apos;The enclosed information is effective from &lt;date&gt;&apos;</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Date that appears in the book to indicate when the plan is effective from. E.g. &apos;The enclosed information is effective from &lt;date&gt;&apos;</inlineHelpText>
+        <label>Health Plan Effective Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Effective_end_date__c</fullName>
+        <description>The date that the process started (may differ to created date if the record was created but not actioned at the same time)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Manually enter the process start date</inlineHelpText>
+        <label>Group Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>External_ID__c</fullName>
+        <externalId>true</externalId>
+        <label>External ID</label>
+        <length>30</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Extra_brochure_wording3__c</fullName>
+        <description>Additional plan information from the Client to appear in the book. No special characters or returns in text.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Additional plan information from the Client to appear in the book. No special characters or returns in text.</inlineHelpText>
+        <label>Client Supplied Plan Wording</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Extra_brochure_wording6__c</fullName>
+        <description>Fields required for client application / brochure. To be finalised by marketing.</description>
+        <externalId>false</externalId>
+        <label>Extra application wording 1</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Extra_brochure_wording7__c</fullName>
+        <externalId>false</externalId>
+        <label>Extra application wording 2</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Extra_brochure_wording8__c</fullName>
+        <description>Fields required for client application / brochure. To be finalised by marketing.</description>
+        <externalId>false</externalId>
+        <label>Extra application wording 3</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Extra_broker_page_in_booklet__c</fullName>
+        <description>Select if a AON or HICA Broker panel is included in the book</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Select if a AON or HICA Broker panel is included in the book</inlineHelpText>
+        <label>Broker Wording Panel</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Aon Voluntary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Aon Corporate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HICA Voluntary</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>HICA Corporate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>FreeCall_number__c</fullName>
+        <description>Indicates the freecall number to appear in the book.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the freecall number to appear in the book.</inlineHelpText>
+        <label>FreeCall number</label>
+        <picklist>
+            <picklistValues>
+                <fullName>1300 551 004</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1300 787 230</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1300 791 757</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1300 794 624</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1800 005 315</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1800 249 966</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1800 633 819</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1800 681 926</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>1800 814 159</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>GU_Health_Plan_Code__c</fullName>
+        <description>Unique code to indicate which group the GU health plan applies to, e.g. &apos;BAE&apos; for GU Health Plan, group 83082. Appears on last page of the book.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Unique code to indicate which group the GU health plan applies to, e.g. &apos;BAE&apos; for GU Health Plan, group 83082. Appears on last page of the book.</inlineHelpText>
+        <label>GU Health Plan Code</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Directory__c</fullName>
+        <externalId>false</externalId>
+        <label>Group Directory</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Name_Web__c</fullName>
+        <description>This is the health plan name for title page, e.g. AON Corporate Health Plan</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the health plan name for title page, e.g. AON Corporate Health Plan</inlineHelpText>
+        <label>Group Name Web</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Number__c</fullName>
+        <description>Group Number from WHICS</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This field needs to be 5 digits long and all numeric</inlineHelpText>
+        <label>Group Number</label>
+        <length>10</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Group_Whics_Name__c</fullName>
+        <description>This is the long technical name, e.g. AON Corporation Australia Limited</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the long technical name, e.g. AON Corporation Australia Limited</inlineHelpText>
+        <label>Group Whics Name</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Hours_of_Operation__c</fullName>
+        <description>Indicates the hours of operation applicable for this group to appear in book.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates the hours of operation applicable for this group to appear in book.</inlineHelpText>
+        <label>Hours of Operation</label>
+        <picklist>
+            <picklistValues>
+                <fullName>8am to 7pm (EST), Monday to Friday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>8.30am to 5pm (EST), Monday to Friday</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>How_to_Join_Transfer__c</fullName>
+        <description>Indicates how a member may join the Group. This determines what join information is included in the book.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Indicates how a member may join the Group. This determines what join information is included in the book.</inlineHelpText>
+        <label>How to Join/Transfer</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Join Online</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Join Standard - Web Code Download App</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Join Standard - No Web Code</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Manual App Only</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>IsPublishWizard__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>A field (system) to distinguish whether the record has been edited using the publish wizard. Tells the system to change the record type to active.</description>
+        <externalId>false</externalId>
+        <label>Is Publish Wizard</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Active__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF( 
+Start_Date__c &gt; TODAY(), &apos;Pending&apos;, 
+IF(
+RecordType.Name == &apos;Draft&apos;, &apos;Draft&apos;,
+IF(
+AND(
+Renewal_Date__c &lt;= TODAY(),
+RecordType.Name == &apos;Replaced&apos;), &apos;Discarded&apos;,
+IF(
+AND(
+Closed_on__c &lt;= TODAY(),
+RecordType.Name == &apos;Replaced&apos;), &apos;Closed&apos;, &apos;Active&apos;))))</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Join_Online_available__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>Indicates if the Group has OMS</description>
+        <externalId>false</externalId>
+        <label>OMS Available</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Manual_Book_Required__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Manual Book Required</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_brochures_not_for_distribution__c</fullName>
+        <defaultValue>false</defaultValue>
+        <description>This field is set to True when the member can not receive marketing brochures.</description>
+        <externalId>false</externalId>
+        <label>Marketing brochures not for distribution</label>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Marketing_comments__c</fullName>
+        <description>AM to record if manual book is required for this group (ie not generated via TH in SF), and/or what Client Wording is on the company rights page (company specifc - currently 4 groups)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>AM to record if manual book is required for this group (ie not generated via TH in SF), and/or what Client Wording is on the company rights page (company specifc - currently 4 groups)</inlineHelpText>
+        <label>Marketing comments</label>
+        <length>32768</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Members__c</fullName>
+        <externalId>false</externalId>
+        <label>Members</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Membership_Reports__c</fullName>
+        <externalId>false</externalId>
+        <label>Membership Reports</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Service Limit Summary/Limit Util Extras</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Active policies by group</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cigna Membership List</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Cigna Membership List with Dep</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>TEXT(Opportunity__r.StageName)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Opportunity Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity_Type__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Type</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Opportunity__c</fullName>
+        <deleteConstraint>Restrict</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Opportunity/Renewal</label>
+        <referenceTo>Opportunity</referenceTo>
+        <relationshipLabel>Groups</relationshipLabel>
+        <relationshipName>Groups</relationshipName>
+        <required>true</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Original_Start_Date__c</fullName>
+        <description>The Date where the very first group was opened, regardless of version (for information purposes, is extracted from WHICS and should not be manually edited)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The Date where the very first group was opened, regardless of version (from WHICS)</inlineHelpText>
+        <label>Original Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Payroll_Contact__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <description>Payroll Contact for Operations</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Payroll Contact for Operations</inlineHelpText>
+        <label>Payroll Contact</label>
+        <referenceTo>Contact</referenceTo>
+        <relationshipLabel>Groups</relationshipLabel>
+        <relationshipName>Groups</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Postal_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Postal Address</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Rate_Code__c</fullName>
+        <externalId>false</externalId>
+        <label>Rate Code</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Real_Renewal_Date__c</fullName>
+        <description>Publish Date + 12 months (calculated by trigger)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date that the group is due for renewal.</inlineHelpText>
+        <label>Renewal Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Rebate_Reports__c</fullName>
+        <externalId>false</externalId>
+        <label>Rebate Reports</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Cigna Rebate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>GU Rebate</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Renewal_Date__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>The date that this record was superseded by publishing a newer version (this is a system field and can not be edited).</inlineHelpText>
+        <label>Discard Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the number of months before the next renewal.</inlineHelpText>
+        <label>Renewal Frequency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>12</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>9</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>6</fullName>
+                <default>false</default>
+            </picklistValues>
+            <restrictedPicklist>true</restrictedPicklist>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Owner__c</fullName>
+        <deleteConstraint>SetNull</deleteConstraint>
+        <externalId>false</externalId>
+        <label>Renewal Owner</label>
+        <referenceTo>User</referenceTo>
+        <relationshipName>Groups1</relationshipName>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Lookup</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Process_Status__c</fullName>
+        <externalId>false</externalId>
+        <formula>IF(
+ISBLANK( Renewal_Processed_Time__c ),
+&apos;Awaiting processing&apos;,
+&apos;Renewal has been created&apos;)</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <inlineHelpText>A renewal can only be generated from a record once. If you require a renewal date to be generated a second time, please contact a system administrator</inlineHelpText>
+        <label>Renewal Process Status</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Renewal_Processed_Time__c</fullName>
+        <description>When the renewal was created (either manually or automatically). Once this field is populated, the scheduler will not clone it automatically</description>
+        <externalId>false</externalId>
+        <inlineHelpText>When the renewal was created (either manually or automatically). Once this field is populated, the scheduler will not clone it automatically</inlineHelpText>
+        <label>Renewal Processed Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>DateTime</type>
+    </fields>
+    <fields>
+        <fullName>Renewal_Trigger_Date__c</fullName>
+        <description>This is the date that the system will create a new renewal (if one has not been created manually already).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>This is the date that the system will create a new renewal (if one has not been created manually already).</inlineHelpText>
+        <label>Renewal Trigger Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Report_End_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Report End Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Report_Frequency__c</fullName>
+        <externalId>false</externalId>
+        <label>Report Frequency</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Six-monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Nine-monthly</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Report_Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Report Start Date</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Required_by__c</fullName>
+        <externalId>false</externalId>
+        <label>Required by</label>
+        <length>250</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Requires_Specific_Reporting_Template__c</fullName>
+        <externalId>false</externalId>
+        <label>Requires Specific Reporting Template</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>No</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Return_Address_Line_1__c</fullName>
+        <description>Return address to appear in books for applications</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Return address to appear in books for applications</inlineHelpText>
+        <label>Return Address Line 1</label>
+        <length>155</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_Address_Line_2__c</fullName>
+        <description>Return address to appear in books for applications</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Return address to appear in books for applications</inlineHelpText>
+        <label>Return Address Line 2</label>
+        <length>100</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_Broker_Name__c</fullName>
+        <description>Broker name to appear in book to receive applications (if applicable)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Broker name to appear in book to receive applications (if applicable)</inlineHelpText>
+        <label>Return Broker Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_City__c</fullName>
+        <description>Return address to appear in books for applications</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Return address to appear in books for applications</inlineHelpText>
+        <label>Return City</label>
+        <length>40</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_Client_Name__c</fullName>
+        <description>Client name to appear in book to receive applications (if applicable)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Client name to appear in book to receive applications (if applicable)</inlineHelpText>
+        <label>Return Client Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_Contact_Name__c</fullName>
+        <description>Contact name to appear in book to receive applications (if applicable)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Contact name to appear in book to receive applications (if applicable)</inlineHelpText>
+        <label>Return Contact Name</label>
+        <length>255</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_Email__c</fullName>
+        <description>Return email address to appear in book for applications</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Return email address to appear in book for applications</inlineHelpText>
+        <label>Return Email</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Email</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_Fax__c</fullName>
+        <description>Return address to appear in books for applications</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Return address to appear in books for applications</inlineHelpText>
+        <label>Return Fax</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Return_Phone__c</fullName>
+        <description>Return phone number to appear in book for applications</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Return phone number to appear in book for applications</inlineHelpText>
+        <label>Return Phone</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Phone</type>
+    </fields>
+    <fields>
+        <fullName>Return_Postcode__c</fullName>
+        <description>Return address to appear in books for applications</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Return address to appear in books for applications</inlineHelpText>
+        <label>Return Postcode</label>
+        <length>20</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_State__c</fullName>
+        <description>Return address to appear in books for applications</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Return address to appear in books for applications</inlineHelpText>
+        <label>Return State</label>
+        <length>80</length>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Return_application_instructions__c</fullName>
+        <description>Alternative return address or contact information for applications (e.g. enter block text to appear in books; no special characters or returns between text)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Alternative return address or contact information for applications (e.g. enter block text to appear in books; no special characters or returns between text)</inlineHelpText>
+        <label>Alternative Return Address</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Review_date__c</fullName>
+        <externalId>false</externalId>
+        <label>Review date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Source__c</fullName>
+        <externalId>false</externalId>
+        <formula>Opportunity__r.RecordType.Name</formula>
+        <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+        <label>Source</label>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Special_Features__c</fullName>
+        <externalId>false</externalId>
+        <label>Special Features</label>
+        <length>2000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Start_Date__c</fullName>
+        <externalId>false</externalId>
+        <label>Publish Date</label>
+        <required>false</required>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Date</type>
+    </fields>
+    <fields>
+        <fullName>Street_Address__c</fullName>
+        <externalId>false</externalId>
+        <label>Street Address</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Type_of_Rates__c</fullName>
+        <description>confirms if product rates blended (if yes) or state by state (if no)</description>
+        <externalId>false</externalId>
+        <inlineHelpText>confirms if product rates blended (if yes) or state by state (if no)</inlineHelpText>
+        <label>Type of Rates</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Blended</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>State by state</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Blended and State by State</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Version__c</fullName>
+        <description>The version of the copy (calculated via the Group Version Number object which is updated via the Group Number)</description>
+        <externalId>false</externalId>
+        <label>Version</label>
+        <precision>3</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Waiting_Period_Waiver_Comments__c</fullName>
+        <externalId>false</externalId>
+        <label>Waiting Period Waiver Comments</label>
+        <length>2000</length>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Waiting_Periods__c</fullName>
+        <description>Waiting periods are full (12 months), half (6 months) or none (no waits).</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Waiting periods are full (12 months), half (6 months) or none (no waits).</inlineHelpText>
+        <label>Waiting Periods</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Full</fullName>
+                <default>true</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Half</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>None</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>Picklist</type>
+    </fields>
+    <fields>
+        <fullName>Warnings_Alerts__c</fullName>
+        <externalId>false</externalId>
+        <label>Warnings &amp; Alerts</label>
+        <length>2000</length>
+        <trackHistory>true</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>LongTextArea</type>
+        <visibleLines>3</visibleLines>
+    </fields>
+    <fields>
+        <fullName>Web_Reports__c</fullName>
+        <externalId>false</externalId>
+        <label>Web Reports</label>
+        <picklist>
+            <picklistValues>
+                <fullName>Web Uptime</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Join Online Data</fullName>
+                <default>false</default>
+            </picklistValues>
+            <picklistValues>
+                <fullName>Web Registration Info</fullName>
+                <default>false</default>
+            </picklistValues>
+            <sorted>false</sorted>
+        </picklist>
+        <required>false</required>
+        <trackHistory>false</trackHistory>
+        <trackTrending>false</trackTrending>
+        <type>MultiselectPicklist</type>
+        <visibleLines>4</visibleLines>
+    </fields>
+    <label>Group</label>
+    <listViews>
+        <fullName>Active</fullName>
+        <booleanFilter>1 OR 2</booleanFilter>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Broker_Name_From_Opp__c</columns>
+        <columns>Renewal_Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Is_Active__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>Opportunity_Type__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Is_Active__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <filters>
+            <field>Is_Active__c</field>
+            <operation>equals</operation>
+            <value>Pending</value>
+        </filters>
+        <label>Active</label>
+    </listViews>
+    <listViews>
+        <fullName>All</fullName>
+        <columns>NAME</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Is_Active__c</columns>
+        <columns>Opportunity_Type__c</columns>
+        <columns>Version__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All</label>
+    </listViews>
+    <listViews>
+        <fullName>Client_Maintenance</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>Renewal_Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operation>equals</operation>
+            <value>Client Maintenance</value>
+        </filters>
+        <label>Client Maintenance</label>
+    </listViews>
+    <listViews>
+        <fullName>Closed</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Broker_Name_From_Opp__c</columns>
+        <columns>Closed_on__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Is_Active__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Is_Active__c</field>
+            <operation>equals</operation>
+            <value>Closed</value>
+        </filters>
+        <label>Closed</label>
+    </listViews>
+    <listViews>
+        <fullName>Created_Today</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Renewal_Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>Is_Active__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>CREATED_DATE</field>
+            <operation>equals</operation>
+            <value>TODAY</value>
+        </filters>
+        <label>Created Today</label>
+    </listViews>
+    <listViews>
+        <fullName>Drafts</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Version__c</columns>
+        <columns>Is_Active__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>CREATEDBY_USER</columns>
+        <columns>UPDATEDBY_USER</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>RECORDTYPE</field>
+            <operation>equals</operation>
+            <value>Group__c.Draft</value>
+        </filters>
+        <label>Drafts</label>
+    </listViews>
+    <listViews>
+        <fullName>My_Groups</fullName>
+        <columns>NAME</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Version__c</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Broker_Name_From_Opp__c</columns>
+        <columns>Is_Active__c</columns>
+        <columns>Opportunity_Type__c</columns>
+        <filterScope>Mine</filterScope>
+        <label>My Groups</label>
+    </listViews>
+    <listViews>
+        <fullName>Opportunities</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Renewal_Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <columns>Is_Active__c</columns>
+        <columns>Version__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operation>equals</operation>
+            <value>Opportunity</value>
+        </filters>
+        <label>Opportunities</label>
+    </listViews>
+    <listViews>
+        <fullName>Ready_for_Renewal_Creation</fullName>
+        <columns>NAME</columns>
+        <columns>Group_Number__c</columns>
+        <columns>Commercial_Analyst__c</columns>
+        <columns>Real_Renewal_Date__c</columns>
+        <columns>Renewal_Process_Status__c</columns>
+        <columns>Renewal_Trigger_Date__c</columns>
+        <columns>Is_Active__c</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Renewal_Trigger_Date__c</field>
+            <operation>lessOrEqual</operation>
+            <value>TODAY</value>
+        </filters>
+        <filters>
+            <field>Renewal_Processed_Time__c</field>
+            <operation>equals</operation>
+        </filters>
+        <filters>
+            <field>Is_Active__c</field>
+            <operation>equals</operation>
+            <value>Active</value>
+        </filters>
+        <label>Ready for Renewal Creation</label>
+        <sharedTo>
+            <group>UAT_Setup</group>
+        </sharedTo>
+    </listViews>
+    <listViews>
+        <fullName>Renewals</fullName>
+        <columns>NAME</columns>
+        <columns>Client_Name__c</columns>
+        <columns>Renewal_Date__c</columns>
+        <columns>Start_Date__c</columns>
+        <columns>OWNER.ALIAS</columns>
+        <columns>CREATEDBY_USER.ALIAS</columns>
+        <filterScope>Everything</filterScope>
+        <filters>
+            <field>Opportunity_Type__c</field>
+            <operation>equals</operation>
+            <value>Renewal</value>
+        </filters>
+        <label>Renewals</label>
+    </listViews>
+    <nameField>
+        <label>Group Name Brochure</label>
+        <trackHistory>false</trackHistory>
+        <type>Text</type>
+    </nameField>
+    <pluralLabel>Groups</pluralLabel>
+    <recordTypeTrackHistory>false</recordTypeTrackHistory>
+    <recordTypes>
+        <fullName>Draft</fullName>
+        <active>true</active>
+        <description>A draft group (not yet implimented)</description>
+        <label>Draft</label>
+        <picklistValues>
+            <picklist>Account_Manager_Reports__c</picklist>
+            <values>
+                <fullName>Membership List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLA Reports</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Book_layout__c</picklist>
+            <values>
+                <fullName>Mix and match</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Claims_Reports__c</picklist>
+            <values>
+                <fullName>Dental %26 Ancillary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental %26 Ancillary by Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental %26 Ancillary with Counts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical YTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical by Prod with MBS %26 Excess</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical by Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical with Counts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top 10 Dental %26 Ancillary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Commercial_Financial_Summary__c</picklist>
+            <values>
+                <fullName>Dental %26 Ancillary Claims Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Analyais Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital %26 Medical Claims Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Commercial_Regular_Reports__c</picklist>
+            <values>
+                <fullName>Membership Bridge Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership Movement Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payroll Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Company_Rights__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Excess</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DRG_Reports__c</picklist>
+            <values>
+                <fullName>DRG Standard %28all%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRG for Customer %28Dependants%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRG for Employee %28Client%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanded DRG Standard %28all%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanded DRG for Customer %28Dependants%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanded DRG for Employee %28Client%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Extra_broker_page_in_booklet__c</picklist>
+            <values>
+                <fullName>Aon Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aon Voluntary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HICA Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HICA Voluntary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FreeCall_number__c</picklist>
+            <values>
+                <fullName>1300 551 004</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1300 787 230</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1300 791 757</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1300 794 624</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 005 315</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 249 966</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 633 819</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 681 926</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 814 159</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hours_of_Operation__c</picklist>
+            <values>
+                <fullName>8%2E30am to 5pm %28EST%29%2C Monday to Friday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8am to 7pm %28EST%29%2C Monday to Friday</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_to_Join_Transfer__c</picklist>
+            <values>
+                <fullName>Join Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Join Standard - No Web Code</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Join Standard - Web Code Download App</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual App Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Membership_Reports__c</picklist>
+            <values>
+                <fullName>Active policies by group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cigna Membership List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cigna Membership List with Dep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Limit Summary%2FLimit Util Extras</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rebate_Reports__c</picklist>
+            <values>
+                <fullName>Cigna Rebate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GU Rebate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Frequency__c</picklist>
+            <values>
+                <fullName>12</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Report_Frequency__c</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nine-monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Six-monthly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Requires_Specific_Reporting_Template__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Rates__c</picklist>
+            <values>
+                <fullName>Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blended and State by State</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State by state</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Waiting_Periods__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Half</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Web_Reports__c</picklist>
+            <values>
+                <fullName>Join Online Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Registration Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Uptime</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Group</fullName>
+        <active>true</active>
+        <description>Standard record type</description>
+        <label>Group</label>
+        <picklistValues>
+            <picklist>Account_Manager_Reports__c</picklist>
+            <values>
+                <fullName>Membership List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLA Reports</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Book_layout__c</picklist>
+            <values>
+                <fullName>Mix and match</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Claims_Reports__c</picklist>
+            <values>
+                <fullName>Dental %26 Ancillary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental %26 Ancillary by Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental %26 Ancillary with Counts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical YTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical by Prod with MBS %26 Excess</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical by Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical with Counts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top 10 Dental %26 Ancillary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Commercial_Financial_Summary__c</picklist>
+            <values>
+                <fullName>Dental %26 Ancillary Claims Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Analyais Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital %26 Medical Claims Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Commercial_Regular_Reports__c</picklist>
+            <values>
+                <fullName>Membership Bridge Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership Movement Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payroll Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Company_Rights__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Excess</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DRG_Reports__c</picklist>
+            <values>
+                <fullName>DRG Standard %28all%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRG for Customer %28Dependants%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRG for Employee %28Client%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanded DRG Standard %28all%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanded DRG for Customer %28Dependants%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanded DRG for Employee %28Client%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Extra_broker_page_in_booklet__c</picklist>
+            <values>
+                <fullName>Aon Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aon Voluntary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HICA Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HICA Voluntary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FreeCall_number__c</picklist>
+            <values>
+                <fullName>1300 551 004</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1300 787 230</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1300 791 757</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1300 794 624</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 005 315</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 249 966</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 633 819</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 681 926</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 814 159</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hours_of_Operation__c</picklist>
+            <values>
+                <fullName>8%2E30am to 5pm %28EST%29%2C Monday to Friday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8am to 7pm %28EST%29%2C Monday to Friday</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_to_Join_Transfer__c</picklist>
+            <values>
+                <fullName>Join Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Join Standard - No Web Code</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Join Standard - Web Code Download App</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual App Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Membership_Reports__c</picklist>
+            <values>
+                <fullName>Active policies by group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cigna Membership List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cigna Membership List with Dep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Limit Summary%2FLimit Util Extras</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rebate_Reports__c</picklist>
+            <values>
+                <fullName>Cigna Rebate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GU Rebate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Frequency__c</picklist>
+            <values>
+                <fullName>12</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Report_Frequency__c</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nine-monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Six-monthly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Requires_Specific_Reporting_Template__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Rates__c</picklist>
+            <values>
+                <fullName>Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blended and State by State</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State by state</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Waiting_Periods__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Half</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Web_Reports__c</picklist>
+            <values>
+                <fullName>Join Online Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Registration Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Uptime</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <recordTypes>
+        <fullName>Replaced</fullName>
+        <active>true</active>
+        <description>When a group is superceded</description>
+        <label>Replaced</label>
+        <picklistValues>
+            <picklist>Account_Manager_Reports__c</picklist>
+            <values>
+                <fullName>Membership List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>SLA Reports</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Book_layout__c</picklist>
+            <values>
+                <fullName>Mix and match</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Standard</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Upgrade</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Claims_Reports__c</picklist>
+            <values>
+                <fullName>Dental %26 Ancillary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental %26 Ancillary by Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Dental %26 Ancillary with Counts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical YTD</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical by Prod with MBS %26 Excess</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical by Product</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hosp %26 Medical with Counts</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Top 10 Dental %26 Ancillary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Commercial_Financial_Summary__c</picklist>
+            <values>
+                <fullName>Dental %26 Ancillary Claims Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Financial Analyais Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Hospital %26 Medical Claims Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Commercial_Regular_Reports__c</picklist>
+            <values>
+                <fullName>Membership Bridge Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Membership Movement Report</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Payroll Report</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Company_Rights__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>No Excess</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>DRG_Reports__c</picklist>
+            <values>
+                <fullName>DRG Standard %28all%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRG for Customer %28Dependants%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>DRG for Employee %28Client%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanded DRG Standard %28all%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanded DRG for Customer %28Dependants%29</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Expanded DRG for Employee %28Client%29</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Extra_broker_page_in_booklet__c</picklist>
+            <values>
+                <fullName>Aon Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Aon Voluntary</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HICA Corporate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>HICA Voluntary</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>FreeCall_number__c</picklist>
+            <values>
+                <fullName>1300 551 004</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1300 787 230</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1300 791 757</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1300 794 624</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 005 315</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 249 966</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 633 819</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 681 926</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>1800 814 159</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Hours_of_Operation__c</picklist>
+            <values>
+                <fullName>8%2E30am to 5pm %28EST%29%2C Monday to Friday</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>8am to 7pm %28EST%29%2C Monday to Friday</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>How_to_Join_Transfer__c</picklist>
+            <values>
+                <fullName>Join Online</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Join Standard - No Web Code</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Join Standard - Web Code Download App</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Manual App Only</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Membership_Reports__c</picklist>
+            <values>
+                <fullName>Active policies by group</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cigna Membership List</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Cigna Membership List with Dep</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Service Limit Summary%2FLimit Util Extras</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Rebate_Reports__c</picklist>
+            <values>
+                <fullName>Cigna Rebate</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>GU Rebate</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Renewal_Frequency__c</picklist>
+            <values>
+                <fullName>12</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>6</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>9</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Report_Frequency__c</picklist>
+            <values>
+                <fullName>Annually</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Nine-monthly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Quarterly</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Six-monthly</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Requires_Specific_Reporting_Template__c</picklist>
+            <values>
+                <fullName>No</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Yes</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Type_of_Rates__c</picklist>
+            <values>
+                <fullName>Blended</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Blended and State by State</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>State by state</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Waiting_Periods__c</picklist>
+            <values>
+                <fullName>Full</fullName>
+                <default>true</default>
+            </values>
+            <values>
+                <fullName>Half</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>None</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+        <picklistValues>
+            <picklist>Web_Reports__c</picklist>
+            <values>
+                <fullName>Join Online Data</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Registration Info</fullName>
+                <default>false</default>
+            </values>
+            <values>
+                <fullName>Web Uptime</fullName>
+                <default>false</default>
+            </values>
+        </picklistValues>
+    </recordTypes>
+    <searchLayouts>
+        <lookupDialogsAdditionalFields>Group_Whics_Name__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Group_Number__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Version__c</lookupDialogsAdditionalFields>
+        <lookupDialogsAdditionalFields>Is_Active__c</lookupDialogsAdditionalFields>
+        <searchResultsAdditionalFields>Is_Active__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Group_Number__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Rate_Code__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Start_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Renewal_Date__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Source__c</searchResultsAdditionalFields>
+        <searchResultsAdditionalFields>Version__c</searchResultsAdditionalFields>
+    </searchLayouts>
+    <sharingModel>ReadWrite</sharingModel>
+    <validationRules>
+        <fullName>Client_Logo_File_Name_is_mandatory</fullName>
+        <active>false</active>
+        <description>Client Logo File Name is mandatory</description>
+        <errorConditionFormula>IF((ISBLANK( Client_Logo_File_Name__c ) ||  ISNULL( Client_Logo_File_Name__c)  ) &amp;&amp;  Client_logo_on_application_booklet__c  = true, true, false)</errorConditionFormula>
+        <errorDisplayField>Client_Logo_File_Name__c</errorDisplayField>
+        <errorMessage>Client Logo File Name is mandatory</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Editing_Group_Number</fullName>
+        <active>true</active>
+        <description>Can only update the group number from a blank value</description>
+        <errorConditionFormula>IF(
+AND(
+ISCHANGED( Group_Number__c ),
+NOT(ISBLANK(PRIORVALUE( Group_Number__c ) ))),
+TRUE,FALSE)</errorConditionFormula>
+        <errorMessage>You can not change the Group Number once it has been set. If there has been an error during data entry please contact Administrative Support.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>FreeCall_number_is_Mandatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>ISPICKVAL( FreeCall_number__c , &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>FreeCall_number__c</errorDisplayField>
+        <errorMessage>Free call number is madatory</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>GroupNumberFormatting</fullName>
+        <active>true</active>
+        <description>5 characters and all numbers</description>
+        <errorConditionFormula>IF(
+OR(
+NOT(ISNUMBER(Group_Number__c)),
+LEN(Group_Number__c) != 5),
+TRUE,FALSE) &amp;&amp; Group_Number__c != null</errorConditionFormula>
+        <errorMessage>The group number is not correctly formatted.
+It must be 5 characters long and all numerical.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>GroupNumberisMandatoryIfNotDraft</fullName>
+        <active>true</active>
+        <errorConditionFormula>RecordType.Name != &apos;Draft&apos; &amp;&amp;   ISNULL(Group_Number__c )</errorConditionFormula>
+        <errorMessage>Cannot publish group without Group Number</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Hours_of_Operation_is_mandatory</fullName>
+        <active>false</active>
+        <errorConditionFormula>ISPICKVAL( Hours_of_Operation__c , &quot;&quot;)</errorConditionFormula>
+        <errorDisplayField>Hours_of_Operation__c</errorDisplayField>
+        <errorMessage>Hours of Operation is mandatory</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Active_Group</fullName>
+        <active>false</active>
+        <description>Locking an active group (can only change the close date or the record type)</description>
+        <errorConditionFormula>IF(
+AND(
+RecordTypeId = PRIORVALUE(RecordTypeId),
+OR(
+Closed_on__c = PRIORVALUE(Closed_on__c),
+ISNULL(Closed_on__c)),
+RecordType.Name = &apos;Group&apos;,
+Is_Active__c = &apos;Active&apos;),
+true,false)</errorConditionFormula>
+        <errorMessage>The only field you can edit on an active record is the Close Date. If you wish to make changes, please create a Client Maintenance copy using the button below.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Lock_Close_Group</fullName>
+        <active>false</active>
+        <description>Locking a closed group</description>
+        <errorConditionFormula>IF(
+AND(
+PRIORVALUE(Closed_on__c) &lt;= TODAY(),
+RecordTypeId = PRIORVALUE(RecordTypeId)),
+true,false)</errorConditionFormula>
+        <errorMessage>You can not make any changes to Closed groups</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>Marketing_Comt_Mandatory_if_Manual_Bk</fullName>
+        <active>true</active>
+        <errorConditionFormula>Manual_Book_Required__c = true &amp;&amp;  ( ISBLANK(Marketing_comments__c) ||  ISNULL(Marketing_comments__c)  )</errorConditionFormula>
+        <errorDisplayField>Marketing_comments__c</errorDisplayField>
+        <errorMessage>Marketing Comments is mandatory if &apos;Manual Book Required&apos; is set</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>No_Special_Characters</fullName>
+        <active>true</active>
+        <description>No special characters</description>
+        <errorConditionFormula>if( !ISNULL(Extra_brochure_wording3__c)  &amp;&amp;  !REGEX(Extra_brochure_wording3__c, &quot;^[a-zA-Z0-9. ]*$&quot;),true,false)</errorConditionFormula>
+        <errorDisplayField>Extra_brochure_wording3__c</errorDisplayField>
+        <errorMessage>No special characters or returns.</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RenewalDateMandatoryOnCheck</fullName>
+        <active>true</active>
+        <description>Validation rule that checks if the Renewal Date is changed when the &quot;Do Not Calculate Renewal Date&quot; field is checked.</description>
+        <errorConditionFormula>AND(
+	ISCHANGED(Do_Not_Calculate_Renewal_Date__c),
+	Do_Not_Calculate_Renewal_Date__c,
+	ISBLANK(Real_Renewal_Date__c)
+)</errorConditionFormula>
+        <errorDisplayField>Real_Renewal_Date__c</errorDisplayField>
+        <errorMessage>Field is required when selecting the &quot;Do Not Calculate Renewal Date&quot; checkbox</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>RenewalInformationCannotBUpdatedInDraft</fullName>
+        <active>false</active>
+        <description>Renewal Information Cannot be updated in Draft</description>
+        <errorConditionFormula>RecordType.Name = &apos;Draft&apos; &amp;&amp; 	Is_Active__c = &apos;Draft&apos; &amp;&amp;
+(
+ischanged(Real_Renewal_Date__c ) ||
+ischanged(Renewal_Owner__c ) ||
+ischanged(Renewal_Trigger_Date__c) ||
+ischanged(Do_Not_Calculate_Renewal_Date__c)
+)</errorConditionFormula>
+        <errorMessage>Renewal Information fields cannot be changed in Draft</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>UserCanOnlyUpdateGroupNumberInDraft</fullName>
+        <active>true</active>
+        <description>User can only add/edit group number in draft if version 1</description>
+        <errorConditionFormula>ISCHANGED(Group_Number__c ) &amp;&amp;  Version__c != 1 &amp;&amp; RecordType.Name != &apos;Draft&apos;</errorConditionFormula>
+        <errorMessage>User can only add/edit group number in draft if version 1</errorMessage>
+    </validationRules>
+    <validationRules>
+        <fullName>User_unable_to_change_group_number_in_dr</fullName>
+        <active>true</active>
+        <description>User unable to change group number in draft record if not version 1</description>
+        <errorConditionFormula>ISCHANGED(Group_Number__c ) &amp;&amp; Version__c != 1 &amp;&amp; RecordType.Name = &apos;Draft&apos;</errorConditionFormula>
+        <errorMessage>User unable to change group number in draft record if not version 1</errorMessage>
+    </validationRules>
+    <webLinks>
+        <fullName>Clone_Group</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Renewal</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+
+var currentId = &quot;{!Group__c.Id}&quot;;
+
+var newId = sforce.apex.execute(&quot;renewalManual&quot;,&quot;processManually&quot;,{recordId:currentId, include:&apos;with&apos;, rt:&apos;Renewal&apos;, objType:&apos;Group__c&apos;}); 
+
+if(newId != &apos;&apos; &amp;&amp; newId != null){ 
+
+window.location.replace(&quot;../&quot; + newId); 
+
+}else{ 
+
+showMessage(&apos;WARNING&apos;, &apos;There was an error creating the Renewal record. Please ensure the data is correct (and the renewal status equals &quot;Awaiting processing&quot;) and try again. If the error persists, please contact a system administrator.&apos;); 
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone_Group_Down</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Clone</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+
+var currentId = &quot;{!Group__c.Id}&quot;;
+
+var newId = sforce.apex.execute(&quot;renewalManual&quot;,&quot;processManually&quot;,{recordId:currentId, include:&apos;without&apos;, rt:&apos;Renewal&apos;, objType:&apos;Group__c&apos;});
+
+window.location.replace(&quot;../&quot; + newId);</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Clone_for_Client_Maintanence</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Create Client Maintanence</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+
+var currentId = &quot;{!Group__c.Id}&quot;; 
+
+var newId = sforce.apex.execute(&quot;renewalManual&quot;,&quot;processManually&quot;,{recordId:currentId, include:&apos;with&apos;, rt:&apos;Client Maintenance&apos;, objType:&apos;Group__c&apos;}); 
+
+if(newId != &apos;&apos; &amp;&amp; newId != null){
+
+window.location.replace(&quot;../&quot; + newId);
+
+}else{
+
+showMessage(&apos;WARNING&apos;, &apos;There was an error creating the Client Maintenance record. Please ensure the data is correct and try again. If the error persists, please contact a system administrator.&apos;);
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Close</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Close</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+
+if(&quot;{!Group__c.Closed_on__c}&quot; == &quot;&quot;){
+
+	alert(&quot;You have not set a closed date. Please set the closed date that the group should become closed.&quot;);
+
+}else{
+	
+	var r = confirm(&quot;Are you sure you want to close this group? If you are simply discarding a draft, please press cancel and select the Discard option.\n\nThis option will close the group number completely...&quot;);
+	if (r == true) { 
+	
+		if(&quot;{!Group__c.Opportunity_Status__c}&quot; != &quot;Closed Discarded&quot; &amp;&amp; &quot;{!Group__c.Opportunity_Status__c}&quot; != &quot;Closed/Declined&quot; &amp;&amp; &quot;{!Group__c.Opportunity_Status__c}&quot; != &quot;Closed Unsuccessful&quot; &amp;&amp; &quot;{!Group__c.Opportunity_Status__c}&quot; != &quot;Completed&quot;){
+			alert(&quot;The parent opportunity/renewal/client maintenance record has not been set to Closed or Completed. Please continue to the parent record and apply one of the suggested statuses if applicable.&quot;);
+		} 
+
+		var group = new sforce.SObject(&quot;Group__c&quot;);
+		var query = sforce.connection.query(&quot;SELECT Id from RecordType WHERE sObjectType = &apos;Group__c&apos; AND Name = &apos;Group&apos; LIMIT 1&quot;);
+
+		records = query.getArray(&quot;records&quot;);
+
+		for (var i=0; i&lt; records.length; i++) {
+			group.RecordTypeId = records[i].Id;
+		}
+		
+		var today = new Date();
+		var dd = today.getDate();
+		var mm = today.getMonth()+1;
+		var yyyy = today.getFullYear();
+
+		if(dd&lt;10) {
+			dd=&apos;0&apos;+dd
+		} 
+
+		if(mm&lt;10) {
+			mm=&apos;0&apos;+mm
+		} 
+		
+		var parent = new sforce.SObject(&quot;Group__c&quot;);
+		var pquery = sforce.connection.query(&quot;SELECT Id from Group__c WHERE Group_Number__c = &apos;{!Group__c.Group_Number__c}&apos; AND( Is_Active__c = &apos;Active&apos; OR Is_Active__c = &apos;Pending&apos;) LIMIT 1&quot;);
+		precords = pquery.getArray(&quot;records&quot;);
+		
+		for (var i=0; i&lt; precords.length; i++) {
+			parent.Id = precords[i].Id;
+		}
+		
+		if(parent.Id != &quot;&quot;){
+			var parentUpdate = sforce.apex.execute(&quot;renewalManual&quot;,&quot;retireGroup&quot;,{pgroup:parent,publishDate:yyyy + &quot;-&quot; + mm + &quot;-&quot; + dd});
+		}
+		
+		group.Id = &quot;{!Group__c.Id}&quot;;
+		group.Renewal_Date__c = null;
+
+		sforce.connection.update([group]);
+		window.location.reload();
+		
+	}
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Discard</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Discard</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)} 
+
+var currentId = &quot;{!Group__c.Id}&quot;; 
+
+var returnMessage = sforce.apex.execute(&quot;renewalManual&quot;,&quot;discardGroupVersion&quot;,{groupId:currentId}); 
+
+if(returnMessage == &apos;&apos;){ 
+
+window.location.replace(&quot;../&quot; + currentId); 
+
+}else{ 
+
+showMessage(&apos;WARNING&apos;, returnMessage); 
+
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Publish</fullName>
+        <availability>online</availability>
+        <description>Publish a Group from draft to group record type</description>
+        <displayType>button</displayType>
+        <linkType>javascript</linkType>
+        <masterLabel>Publish</masterLabel>
+        <openType>onClickJavaScript</openType>
+        <protected>false</protected>
+        <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)}
+
+if(&quot;{!Group__c.Start_Date__c}&quot; == &quot;&quot;){
+	alert(&quot;You have not set a publish date. Please set the publish date that the group should become active.&quot;);
+}else if(&quot;{!Group__c.Group_Number__c}&quot; == &quot;&quot;){
+	alert(&quot;You can not publish a Group that has not been assigned a Group Number.&quot;);
+}else if(&quot;{!Group__c.Opportunity_Status__c}&quot; == &quot;Closed Won&quot; || &quot;{!Group__c.Opportunity_Status__c}&quot; == &quot;Complete&quot;){
+	var r = confirm(&quot;The start date of this publish has been set to {!Group__c.Start_Date__c}. Is this correct? Please note the source that this record was cloned from will be updated to close on the day this group starts.&quot;);
+	if (r == true) {
+		
+		var parent = new sforce.SObject(&quot;Group__c&quot;);
+		var pquery = sforce.connection.query(&quot;SELECT Id from Group__c WHERE Group_Number__c = &apos;{!Group__c.Group_Number__c}&apos; AND( Is_Active__c = &apos;Active&apos; OR Is_Active__c = &apos;Pending&apos;) LIMIT 1&quot;);
+		precords = pquery.getArray(&quot;records&quot;);
+		for (var i=0; i&lt; precords.length; i++) {
+			parent.Id = precords[i].Id;
+		}
+		if(parent.Id != &quot;&quot;){
+			var dd = &quot;{!DAY(Group__c.Start_Date__c)}&quot;;
+			var mm = &quot;{!MONTH(Group__c.Start_Date__c)}&quot;;
+			var yyyy = &quot;{!YEAR(Group__c.Start_Date__c)}&quot;;
+
+			if(dd&lt;10) {
+				dd=&apos;0&apos;+dd
+			}
+
+			if(mm&lt;10) {
+				mm=&apos;0&apos;+mm
+			} 
+			
+			var parentUpdate = sforce.apex.execute(&quot;renewalManual&quot;,&quot;retireGroup&quot;,{pgroup:parent,publishDate:yyyy + &quot;-&quot; + mm + &quot;-&quot; + dd});
+		}
+		
+		var group = new sforce.SObject(&quot;Group__c&quot;);
+		var query = sforce.connection.query(&quot;SELECT Id from RecordType WHERE sObjectType = &apos;Group__c&apos; AND Name = &apos;Group&apos; LIMIT 1&quot;);
+
+		records = query.getArray(&quot;records&quot;);
+
+		for (var i=0; i&lt; records.length; i++) {
+			group.RecordTypeId = records[i].Id;
+		}
+
+		group.Id = &quot;{!Group__c.Id}&quot;;
+		group.Renewal_Date__c = null;
+
+		sforce.connection.update([group]);
+		window.location.reload();
+
+	}
+}else{
+	alert(&quot;The parent opportunity/renewal/client maintenance record has not been closed. Please follow any and all procedural steps at this level, close the record and proceed to click publish again.&quot;);
+}</url>
+    </webLinks>
+    <webLinks>
+        <fullName>Publishv2</fullName>
+        <availability>online</availability>
+        <displayType>button</displayType>
+        <height>600</height>
+        <linkType>page</linkType>
+        <masterLabel>Publish</masterLabel>
+        <openType>sidebar</openType>
+        <page>publishWizard</page>
+        <protected>false</protected>
+    </webLinks>
+</CustomObject>

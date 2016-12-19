@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>Group__c.Group_Whics_Name__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Group_Number__c</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>Group__c.Extra_broker_page_in_booklet__c</column>
+            <operator>notEqual</operator>
+            <value></value>
+        </criteriaItems>
+    </filter>
+    <format>Summary</format>
+    <groupingsDown>
+        <dateGranularity>Day</dateGranularity>
+        <field>Group__c.Extra_broker_page_in_booklet__c</field>
+        <sortOrder>Asc</sortOrder>
+    </groupingsDown>
+    <name>Extra Broker Panel field changes</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Group__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <timeFrameFilter>
+        <dateColumn>CUST_CREATED_DATE</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

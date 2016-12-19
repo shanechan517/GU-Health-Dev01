@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>This email is sent to Client/Prospect account manager to notify that opportunity needs to be converted</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GUHealth</letterhead>
+    <name>Opportunity ClosedWon/AM alert</name>
+    <style>freeForm</style>
+    <subject>An opportunity has been Won - Start new group process - {!Opportunity.Account} - {!Opportunity.RecordType} - {!Opportunity.Name}</subject>
+    <textOnly>{!Opportunity.Account} - {!Opportunity.RecordType} - {!Opportunity.Name}
+
+This new won opportunity has now been assigned to the opportunity&apos;s client/prospect account manager.  A task has been created and assigned to {!Opportunity.OwnerFullName} to initiate the “New Group” process.
+
+
+{!Opportunity.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

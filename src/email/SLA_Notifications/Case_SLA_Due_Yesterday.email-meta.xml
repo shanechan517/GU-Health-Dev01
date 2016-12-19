@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to team that case was due Yesterday</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GUHealth</letterhead>
+    <name>Case SLA Due Yesterday</name>
+    <style>freeForm</style>
+    <subject>Case Now Overdue - {!Case.Related_Record_Type__c} | {!Case.Related_Record__c} - {!Case.Subject}</subject>
+    <textOnly>{!Case.Related_Record_Type__c} | {!Case.Related_Record__c} - {!Case.Subject}
+
+The following case is overdue:
+{!Case.CaseNumber}
+
+Please try to complete the case asap as the case is past it&apos;s required completion date, and if you have any blockages please communicate them to the relevant individual/team.
+
+{!Case.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

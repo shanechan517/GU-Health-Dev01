@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email sent to requester that cases are complete</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <letterhead>GUHealth</letterhead>
+    <name>Parent Case Complete</name>
+    <style>freeForm</style>
+    <subject>Cases Completed - {!Case.Related_Record_Type__c} | {!Case.Related_Record__c}</subject>
+    <textOnly>{!Case.Related_Record_Type__c} | {!Case.Related_Record__c}
+
+All cases relating to case {!Case.CaseNumber} have been completed.
+
+Please log into Salesforce and verify that all actions have been completed successfully.
+
+{!Case.Link}</textOnly>
+    <type>html</type>
+</EmailTemplate>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Report xmlns="http://soap.sforce.com/2006/04/metadata">
+    <columns>
+        <field>Group__c.Group_Number__c</field>
+    </columns>
+    <columns>
+        <field>Group__c.Version__c</field>
+    </columns>
+    <columns>
+        <field>FK_OPP_RECORDTYPE</field>
+    </columns>
+    <columns>
+        <field>CUST_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_NAME</field>
+    </columns>
+    <columns>
+        <field>FK_OPP_STAGE_NAME</field>
+    </columns>
+    <filter>
+        <criteriaItems>
+            <column>FK_OPP_RECORDTYPE</column>
+            <operator>notEqual</operator>
+            <value>Opportunity.Opportunity</value>
+        </criteriaItems>
+    </filter>
+    <format>Tabular</format>
+    <name>List of Renewals and C. Maintenance</name>
+    <params>
+        <name>co</name>
+        <value>1</value>
+    </params>
+    <reportType>CustomEntity$Group__c@Group__c.Opportunity__c</reportType>
+    <scope>organization</scope>
+    <showDetails>true</showDetails>
+    <sortColumn>Group__c.Group_Number__c</sortColumn>
+    <sortOrder>Asc</sortOrder>
+    <timeFrameFilter>
+        <dateColumn>Group__c.Closed_on__c</dateColumn>
+        <interval>INTERVAL_CUSTOM</interval>
+    </timeFrameFilter>
+</Report>

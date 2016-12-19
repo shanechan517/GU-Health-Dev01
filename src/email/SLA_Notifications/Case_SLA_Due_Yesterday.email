@@ -1,0 +1,6 @@
+<table border="0" cellpadding="5" width="550" cellspacing="5" height="400" >
+<tr valign="top" height="400" >
+<td tEditID="c1r1" style=" background-color:#FFFFFF; color:#000000; bEditID:r3st1; bLabel:main; font-size:12pt; font-family:arial;" aEditID="c1r1" locked="0" >
+<![CDATA[<div><b style="color: rgb(51, 51, 51); font-family: arial; font-size: medium;">{!Case.Related_Record_Type__c} |&nbsp;{!Case.Related_Record__c} -&nbsp;</b><font color="#333333" face="arial"><b>{!Case.Subject}</b></font></div><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333"><div><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333"><br></font></font></div>The following case is overdue:<br>{!Case.CaseNumber}<br><br>Please try to complete the case asap as the case is past it's required completion date, and if you have any blockages please communicate them to the relevant individual/team.<br><br>{!Case.Link}<br></font></font><font style="color: rgb(0, 0, 0); font-family: arial; font-size: 12pt;" color="#666666"><font color="#333333"></font></font>]]></td>
+</tr>
+</table>
